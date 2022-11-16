@@ -2,6 +2,21 @@
 complete adobe commerce(magento guide)
 
 
+
+## Before Go into Magento 
+
+    - Php 
+    - Html
+    - Css
+    - Javascript
+    - Knockout JS
+    - Xml
+    - Jquery
+    - 
+
+
+
+
 ## History of Magento(Adobe Commerce)
 
 
@@ -12,8 +27,6 @@ complete adobe commerce(magento guide)
 ## Setup and Installation 
 
 
-
-
 ## Common Issue or Error  for Magento Developer  as Beginner
 
 
@@ -22,7 +35,33 @@ complete adobe commerce(magento guide)
 
 
 
-## 
+## How Magento Taking Memory and How it is Working on Local
+
+
+## How Magento Code Giving Output 
+
+
+
+## What is the need of Console Interface to Operate Magento codes(Terminal)
+
+
+
+
+## MVC in Magento 
+
+
+
+## Storefont in Magento 
+
+
+## Admin Panel in Magento 
+
+
+
+## Architecture Level Concept in Magento
+
+
+
 
 
 
@@ -36,22 +75,32 @@ complete adobe commerce(magento guide)
 
 
 
-## 
-
-
-
 ## Basic Magento Syllabus
 
-
-
 ## Advance Magento Syllabus
-
 
 ## Cloud Envirnmonet in Magento
 
 
+## Deprecated Code in Magento 
+
+
+
+# Task 
+    - Basic Understanding of Magento Assignment Part - 1
+
+    - Basic Understanding of Magento Assignment Part - 2
+    
+    - Basic Understanding of Magento Assignment Part - 3 
+    
+    - Basic Understanding of Magento Assignment Part - 4
+
+    - Basic Understanding of Magento Assignment Part - 5 
+
 
 ## Existing Free Extension For Magento 
+
+## Bug in Magento 
 
 ## Third Party Integration with Magento (Adobe Commerce)
 
