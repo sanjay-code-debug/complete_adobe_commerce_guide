@@ -22,9 +22,34 @@ complete adobe commerce(magento guide)
 
 
 ## Tools Require 
-
+       - Nginx
+       - Apache
+       - Php
+       - Elasticsearch
+       - OpenSearch
+       -  Redish
+       - Varnish
+       - RabbitMQ
+       - Xdebug
+       
 
 ## Setup and Installation 
+       
+
+
+## Basic Commands and use
+
+      - Production Vs Developer Vs Default Mode
+      - Two_FactorAuthentication
+      - bin/magento deploy:mode:set production     - set the mode
+      - bin/magento se:up 
+      - bin/magento se:di:co
+      - bin/magento ca:fl
+      - bin/magento module:status
+      - bin/magento module:enable Modeule
+      - bin/magento module:disable Modeule
+      
+      
 
 
 ## Common Issue or Error  for Magento Developer  as Beginner
