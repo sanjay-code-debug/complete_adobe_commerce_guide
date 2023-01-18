@@ -1,0 +1,70 @@
+Core Concept
+============
+
+
+PLP
+===
+    - Catalog price rules   
+
+
+PDP
+===
+    - 
+
+Checkout
+=========
+
+
+Cart
+====
+    - Target rules
+    - Cart price rules
+
+
+
+Price
+=====
+
+   - Base Price
+   - Ragular Price
+   - Tier Price
+   - 
+
+
+Currency Conversion
+===================
+
+
+
+Import  Entity
+==============
+
+
+Export Entity
+=============
+
+Payment Method
+==============
+
+
+Shipping Method
+===============
+
+
+Logiless Implementation
+=======================
+
+
+
+
+Third Party Integration
+=======================
+
+
+
+Api Curl Request Create
+=======================
+
+
+
+
