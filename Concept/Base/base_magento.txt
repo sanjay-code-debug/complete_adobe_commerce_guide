@@ -1,0 +1,5 @@
+Base of Magento
+===============
+
+- All File how it is Working 
+- How Magento is Taking Memory
