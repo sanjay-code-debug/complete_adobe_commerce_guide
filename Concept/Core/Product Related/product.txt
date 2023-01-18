@@ -1,0 +1,8 @@
+Product Related
+===============
+   - simple
+   - configurable
+   - virtual
+   - downloadable 
+   - bundle
+   - 
