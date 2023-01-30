@@ -143,6 +143,8 @@ Adobe Training Docs
 
 
   Cloud
+  
+  
            Cloud overview --> https://devdocs.magento.com/cloud/bk-cloud.html
            Onboarding --> https://devdocs.magento.com/cloud/onboarding/onboarding-tasks.html
            Architecture --> https://devdocs.magento.com/cloud/architecture/cloud-architecture.html
