@@ -100,6 +100,58 @@ complete adobe commerce(magento guide)
 
 
 
+
+Core Magento Concept
+====================
+
+Rest Api in Magento(Service contract & webapi.xml)
+--------------------------------------------------
+  Customer
+  --------
+       Login & Create
+       --------------
+             - Register
+             - Login
+             - Forgot Password
+             - Social Login
+      Customer Dashboard
+      ------------------
+             - Customer Details
+             - Customer Cart 
+             - Customer Orders
+             - Customer Whislist
+             - Shipping Address
+             - Billing Address
+             - Customer Logout
+             
+Guset Customer
+==============
+   
+PLP(Product Listing Page)
+=========================
+
+
+PDP(Product Description Page)
+============================
+
+
+Checkout 
+========
+
+
+
+Cart
+====
+
+   
+
+Third Party Integration
+=======================
+
+
+
+
+
 ## Basic Magento Syllabus
 
 ## Advance Magento Syllabus
