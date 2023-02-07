@@ -101,9 +101,8 @@ complete adobe commerce(magento guide)
 
 
 
-Core Magento Concept
-====================
-
+##Core Concept In Magento
+=========================
 Rest Api in Magento(Service contract & webapi.xml)
 --------------------------------------------------
   Customer
