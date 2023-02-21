@@ -106,8 +106,9 @@ complete adobe commerce(magento guide)
 Rest Api in Magento(Service contract & webapi.xml)
 --------------------------------------------------
  - http://magento.local(base_url)/swagger#/
+ 
                 |
-                |----Some time it will not work 
+                |----Some time it will not work So Check Below Configuration
                               |
                               |--------------Stores > Settings > Configuration > Advanced > Developer
                                                                                               |-------Swagger----->Enabled Yes/No (make it Yes)
