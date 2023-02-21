@@ -105,6 +105,13 @@ complete adobe commerce(magento guide)
 =========================
 Rest Api in Magento(Service contract & webapi.xml)
 --------------------------------------------------
+ - http://magento.local(base_url)/swagger#/
+                |
+                |----Some it will not work 
+                              |--------------Stores > Settings > Configuration > Advanced > Developer
+                                                                                              |-------Swagger----->Enabled Yes/No (make it Yes)
+                                                                                                         
+
   Customer
   --------
        Login & Create
@@ -123,8 +130,15 @@ Rest Api in Magento(Service contract & webapi.xml)
              - Billing Address
              - Customer Logout
              
-Guset Customer
-==============
+             
+             
+Guest Customer Flow 
+===================
+
+LoggedIn Customer Flow
+======================
+
+
    
 PLP(Product Listing Page)
 =========================
@@ -141,6 +155,8 @@ Checkout
 
 Cart
 ====
+
+
 
    
 
@@ -178,6 +194,10 @@ Third Party Integration
 
 ## Bug in Magento 
 
+
+## Publish your Custom Extension 
+
+
 ## Third Party Integration with Magento (Adobe Commerce)
 
 
@@ -197,28 +217,51 @@ Adobe Training Docs
   
   
            Cloud overview --> https://devdocs.magento.com/cloud/bk-cloud.html
+           
            Onboarding --> https://devdocs.magento.com/cloud/onboarding/onboarding-tasks.html
+           
            Architecture --> https://devdocs.magento.com/cloud/architecture/cloud-architecture.html
+           
            Pro vs Started --> https://devdocs.magento.com/cloud/architecture/starter-architecture.html
+           
            Pro vs Started --> https://devdocs.magento.com/cloud/architecture/pro-architecture.html
+           
            Technical Requirements --> https://devdocs.magento.com/cloud/requirements/cloud-requirements.html
+           
            Magneto CLI --> https://devdocs.magento.com/cloud/reference/cli-ref-topic.html
+           
            ECE Tool --> https://devdocs.magento.com/cloud/reference/ece-tools-reference.html
+           
            Private Link --> https://devdocs.magento.com/cloud/project/privatelink-service.html
+           
            SSH --> https://devdocs.magento.com/cloud/env/environments-ssh.html
+           
            NewRelic --> https://devdocs.magento.com/cloud/project/new-relic.html
+           
            SendGrid --> https://devdocs.magento.com/cloud/project/sendgrid.html
+           
            Cloud Project Structure --> https://devdocs.magento.com/cloud/project/sendgrid.html
+           
            Fastly --> https://devdocs.magento.com/cloud/cdn/cloud-fastly.html
+           
            Configure Application --> https://devdocs.magento.com/cloud/project/magento-app.html
+           
            Build and Deploy --> https://devdocs.magento.com/cloud/project/magento-env-yaml.html
+           
            Services Configuration --> https://devdocs.magento.com/cloud/project/services.html
+           
            PHP Configuration --> https://devdocs.magento.com/cloud/project/magento-app-php-ini.html
+           
            Environment Variable --> https://devdocs.magento.com/cloud/env/variables-intro.html
+           
            All Type of Variable --> https://devdocs.magento.com/cloud/env/variables-intro.html
+           
            Zero Down time deployment --> https://devdocs.magento.com/cloud/deploy/reduce-downtime.html
+           
            Go Live Checklist --> https://devdocs.magento.com/cloud/live/site-launch-checklist.html
+           
            Upgrade --> https://devdocs.magento.com/cloud/project/project-upgrade-parent.html 
+           
             
             
             
