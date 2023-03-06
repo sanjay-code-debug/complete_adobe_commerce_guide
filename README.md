@@ -190,6 +190,35 @@ complete adobe commerce(magento guide)
   
 </details>
 
+### Composer
+<details>
+    <i> Composer.json Vs Composer.lock </i>
+
+
+     - Doing some Changes on Module 
+              |--------------------Creating Pr -- Pr got Merged ---> Create new Tag after PR Merged   - tag-1.0.2
+              
+              
+     - Go to Our Existing Branch Which Already Got Merged 
+                               |------Take pull - and add the Tag Version into - composer.json(main composer.json)
+                                       |
+                                       |--------Run Composer Update 
+                                                 |
+                                                 |----After running of composer update it will automatically update into composer.lock
+</details>
+    
+<details>
+    <i> Composer Install  vs Composer Update </i>
+                                                                      
+      Composer Install
+       ----------------
+          - When we run composer install  - it will check the composer file and generate the composer.lock file 
+       
+      Composer Update
+      ----------------
+          composer.json  --  when we run composer update it will take all the updated version version mention in composer.json into composer.lock 
+    
+</details>   
 
 
 ### ElasticSearch
