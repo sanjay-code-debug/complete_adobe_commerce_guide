@@ -132,6 +132,63 @@ complete adobe commerce(magento guide)
 
 
 ### MailHog
+<details>
+    <i> Referecne docs - https://www.rakeshjesadiya.com/install-mailhog-in-ubuntu-php-environment/ </i>
+     
+  Step-1
+  -------
+          - Common Directory
+          - sudo apt-get update
+          - sudo apt-get install golang-go
+           
+  Step-2
+  -------
+          - Install MailHog = go get github.com/mailhog/MailHog
+          - Install mhsendmail = go get github.com/mailhog/mhsendmail
+          
+  Step-3
+  ------
+         - echo "$USER"    - For check the User (Which user name of system)
+         
+         - sudo cp /home/{system_user}/go/bin/MailHog /usr/local/bin/mailhog         - sudo cp /home/sanjay/go/bin/MailHog /usr/local/bin/mailhog 
+         - sudo cp /home/{system_user}/go/bin/mhsendmail /usr/local/bin/mhsendmail   - sudo cp /home/sanjay/go/bin/mhsendmail /usr/local/bin/mhsendmail
+         
+  Step-4
+  ------
+         - Now Modify the php.ini to setup MailHog path
+              |
+              |---I am working with PHP 7.4 version, So My  php.ini path location would be  /etc/php/7.4/fpm/php.ini
+              
+              |--- sudo nano php.ini
+              
+          - Now update ;sendmail_path = with the given line. Remove the semicolon from the starting and update the path,
+               - sendmail_path = /usr/local/bin/mhsendmail     
+               
+          - If not Work add path to  PHP - CLI  also and Restart the FPM (sudo service php7.4-fpm restart)     
+   Step-5
+   ------
+          - To Start the Mailhoh is Working or not 
+             
+                   - run   =  mailhog
+           
+           - Open your Browser(chrome)
+                           |------------http://localhost:8025  
+                                                  |
+                                                  Project Wise
+                                                          |----http://blank.m24.test:8025/
+                                                          |----http://fresh.local:8025/
+                                                            
+   Step-6
+   -------
+            - Now Click on Enable Jim
+            
+            - Place one Order from magento side and check the mailHog
+            
+         
+          "Congradulations -- Finally You Setup MailHog"  - If any Error Take Help of Google
+               
+  
+</details>
 
 
 
