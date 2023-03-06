@@ -20,7 +20,22 @@ complete adobe commerce(magento guide)
      
      
 ### Best Practices
-<details><summary><b>Best Codding Standards</b></summary>
+<details><summary><b>Always Remind Before Code</b></summary>
+               
+                 - Before Code - Understood what is the Requirement
+                 - Some Time Directly Try - If you are not gettting 
+                 - Always Try with Dummy Value then Implement Real
+                 - Implement Oops Concept
+                            |
+                            |--- Divide code into small methods 
+                            |--- Write Clean Code (Proper Naming )
+                            |--- 
+                 -  
+    
+    
+ </details>      
+    
+<details><summary><b>Try Catch</b></summary>
     
              try { echo 'Perferom your Operation'; } catch(Exception $e) { echo 'Message: ' .$e->getMessage(); }
                try {
@@ -52,7 +67,9 @@ complete adobe commerce(magento guide)
                       $logger->info('This Is Simple Text Log'); //To print simple text log
                       $logger->info(print_r($myarray, true)); //To print array log  
  
- </details>   
+ </details>  
+ 
+ 
 
 ### PhpCs and Php Md
 
