@@ -21,8 +21,9 @@ complete adobe commerce(magento guide)
      
 ### Best Practices
 <details><summary><b>Info</b></summary>
-            try { echo 'Perferom your Operation'; } catch(Exception $e) { echo 'Message: ' .$e->getMessage(); }
-              try {
+    
+             try { echo 'Perferom your Operation'; } catch(Exception $e) { echo 'Message: ' .$e->getMessage(); }
+               try {
                    //check if
                      var $test = "TEST";
                      if(($test) === "TEST") {
@@ -41,11 +42,13 @@ complete adobe commerce(magento guide)
                  catch(Exception $e) {
                   echo $e->getMessage();
                 }  
-</details>
-
+  </details>
+ 
 
 ### PhpCs and Php Md
 
+<details><summary><b>Info</b></summary>
+    
          - https://magefan.com/blog/magento-extension-code-quality
        
        Way -1
@@ -95,8 +98,8 @@ complete adobe commerce(magento guide)
        =========
          - Open PhpStorm -> Go To Files ->Setting -> Search for Php->Code Style->Php--> Right Side corner->Set From -->Select the Coding Standard.
 
-
-
+</details>
+    
 
 ### Xdebug 
 
