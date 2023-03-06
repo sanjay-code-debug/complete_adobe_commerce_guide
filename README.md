@@ -15,6 +15,32 @@ complete adobe commerce(magento guide)
     - 
 
 
+## Codding Standards
+
+### PhpCs and Php Md
+
+         - https://magefan.com/blog/magento-extension-code-quality
+         
+
+
+### Xdebug 
+
+
+
+### MailHog
+
+
+
+### ElasticSearch
+
+
+### Redis
+
+
+
+### Varnish
+
+
 
 
 ## History of Magento(Adobe Commerce)
