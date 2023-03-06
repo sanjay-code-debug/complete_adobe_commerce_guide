@@ -18,11 +18,84 @@ complete adobe commerce(magento guide)
 ## Codding Standards
      - https://developer.adobe.com/commerce/php/coding-standards/
      
+     
+### Best Practices
+<details><summary><b>Info</b></summary>
+            try { echo 'Perferom your Operation'; } catch(Exception $e) { echo 'Message: ' .$e->getMessage(); }
+              try {
+                   //check if
+                     var $test = "TEST";
+                     if(($test) === "TEST") {
+                     //throw exception if condition is not valid
+                     throw new customException($test);
+                 }
+                  //check for "TEST" in dummy value
+                   if(strpos($test, "TEST") !== FALSE) 
+                   {
+                    throw new Exception("$test is an example Dummy Value");
+                  }
+                 }
+                 catch (customException $e) {
+                    echo $e->errorMessage();
+                    }
+                 catch(Exception $e) {
+                  echo $e->getMessage();
+                }  
+</details>
+
 
 ### PhpCs and Php Md
 
          - https://magefan.com/blog/magento-extension-code-quality
+       
+       Way -1
+       ======
+         Go to /var/www/html 
+          ===================
+              - git clone https://github.com/magento/magento-coding-standard.git
+              - cd magento-coding-standard
+              - composer install
+ 
+         If Permission issue
+                 sudo chmod -R 777 /var/www/html/magento-coding-standard
+ 
+          Check the Particular Module
+          ---------------------------
+             - vendor/bin/phpcs /path/to/your/extension --standard=Magento2 > log.txt  ---> syntax for Check standard
+     
+            - vendor/bin/phpcs /var/www/html/marina/app/code/Codilar/CustomRestApi --standard=Magento2 > log.txt   --- log.txt (all errors)
+
+
+      Way -2
+      ======
+       step -1
+       -------  
+              - Get the Magento Coding Standard Folder and Place inside this location- var/www/html
+               Link - https://drive.google.com/file/d/119z6fG5j7AzTd35h4G1i1uNS9alBMHIy/view?usp=sharing
+              
+      step -2
+      -------
+       - Open Magento Project in PhpStrom 
+                      -->Setting --->PHP-->Quality Code ---> Php_CodeSniffer-->Select(Click on this 3 dot) [...] 
+                                      
+                                         ---> When you click on (...) it open --->local and there two option
+                                         
+                                              - PHP_CodeSniffer path : - /var/www/html/magento-coding-standard/vendor/bin/phpcs
+                                              - Path to phpcbf       : -/var/www/html/magento-coding-standard/vendor/bin/phpcbf
+                                              
+                                              - After giving path -- click on validate button 
+                                              
+                                              - After Validate - Click on Apply  ---> Ok 
+
+       Direct Command
+       ==============
+            - ./vendor/bin/phpcs --standard=./dev/tests/static/framework/Magento/ruleset.xml app/code/CasioSingapore/   
          
+       PSR1/PSR2
+       =========
+         - Open PhpStorm -> Go To Files ->Setting -> Search for Php->Code Style->Php--> Right Side corner->Set From -->Select the Coding Standard.
+
+
 
 
 ### Xdebug 
