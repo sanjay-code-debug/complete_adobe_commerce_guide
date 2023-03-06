@@ -20,7 +20,7 @@ complete adobe commerce(magento guide)
      
      
 ### Best Practices
-<details><summary><b>Info</b></summary>
+<details><summary><b>Best Codding Standards</b></summary>
     
              try { echo 'Perferom your Operation'; } catch(Exception $e) { echo 'Message: ' .$e->getMessage(); }
                try {
@@ -43,7 +43,16 @@ complete adobe commerce(magento guide)
                   echo $e->getMessage();
                 }  
   </details>
+  
+  <details><summary><b>Print Logs</b></summary>
+  
+                      $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/mylogfile.log');
+                      $logger = new \Zend\Log\Logger();
+                      $logger->addWriter($writer);
+                      $logger->info('This Is Simple Text Log'); //To print simple text log
+                      $logger->info(print_r($myarray, true)); //To print array log  
  
+ </details>   
 
 ### PhpCs and Php Md
 
