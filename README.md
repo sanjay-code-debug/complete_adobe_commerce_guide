@@ -264,7 +264,7 @@ complete adobe commerce(magento guide)
       - bin/magento module:status
       - bin/magento module:enable Modeule
       - bin/magento module:disable Modeule
-      
+      - bin/magento dev:di:info "Magento\Catalog\Ui\DataProvider\Product\Listing\DataProvider"
       
 
 
