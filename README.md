@@ -377,11 +377,6 @@ Cart
 
 
 
-Deprecated Functionality
-========================
-
-
-
 Service Contract Both Way
 =========================
 
@@ -393,20 +388,35 @@ Service Contract Both Way
           Repository Way
           --------------
           
+## Various Task Quick Help 
+==========================
+
+#### Deprecated Functionality
           
           
-####Best Practice of Use Filter On Collection
+#### Best Practice of Use Filter On Collection
+
+
+#### SQl Query In Magento
 
 
 
+#### Get Object Of Any Class and Save or Get Data
 
 
-####SQl Query In Magento
+### Ui - Component (Admin Grid) Quick Idea
+==========================================
+
+#### How InsertListing Working 
 
 
+#### How Search is Working 
 
 
-####Get Object Of Any Class and Save or Get Data
+#### How Filter is Working 
+
+
+#### How Data Source is Woring 
           
           
           
