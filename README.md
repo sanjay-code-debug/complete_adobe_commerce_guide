@@ -376,6 +376,44 @@ Cart
 
 
 
+
+Deprecated Functionality
+========================
+
+
+
+Service Contract Both Way
+=========================
+
+          Basic Way
+          ---------
+          
+          
+          
+          Repository Way
+          --------------
+          
+          
+          
+####Best Practice of Use Filter On Collection
+
+
+
+
+
+####SQl Query In Magento
+
+
+
+
+####Get Object Of Any Class and Save or Get Data
+          
+          
+          
+          
+          
+          
+
    
 
 Third Party Integration
