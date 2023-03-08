@@ -389,8 +389,6 @@ Service Contract Both Way
           --------------
           
 ## Various Task Quick Help 
-==========================
-
 #### Deprecated Functionality
           
           
@@ -405,7 +403,6 @@ Service Contract Both Way
 
 
 ### Ui - Component (Admin Grid) Quick Idea
-==========================================
 
 #### How InsertListing Working 
 
