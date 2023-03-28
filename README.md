@@ -229,6 +229,11 @@ Service Contract Both Way
           
 #### Best Practice of Use Filter On Collection
 
+            -  $customers = $this->customerCollection->create();
+               $customers->addFieldToFilter("is_active", ['eq' => true]);
+               
+            -    
+
 
 #### SQl Query In Magento
 
