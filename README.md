@@ -154,6 +154,9 @@ complete adobe commerce(magento guide)
 
 ##Core Concept In Magento
 =========================
+# API
+![api](https://user-images.githubusercontent.com/78407424/229434266-befbda7b-674b-4156-9a62-75c8a9d37319.png)
+
 Rest Api in Magento(Service contract & webapi.xml)
 --------------------------------------------------
  - http://magento.local(base_url)/swagger#/
@@ -163,7 +166,7 @@ Rest Api in Magento(Service contract & webapi.xml)
                               |
                               |--------------Stores > Settings > Configuration > Advanced > Developer
                                                                                               |-------Swagger----->Enabled Yes/No (make it Yes)
-                                                                                                         
+      
 
   Customer
   --------
@@ -227,37 +230,9 @@ Service Contract Both Way
 #### Deprecated Functionality
           
           
-#### Best Practice of Use Filter On Collection
-
-            -  $customers = $this->customerCollection->create();
-               $customers->addFieldToFilter("is_active", ['eq' => true]);
-               
-            -    
-
-
-#### SQl Query In Magento
-
-
-
-#### Get Object Of Any Class and Save or Get Data
-
-
-### Ui - Component (Admin Grid) Quick Idea
-
-#### How InsertListing Working 
-
-
-#### How Search is Working 
-
-
-#### How Filter is Working 
-
-
-#### How Data Source is Woring 
           
-          
-          
-          
+# GraphQl
+--------          
           
           
 
