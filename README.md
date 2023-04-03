@@ -188,35 +188,30 @@ Rest Api in Magento(Service contract & webapi.xml)
              
              
              
-Guest Customer Flow 
-===================
+  Guest Customer Flow 
+  -------------------
 
-LoggedIn Customer Flow
-======================
+  LoggedIn Customer Flow
+  ----------------------
+  
+  PLP(Product Listing Page)
+  -------------------------
 
-
-   
-PLP(Product Listing Page)
-=========================
-
-
-PDP(Product Description Page)
-============================
-
-
-Checkout 
-========
-
-
-
-Cart
-====
+  PDP(Product Description Page)
+  -----------------------------
+  
+  Checkout
+  --------
+  
+  Cart
+  ----
+  
 
 
 
 
-Service Contract Both Way
-=========================
+## Service Contract Both Way
+
 
           Basic Way
           ---------
@@ -225,10 +220,7 @@ Service Contract Both Way
           
           Repository Way
           --------------
-          
-## Various Task Quick Help 
-#### Deprecated Functionality
-          
+                    
           
           
 # GraphQl
@@ -238,8 +230,8 @@ Service Contract Both Way
 
    
 
-Third Party Integration
-=======================
+## Third Party Integration
+
 
 
 
