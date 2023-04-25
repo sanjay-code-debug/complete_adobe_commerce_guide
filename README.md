@@ -162,6 +162,11 @@ Rest Api in Magento(Service contract & webapi.xml)
  - http://magento.local(base_url)/swagger#/
  
                 |
+                |------First check the active mode website is running
+                |                                              |-----------sudo bin/magento deploy:mode:show
+                |----- If It is in default mode then chane it to "developer"
+                |                                                     |--------- sudo bin/magento deploy:mode:set developer (do se:up & ca:fl)
+                |
                 |----Some time it will not work So Check Below Configuration
                               |
                               |--------------Stores > Settings > Configuration > Advanced > Developer
