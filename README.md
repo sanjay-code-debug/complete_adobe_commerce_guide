@@ -64,7 +64,39 @@ complete adobe commerce(magento guide)
                       $logger->info(print_r($myarray, true)); //To print array log  
  
  </details>  
+
+ <details><summary><b>Setup coding standards</b></summary>
+
+          Step - 1
+          --------
+                     - Install the coding-standard folder 
+                                       |
+                                       |
+                                       |------------------ direct folder
+                                       |
+                                       |------------------ install via composer way
+
+          Step - 2
+          --------
+                    - Install(keep) folder any directory location
+
+                    - Here i kept under directory location i.e -  /var/www/html/coding-standards
+
+                    - cd /var/www/html/coding-standards   ---- composer install
+
+
+          Step -3
+          -------
+                   - use below command to check the coding standard
+
+                   - vendor/bin/phpmd /var/www/html/marina/app/code/Codilar/CustomApi/ text /var/www/html/marina/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml
+                   
+                   - vendor/bin/phpcs --standard=Magento2 --extensions=php /var/www/html/marina/app/code/Codilar/CustomApi/
+                   
+                   - php src/php-cpd/phpcpd.phar --fuzzy /var/www/html/marina/app/code/Codilar/CustomApi/
+                
  
+ </details>  
 
 ## History o    f Magento(Adobe Commerce)
 
