@@ -177,8 +177,19 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 ## How Files are working
 
 
+## Order Flow
 
-
+ <details><summary><b>order concept</b></summary>
+     
+        Order Flow: 
+            New: when customers just created an order and have not made any payment
+            Pending: when the invoice and shipment have not been created
+            Processing: the order has been either invoiced or delivered
+            Complete: when the order has been both invoiced and shipped
+            On hold: admins can assign the On hold status manually
+            Canceled: when the order has not been paid for, the store admin or the payment gateway will decide to put this status.
+            Closed: a credit memo is included and the refund has been made.
+ </details>
 
 ##Core Concept In Magento
 =========================
