@@ -131,34 +131,6 @@ History of Magento(Adobe Commerce)
        - Xdebug
      
 </details>        
-
-Basic's
--------
-<details><summary><b>info</b></summary>
-
-### Basic Commands and use
---------------------------
-<details><summary><b>info</b></summary>
-        
-          - Production Vs Developer Vs Default Mode
-          - Two_FactorAuthentication
-          - bin/magento deploy:mode:set production     - set the mode
-          - bin/magento se:up 
-          - bin/magento se:di:co
-          - bin/magento ca:fl
-          - bin/magento module:status
-          - bin/magento module:enable Modeule
-          - bin/magento module:disable Modeule
-          - bin/magento dev:di:info "Magento\Catalog\Ui\DataProvider\Product\Listing\DataProvider"
-          
-    </details>    
-
-### How Files are working
--------------------------
-<details><summary><b>info</b></summary>
-</details>
-
-</details>   
         
 Adobe Training Docs & Syllabus
 ------------------------------      
