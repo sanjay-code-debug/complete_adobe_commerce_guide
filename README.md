@@ -46,6 +46,7 @@ Best Practices - no comparmise
 
  ### exception handling
 <details><summary><b>infp</b></summary>
+    
              try { echo 'Perferom your Operation'; } catch(Exception $e) { echo 'Message: ' .$e->getMessage(); }
                try {
                    //check if
@@ -118,6 +119,7 @@ History of Magento(Adobe Commerce)
 
 ## Tools Require 
 <details><summary><b>info</b></summary>
+    
        - Nginx
        - Apache
        - Php
