@@ -737,6 +737,7 @@ Adobe Training Docs & Syllabus
 Magento Core Concept
 --------------------
 <details><summary><b>info</b></summary>
+    
 ### Design pattern's 
 <details><summary><b>info</b></summary>
 </details>
@@ -1023,7 +1024,8 @@ Magento Core Concept
     </details>  
 </details>     
 
-### API
+## API
+-------
 ![api](https://user-images.githubusercontent.com/78407424/229434266-befbda7b-674b-4156-9a62-75c8a9d37319.png)
     
 #### Rest Api in Magento(Service contract & webapi.xml)
@@ -1059,23 +1061,20 @@ Magento Core Concept
  </details> 
 
 
- ## Checkout Flow
------------------
+## Checkout Flow
+----------------
 <details><summary><b>info</b></summary>
 
 ### require-config.js
----------------------
-    <details><summary><b>info</b></summary>
-    </details> 
+<details><summary><b>info</b></summary>
+</details> 
 
 ### how knock.js work
----------------------
-    <details><summary><b>info</b></summary>
+<details><summary><b>info</b></summary>
+
+</details> 
     
-    </details> 
-    
- ### Payment Method's
----------------------
+### Payment Method's
 <details><summary><b>info</b></summary>
 </details> 
 
@@ -1084,8 +1083,9 @@ Magento Core Concept
 
 Magento Latestes Era
 --------------------
+<details><summary><b>info: </b></summary>
+    
 ### Magento Contribution Path
-------------------------------
 <details><summary><b>info: </b></summary>
                 <i> https://www.slideshare.net/secret/MwPFaOYcTj496V </i>
             
@@ -1100,10 +1100,10 @@ Magento Latestes Era
 </details>
 
 ### Publish your Custom Extension 
----------------------------------
 <details><summary><b>info: </b></summary>
 </details>
 
+</details>
       
 
 E-Commerce Era (how it is working -- flipkart, amazon )
