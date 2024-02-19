@@ -736,6 +736,7 @@ Adobe Training Docs & Syllabus
 
 Magento Core Concept
 --------------------
+<details><summary><b>info</b></summary>
 ### Design pattern's 
 <details><summary><b>info</b></summary>
 </details>
@@ -744,21 +745,21 @@ Magento Core Concept
 ### Service Contract
 <details><summary><b>info</b></summary>
     
-  Service Contract
-        ================
-           |
-           |------What is Service contract
-           |                 |-----------why should any one implement Service contract in magento
-           |                 |-----------Benefit of Service Contract 
-           |------types of interface service contract concept implement
-           |                        |-------what is Data interfaces
-           |                        |                        |---------what is data integrity
-           |                        |-------what is service interfaces 
-           |                                                 |----------types of service interfaces
-           |                                                 |----------what is  Repository interfaces(CRUD)
-           |                                                 |----------what is Management interfaces(send the email, manage related)
-           |                                                 |----------what is Metadata interfaces(Eg-name has --first_name, last_name)
-           |          
+      Service Contract
+      ================
+               |
+               |------What is Service contract
+               |                 |-----------why should any one implement Service contract in magento
+               |                 |-----------Benefit of Service Contract 
+               |------types of interface service contract concept implement
+               |                        |-------what is Data interfaces
+               |                        |                        |---------what is data integrity
+               |                        |-------what is service interfaces 
+               |                                                 |----------types of service interfaces
+               |                                                 |----------what is  Repository interfaces(CRUD)
+               |                                                 |----------what is Management interfaces(send the email, manage related)
+               |                                                 |----------what is Metadata interfaces(Eg-name has --first_name, last_name)
+               |          
        
     
 ![Service_contract](https://user-images.githubusercontent.com/78407424/170829619-146e2aa8-2507-4f36-bfaa-718794394412.png)
@@ -952,7 +953,7 @@ Magento Core Concept
             |                 |---If we need to add extension attribute for customer then what we need to do.
             |                 |--For getting and set the extension attribute which interface we need extends in service contract design.
                                
-    </details>
+</details>
 
  ### Custom attribute vs Extension attribute
 <details><summary><b>info</b></summary>   
@@ -1079,6 +1080,7 @@ Magento Core Concept
 </details> 
 
 </details> 
+</details>
 
 Magento Latestes Era
 --------------------
