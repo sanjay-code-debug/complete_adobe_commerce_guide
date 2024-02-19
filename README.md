@@ -34,7 +34,6 @@ Best Practices - no comparmise
  </details>  
  
 ### Print Logs
---------------
 <details><summary><b>info</b></summary>
   
           $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/mylogfile.log');
@@ -46,7 +45,6 @@ Best Practices - no comparmise
 </details>  
 
  ### exception handling
- ----------------------
 <details><summary><b>infp</b></summary>
              try { echo 'Perferom your Operation'; } catch(Exception $e) { echo 'Message: ' .$e->getMessage(); }
                try {
@@ -71,7 +69,6 @@ Best Practices - no comparmise
   </details>
 
 ### Setup coding standards
---------------------------
 <details><summary><b>Setup coding standards</b></summary>
     
               Step - 1
@@ -106,7 +103,6 @@ Best Practices - no comparmise
 </details> 
 
 ### Debug untill fix - no matter what
--------------------------------------
 <details><summary><b>info</b></summary>
     
 </details>  
