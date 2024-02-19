@@ -749,6 +749,7 @@ Magento Core Concept
 ### Service Contract
 --------------------
 <details><summary><b>info</b></summary>
+    
   Service Contract
         ================
            |
@@ -771,8 +772,9 @@ Magento Core Concept
 </details>
 
 ### Dependency Injection
-------------------------
+
 <details><summary><b>info</b></summary>  
+    
               Dependency Injection 
              --------------------
                  |-----deffination
@@ -835,20 +837,24 @@ Magento Core Concept
                  |------------What is Object Manager in Magento(to mange the object by checking from di.xml(all the things declare here)
                                                           |----------what is the use of create() method (for non-injectable class)
                                                           |----------what is the use of get() method (for injectable class)
-                   
-![type_virtualtype](https://user-images.githubusercontent.com/78407424/216369559-323f1132-c4f6-46e7-a039-21fc51bfe545.png)
- 
+                                                          
 </details>
 
 ### Object Manager
-------------------
 <details><summary><b>info</b></summary>
 
 </details>
 
 
+### Type vs VirtualType
+
+<details><summary><b>info</b></summary>      
+    
+![type_virtualtype](https://user-images.githubusercontent.com/78407424/216369559-323f1132-c4f6-46e7-a039-21fc51bfe545.png)
+ 
+</details>
+
 ### Factories(Factory Class)
-----------------------------
 <details><summary><b>info</b></summary>
     
 ![Factories_3](https://user-images.githubusercontent.com/78407424/170829686-0171959b-3bb8-4469-a952-92ad24aca85d.png)
@@ -856,7 +862,6 @@ Magento Core Concept
 </details>
 
 ### Proxies(Proxy Class)
-------------------------
 <details><summary><b>info</b></summary>
     
 - di.xml is having higher priority rather than constructor
@@ -866,8 +871,9 @@ Magento Core Concept
 </details>
 
 ### Indexing
-------------
+
 <details><summary><b>info</b></summary>
+    
       Indexing
       ========
         |
@@ -883,9 +889,11 @@ Magento Core Concept
         |---What all file require to implement indexing concept in magento
                                         |----------what is the use of indexer.xml
                                         |----------what is the use of mview.xml 
-                                                          |-----how mview file is link with other files and help cron job to work       
+                                                          |-----how mview file is link with other files and help cron job to work      
+    
     
 ![Screenshot from 2022-05-28 19-30-43](https://user-images.githubusercontent.com/78407424/170829798-5186503c-dead-4948-a22e-c9620b424515.png)
+
 </details> 
 
 ### Caching
@@ -921,7 +929,6 @@ Magento Core Concept
 
 
 ### EAV
--------
 <details><summary><b>info</b></summary>
     
            EAV 
@@ -954,14 +961,12 @@ Magento Core Concept
     </details>
 
  ### Custom attribute vs Extension attribute
---------------------------------------------
 <details><summary><b>info</b></summary>   
 
 </details>
 
 
 ### Declarative Schema (DataPatch vs SchemaPatch)
--------------------------------------------------
 <details><summary><b>info</b></summary>
 
     Declarative Schema
@@ -986,10 +991,8 @@ Magento Core Concept
 
 </details>    
 
-
     
 ### Order Flow
---------------
 <details><summary><b>order concept</b></summary>
      
         Order Flow: 
@@ -1003,7 +1006,6 @@ Magento Core Concept
  </details>
     
 ### how to setup multiple store
--------------------------------
 <details><summary><b>info</b></summary>
             
             Link - https://www.youtube.com/watch?v=1HrOfr8e96A
@@ -1026,10 +1028,8 @@ Magento Core Concept
     </details>  
 
 ### API
---------
-<details><summary><b>info</b></summary>
-        
-    ![api](https://user-images.githubusercontent.com/78407424/229434266-befbda7b-674b-4156-9a62-75c8a9d37319.png)
+<details><summary><b>info</b></summary> 
+![api](https://user-images.githubusercontent.com/78407424/229434266-befbda7b-674b-4156-9a62-75c8a9d37319.png)
     
 #### Rest Api in Magento(Service contract & webapi.xml)
 ------------------------------------------------------
@@ -1046,7 +1046,7 @@ Magento Core Concept
                                       |
                                       |--------------Stores > Settings > Configuration > Advanced > Developer
                                                                                                       |-------Swagger----->Enabled Yes/No (make it Yes)
-        </details> 
+   </details> 
 
 #### GraphQl Api in Magento(Resolver & schema.graphqls)
 ------------------------------------------------------
@@ -1095,10 +1095,9 @@ Magento Core Concept
 </details> 
 
 
+
 Magento Latestes Era
 --------------------
-<details><summary><b>info: </b></summary>
-
 ### Magento Contribution Path
 ------------------------------
 <details><summary><b>info: </b></summary>
@@ -1120,8 +1119,6 @@ Magento Latestes Era
 </details>
 
       
-</details>
-
 
 E-Commerce Era (how it is working -- flipkart, amazon )
 -------------------------------------------------------
