@@ -107,7 +107,7 @@ Best Practices - no comparmise
 
 ### Debug untill fix - no matter what
 -------------------------------------
-<details><summary><b>Setup coding standards</b></summary>
+<details><summary><b>info</b></summary>
     
 </details>  
      
