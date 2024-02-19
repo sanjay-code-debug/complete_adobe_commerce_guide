@@ -736,18 +736,12 @@ Adobe Training Docs & Syllabus
 
 Magento Core Concept
 --------------------
-<details><summary><b>info: </b></summary>
-
 ### Design pattern's 
---------------------
 <details><summary><b>info</b></summary>
-
-
 </details>
 
                                                              
 ### Service Contract
---------------------
 <details><summary><b>info</b></summary>
     
   Service Contract
@@ -1032,7 +1026,6 @@ Magento Core Concept
 ![api](https://user-images.githubusercontent.com/78407424/229434266-befbda7b-674b-4156-9a62-75c8a9d37319.png)
     
 #### Rest Api in Magento(Service contract & webapi.xml)
-------------------------------------------------------
  <details><summary><b>info</b></summary>
          - http://magento.local(base_url)/swagger#/
          
@@ -1049,7 +1042,6 @@ Magento Core Concept
    </details> 
 
 #### GraphQl Api in Magento(Resolver & schema.graphqls)
-------------------------------------------------------
 <details><summary><b>info</b></summary>
          - http://magento.local(base_url)/swagger#/
          
@@ -1064,7 +1056,6 @@ Magento Core Concept
                                       |--------------Stores > Settings > Configuration > Advanced > Developer
                                                                                                       |-------Swagger----->Enabled Yes/No (make it Yes)
  </details> 
-</details> 
 
 
  ## Checkout Flow
@@ -1082,14 +1073,12 @@ Magento Core Concept
     
     </details> 
     
-            
-</details>  
-
  ### Payment Method's
 ---------------------
 <details><summary><b>info</b></summary>
 </details> 
 
+</details> 
 
 Magento Latestes Era
 --------------------
