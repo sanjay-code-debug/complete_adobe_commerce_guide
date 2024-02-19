@@ -897,7 +897,7 @@ Magento Core Concept
 </details> 
 
 ### Caching
-------------
+
 <details><summary><b>info</b></summary> 
     
     Caching 
@@ -1026,9 +1026,9 @@ Magento Core Concept
                 $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = $websiteType;
                 
     </details>  
+</details>     
 
 ### API
-<details><summary><b>info</b></summary> 
 ![api](https://user-images.githubusercontent.com/78407424/229434266-befbda7b-674b-4156-9a62-75c8a9d37319.png)
     
 #### Rest Api in Magento(Service contract & webapi.xml)
@@ -1063,10 +1063,8 @@ Magento Core Concept
                                       |
                                       |--------------Stores > Settings > Configuration > Advanced > Developer
                                                                                                       |-------Swagger----->Enabled Yes/No (make it Yes)
- 
  </details> 
-        
- </details> 
+</details> 
 
 
  ## Checkout Flow
@@ -1087,13 +1085,10 @@ Magento Core Concept
             
 </details>  
 
- ## Payment Method's
--------------------
+ ### Payment Method's
+---------------------
 <details><summary><b>info</b></summary>
-
-
 </details> 
-
 
 
 Magento Latestes Era
