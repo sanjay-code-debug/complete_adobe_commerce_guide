@@ -1126,7 +1126,7 @@ E-Commerce Era (how it is working -- flipkart, amazon )
           go the the directory = cd /etc/nginx/sites-available
 
           create a file i.e   = sudo nano local   (paste the below data - here i am doing two site setup)
-
+     #-------------------------------------------------------------------> 
            upstream fastcgi_backend {
                  server unix:/run/php/php8.1-fpm.sock;
             }
@@ -1145,7 +1145,7 @@ E-Commerce Era (how it is working -- flipkart, amazon )
                 set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
                 include /var/www/html/local/nginx.conf.sample;
             }
-
+      #-------------------------------------------------------------------> 
            
             get the website code from this magento table i.e = store_website    (get the Code column value )[here fn_nz and fn_au are  website code ]
 
@@ -1219,12 +1219,17 @@ E-Commerce Era (how it is working -- flipkart, amazon )
                             fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
                             include        fastcgi_params;
                         }
-            
-               - Modify the above with Below Two Line  (Before " include    fastcgi_params;  Line)
-                     
+                        
+      Step-5
+      -------      
+             - Modify the above with Below Two Line  (Before " include    fastcgi_params;  Line)
+            #------------------------------------------------------------------->   
                     - fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
                     - fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
-                    
+            #------------------------------------------------------------------->          
+
+      Step-6
+      ------           
                 After Modify (currently)
                 ========================
                 # PHP entry point for main application
@@ -1241,10 +1246,12 @@ E-Commerce Era (how it is working -- flipkart, amazon )
                     
                         fastcgi_index  index.php;
                         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-                        # START - Multisite customization-----------------------------------------------------------------> 
+                #------------------------------------------------------------------->        
+                        # START - Multisite customization
                         fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
                         fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
-                        # END - Multisite customization-------------------------------------------------------------------->
+                        # END - Multisite customization
+                #-------------------------------------------------------------------->
                         include        fastcgi_params;
                     }
   
