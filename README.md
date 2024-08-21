@@ -1115,7 +1115,181 @@ E-Commerce Era (how it is working -- flipkart, amazon )
 
 
 
+# Magento Core Concept
+#### Multi-Store Setup for Nginx (Ubuntu)
+<details><summary><b>info</b></summary>   
 
+     Link  = https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/multi-sites/ms-nginx
+
+     Step-1
+     ------
+          go the the directory = cd /etc/nginx/sites-available
+
+          create a file i.e   = sudo nano local   (paste the below data - here i am doing two site setup)
+
+           upstream fastcgi_backend {
+                 server unix:/run/php/php8.1-fpm.sock;
+            }
+            
+            map $http_host $MAGE_RUN_CODE {
+                default '';
+                dev.forevernew.co.nz fn_nz;
+                dev.forevernew.co.au fn_au;
+            }
+            
+            server {
+                listen 80;
+                server_name dev.forevernew.co.nz dev.forevernew.co.nz dev.forevernew.co.au;
+                set $MAGE_ROOT /var/www/html/local;
+                set $MAGE_MODE developer;
+                set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+                include /var/www/html/local/nginx.conf.sample;
+            }
+
+           
+            get the website code from this magento table i.e = store_website    (get the Code column value )[here fn_nz and fn_au are  website code ]
+
+
+    Step-2 
+    ------ 
+           create two more file inside this  {" cd /etc/nginx/sites-available " directory}  [two store so - two file create if more create more file]
+
+          i)  sudo nano dev.forevernew.co.nz  (paste the below data)
+
+               server {
+                    listen 80;
+                    server_name dev.forevernew.co.nz;
+                    set $MAGE_ROOT /var/www/html/local;
+                    set $MAGE_MODE developer;
+                    set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+                    set $MAGE_RUN_CODE fn_nz;
+                    include /var/www/html/local/nginx.conf.sample;
+                 }
+
+ 
+         ii) sudo nano dev.forevernew.co.au  (paste the below data)
+
+                server {
+                    listen 80;
+                    server_name dev.forevernew.co.au;
+                    set $MAGE_ROOT /var/www/html/local;
+                    set $MAGE_MODE developer;
+                    set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+                    set $MAGE_RUN_CODE fn_au;
+                    include /var/www/html/local/nginx.conf.sample;
+                }
+                
+    Step-3
+    ------            
+             - create the all 3- files symlink to cd /etc/nginx/sites-enabled
+
+             - sudo ln -s /etc/nginx/sites-available/local /etc/nginx/sites-enabled
+             - sudo ln -s /etc/nginx/sites-available/dev.forevernew.co.nz /etc/nginx/sites-enabled
+             - sudo ln -s /etc/nginx/sites-available/dev.forevernew.co.au /etc/nginx/sites-enabled
+
+             - sudo nginx -t
+            
+             - sudo service nginx restart
+
+    Step-4
+    ------- 
+
+             - Go the your magento folder location (e.g = /var/www/html/local )
+
+             - Find nginx.conf.sample  file 
+
+             - Edit --->  nginx.conf.sample  
+
+             - Search   below location 
+                    
+                 Previous (existing)
+                 =====================
+                    # PHP entry point for main application
+                        location ~ (index|get|static|report|404|503|health_check)\.php$ {
+                            try_files $uri =404;
+                            fastcgi_pass   fastcgi_backend;
+                            fastcgi_buffers 1024 4k;
+                        
+                            fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+                            fastcgi_param  PHP_VALUE "memory_limit=1G \n max_execution_time=18000";
+                            fastcgi_read_timeout 600s;
+                            fastcgi_connect_timeout 600s;
+                        
+                            fastcgi_index  index.php;
+                            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+                            include        fastcgi_params;
+                        }
+            
+               - Modify the above with Below Two Line  (Before " include    fastcgi_params;  Line)
+                     
+                    - fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+                    - fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
+                    
+                After Modify (currently)
+                ========================
+                # PHP entry point for main application
+
+                    location ~ (index|get|static|report|404|503|health_check)\.php$ {
+                        try_files $uri =404;
+                        fastcgi_pass   fastcgi_backend;
+                        fastcgi_buffers 1024 4k;
+                    
+                        fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+                        fastcgi_param  PHP_VALUE "memory_limit=1G \n max_execution_time=18000";
+                        fastcgi_read_timeout 600s;
+                        fastcgi_connect_timeout 600s;
+                    
+                        fastcgi_index  index.php;
+                        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+                        # START - Multisite customization-----------------------------------------------------------------> 
+                        fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+                        fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
+                        # END - Multisite customization-------------------------------------------------------------------->
+                        include        fastcgi_params;
+                    }
+  
+
+</details>
+
+
+
+#### File & Folder Permission On Magento
+<details><summary><b>info</b></summary>   
+    
+    Magento Folder Permission
+    ---------------------------
+       - # Change ownership of project directory
+             sudo chown -R sanjay:sanjay /var/www/html/local
+
+         # Fix permissions for the project directory
+            find /var/www/html/local -type d -exec chmod 755 {} \;
+            find /var/www/html/local -type f -exec chmod 644 {} \;
+
+       
+    Composer Install Not Working Due to Permission Issue
+    ----------------------------------------------------
+                     - Magento folder have different permission  & .ssh folder have different permission.
+                     
+                    - Give root permission to .ssh folder (i.e = sudo chmod -R 777 .ssh/) [or] Change the /var/www/html/local magento permission to .ssh level permission.
+                     
+                    - If /var/www/html/local  is root permission then  move the .ssh to root 
+                                
+                                        - sudo cp ~/.ssh /root/.ssh/
+                                        - sudo chown root:root /root/.ssh/
+
+     
+     Basic of Permission Group and User
+     ===================================
+                        -  700 (read, write, and execute for the owner only).
+
+           
+        chmod  :- 
+
+        chown  :- 
+                                   
+ 
+
+<details>
 
 
             
