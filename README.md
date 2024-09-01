@@ -1296,8 +1296,55 @@ E-Commerce Era (how it is working -- flipkart, amazon )
                                    
  
 
-<details>
+</details>
 
+   
+#### Run Php Script On Magento for Quick Testing 
+<details><summary><b>info</b></summary>   
+    
+                <?php
+                use Magento\Framework\App\Bootstrap;
+                use Magento\Framework\App\ObjectManager;
+            
+                // Include Magento Bootstrap file
+                require __DIR__ . '/../app/bootstrap.php';
+                
+                // Initialize the Magento application
+                $bootstrap = Bootstrap::create(BP, $_SERVER);
+                $objectManager = $bootstrap->getObjectManager();
+                $state = $objectManager->get('Magento\Framework\App\State');
+                $state->setAreaCode('frontend');
+                
+                // Retrieve the product repository
+                $productRepository = $objectManager->get('\Magento\Catalog\Model\ProductRepository');
+                
+                // Replace 'your_sku' with the SKU of the product you want to retrieve
+                $sku = '257760';
+                
+                try {
+                    // Load the product by SKU
+                    $product = $productRepository->get($sku);
+                
+                    // Display product details
+                    echo "Product ID: " . $product->getId() . "<br>";
+                    echo "Name: " . $product->getName() . "<br>";
+                    echo "SKU: " . $product->getSku() . "<br>";
+                    echo "Price: " . $product->getPrice() . "<br>";
+                } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
+                    echo "No product found with SKU: $sku";
+                }
+                
+                /*
+                 *
+                 * File location = inside the pub directory i.e = /opt/homebrew/var/www/forevernew/pub
+                 *
+                 * To Run on Terminal = cd /opt/homebrew/var/www/forevernew/pub
+                 *                    = php Test.php
+                 *
+                 *  To Run on Frontend = http://dev.forevernew.co.nz/Test.php
+                 *
+                 */
+</details>
 
             
             
