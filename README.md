@@ -1285,14 +1285,44 @@ E-Commerce Era (how it is working -- flipkart, amazon )
                                         - sudo chown root:root /root/.ssh/
 
      
-     Basic of Permission Group and User
-     ===================================
-                        -  700 (read, write, and execute for the owner only).
+     Basic of Permission For Owner(user),Group and Others
+     ----------------------------------------------------
+               -  700 (read, write, and execute for the owner only).
 
+                  7 --- read + write + execute [4 + 2 + 1]
+                  0 --- nothing
+                  0 --- nothing 
+
+                  
+
+
+      3-types of access restrictions
+      ------------------------------
+            permission    |  Action | chmod option
+                          |         |
+             read         |  view   |  r or 4 
+                          |         |
+             write        |  edit   |  w or 2
+                          |         |
+             execute      | execute |  x or 1 
+
+
+
+      3-types of user restrictions
+      ----------------------------
+            user  | Is Output 
+                  |
+            Owner |  -rwx------
+                  |
+            Group |  ----rwx---
+                  |
+            Other |  -------rwx
+             
+                          
            
-        chmod  :- 
+        chmod  :-  permission related
 
-        chown  :- 
+        chown  :- owner and group related changes
                                    
  
 
