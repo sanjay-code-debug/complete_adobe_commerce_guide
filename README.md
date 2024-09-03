@@ -17,7 +17,6 @@ Technology used for Magento(adobe commerce)
 
 Best Practices - no comparmise
 ------------------------------
-    
 ### alway's remind - before start development
 <details><summary><b>info</b></summary>
                
@@ -29,7 +28,11 @@ Best Practices - no comparmise
                             |--- Divide code into small methods 
                             |--- Write Clean Code (Proper Naming )
                             |--- 
-                 -  
+                 -  Avoid the Deprecated Code
+                 -  Always follow vendor code and DevDocs
+                 -  Re-test the Scenario (twice )
+                 -  Optimize the Code (Best Way)
+                 -  Debug & Debug (Xdebug | Read Online | Logs | Hacks)
     
  </details>  
  
