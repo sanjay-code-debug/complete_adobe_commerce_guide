@@ -1379,8 +1379,25 @@ E-Commerce Era (how it is working -- flipkart, amazon )
                  */
 </details>
 
+
             
-            
+# Magento Cloud Concept
+#### Push and Get Data to Staging Environment Using Ssh
+<details><summary><b>info</b></summary>    
+    
+        Connect to sftp (From the Directory where  you want to Upload the Files)
+        ------------------------------------------------------------------------
+                run - : sftp 1.ent-wh2okhswlvpuo-staging-ded-yg3eyli@ssh.us-3.magentosite.cloud
+
+                        sftp> put File.php
+
+                        sftp> put -r directoryName
+
+                        sftp> get File.php
+
+                        sftp> get -r applogy_email                        
+        
+</details>           
             
             
             
