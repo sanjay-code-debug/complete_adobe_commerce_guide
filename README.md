@@ -1399,7 +1399,19 @@ E-Commerce Era (how it is working -- flipkart, amazon )
         
 </details>           
             
-            
+  
+#### Get some select table from staging environment
+<details><summary><b>info</b></summary>    
+    
+        Get some selected table from staging environment
+        ------------------------------------------------
+          bin/n98-magerun2.phar db:dump --strip="emarsys_events_data core_config_data cron_schedule emarsys_log_cron_schedule experius_emailcatcher forevernew_rma_quote  
+          eshopworld_extension_logs fn_riskify_whitelist gene_bluefoot_entity_text rating_option_vote review_detail integration legacym1_giftcardwebservice_giftcardlog 
+          magento_giftcardaccount_history mcom_api_messages mcom_logged_messages_queue os_search_result_customers_index password_reset_request_event webpos_staff emarsys_contact_field 
+          catalog_category_flat_store_* catalog_category_product_index_* catalog_product_flat_* catalogrule_product_price_* catalogrule_product_* catalogsearch_fulltext_* 
+          fredhopper_product_data_index_* queue_* salesrule_customer sequence_creditmemo_* sequence_invoice_* sequence_order_* sequence_rma_item_* sequence_shipment_* social_account adyen_* 
+          stockists_location_entity_ @mailchimp @temp @klarna @newrelic_reporting @2fa @dotmailer @development" -c gz var/backups/stg-db-strip_29Oct2024.sql.gz
+</details>             
             
             
             
