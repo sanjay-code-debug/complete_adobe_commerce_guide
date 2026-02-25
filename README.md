@@ -1,220 +1,29 @@
-# Complete_Adobe_Commerce_Guide
-complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/php/development/roadmap/
+
+ # Adobe Commere or Magento 2 
+
+complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/php/development/roadmap/  
 
 
-Technology used for Magento(adobe commerce)
--------------------------------------------
-<details><summary><b>tech stack : - </b></summary>
-    - Php 
-    - Html
-    - Css
-    - Javascript
-    - Knockout JS
-    - Xml
-    - Jquery
-    - 
- </details>  
-
-Best Practices - no comparmise
-------------------------------
-### alway's remind - before start development
-<details><summary><b>info</b></summary>
-               
-                 - Before Code - Understood what is the Requirement
-                 - Some Time Directly Try - If you are not gettting 
-                 - Always Try with Dummy Value then Implement Real
-                 - Implement Oops Concept
-                            |
-                            |--- Divide code into small methods 
-                            |--- Write Clean Code (Proper Naming )
-                            |--- 
-                 -  Avoid the Deprecated Code
-                 -  Always follow vendor code and DevDocs
-                 -  Re-test the Scenario (twice )
-                 -  Optimize the Code (Best Way)
-                 -  Debug & Debug (Xdebug | Read Online | Logs | Hacks)
-    
- </details>  
- 
-### Print Logs
-<details><summary><b>info</b></summary>
+## adobe commerce guide 
+-------------------------
+             
+                     magento | magento 2 | adobe commerce 
+                     ------------------------------------
+                                     |
+                                     |
+                 -------------------------------------------------           
+                 |                     |                         |
+                 |                     |                         |
+               Basic                Intermediate              Advance
+      
+### Basic
+----------
+  - Core Tech Stack 
   
-          $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/mylogfile.log');
-          $logger = new \Zend\Log\Logger();
-          $logger->addWriter($writer);
-          $logger->info('This Is Simple Text Log'); //To print simple text log
-          $logger->info(print_r($myarray, true)); //To print array log  
- 
-</details>  
-
- ### exception handling
-<details><summary><b>infp</b></summary>
-    
-             try { echo 'Perferom your Operation'; } catch(Exception $e) { echo 'Message: ' .$e->getMessage(); }
-               try {
-                   //check if
-                     var $test = "TEST";
-                     if(($test) === "TEST") {
-                     //throw exception if condition is not valid
-                     throw new customException($test);
-                 }
-                  //check for "TEST" in dummy value
-                   if(strpos($test, "TEST") !== FALSE) 
-                   {
-                    throw new Exception("$test is an example Dummy Value");
-                  }
-                 }
-                 catch (customException $e) {
-                    echo $e->errorMessage();
-                    }
-                 catch(Exception $e) {
-                  echo $e->getMessage();
-                }  
-  </details>
-
-### Setup coding standards
-<details><summary><b>Setup coding standards</b></summary>
-    
-              Step - 1
-              --------
-                         - Install the coding-standard folder   --- https://developer.adobe.com/commerce/php/coding-standards/
-                                           |
-                                           |
-                                           |------------------ direct folder
-                                           |
-                                           |------------------ install via composer way
-    
-              Step - 2
-              --------
-                        - Install(keep) folder any directory location
-    
-                        - Here i kept under directory location i.e -  /var/www/html/coding-standards
-    
-                        - cd /var/www/html/coding-standards   ---- composer install
-    
-    
-              Step -3
-              -------
-                       - use below command to check the coding standard
-    
-                       - vendor/bin/phpmd /var/www/html/marina/app/code/Codilar/CustomApi/ text /var/www/html/marina/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml
-                       
-                       - vendor/bin/phpcs --standard=Magento2 --extensions=php /var/www/html/marina/app/code/Codilar/CustomApi/
-                       
-                       - php src/php-cpd/phpcpd.phar --fuzzy /var/www/html/marina/app/code/Codilar/CustomApi/
-                    
-     
-</details> 
-
-### Debug untill fix - no matter what
-<details><summary><b>info</b></summary>
-    
-</details>  
-     
-</details>   
-
-History of Magento(Adobe Commerce)
-----------------------------------
-<details><summary><b>info</b></summary>
-    
-</details>  
-
-
-## Tools Require 
-<details><summary><b>info</b></summary>
-    
-       - Nginx
-       - Apache
-       - Php
-       - Elasticsearch
-       - OpenSearch
-       -  Redish
-       - Varnish
-       - RabbitMQ
-       - Xdebug
-     
-</details>        
-        
-Adobe Training Docs & Syllabus
-------------------------------      
-<details><summary><b>info: </b></summary>
-    
-### Ground Level
-----------------
-<details><summary><b>info: </b></summary>
-    
-    - How magento is taking memory.
-            |-------From Which File Magento Code get Executed
-            |-------How i can find particular route in magento by folder(code) structure way internally
-            |-------Why magento keep this much folder 
-            |-------Explain all the folder present in magento and their uses
-            |-------If we delete some of the folder then what happen if not then why 
-                            |-------Based on Which mechanism magento is Working
-                            |-------What all concept magento is implementing  and When
-
-
-
-
-   
-
-             - Use of Elasticsearch. why magento use elasticsearch
-                                                 |--------what is elasticsearch
-                                                 |--------advantage of elasticsearch
-                                                 |--------how elasticsearch work internally
-                                                 |--------It is necessary to use elasticsearch
-                                                 |--------If We need to change anything in elasticsearch then how can we change 
-                                                 |--------Which port it is taking and how it detect the port 
-                                                 |-------Why anyone choose elasticsearch
-                                       
-  
-              - Use of Varnish. Why magento use varnish
-                                         |--------what is varnish
-                                         |--------advantage of varnish
-                                         |--------how varnish work internally
-                                         |--------It is necessary to use varnish
-                                         |--------If We need to change anything in varnish then how can we change 
-                                         |--------Which port it is taking and how it detect the port 
-                                         |-------Why anyone choose varnish
-  
-              - Use of Redis . Why magento use Redis
-                                      |--------what is Redis
-                                      |--------advantage of Redis
-                                      |--------how Redis work internally
-                                      |--------It is necessary to use Redis
-                                      |--------If We need to change anything in redis then how can we change 
-                                      |--------Which port it is taking and how it detect the port
-                                      |-------Why anyone choose redis 
-
-
-
-                   - How to Know In Which File or Which Mechanism Magento Configure Varnish, Redis and Elasticseaerch along with Php
-                                                        |
-                                                        |-------How Varnish and Redis is Related with Cache and Indexing
-                                                        |-------Is it mandotory to use varnish and redis at the same time for magento if yes then Why 
-                                                                                         
-                                                                                        
-                                    
-       
-
-                 - What all Application Mode in Magento
-                                 |-------By default which application mode magento have 
-                                 |-------How to know which application mode we will use and When
-                                 |-------What advantage we will get by Application Mode
-                                 |-------Is it Helpfull for  Magento 
-                               
-
-                - What is Indexing
-                            |----------------What are all Indexing mode in magento
-                            |----------------How Indexing is Usefull for Magento
-</details>
-
-   
-###  PHP
---------
-
+  - PHP
     <details><summary><b>info: </b></summary>
-           PHP
-           ===
+     
+            |
             |------ How Php code get executed
             |------ Php is a which type of language compiled or interpreted
             |------ Difference between Compiled and Interpreted Language
@@ -275,10 +84,161 @@ Adobe Training Docs & Syllabus
             
     </details>
 
+  - OOPS
 
-### Magento Fundamentals Part-1
--------------------------------
+  - MVC 
 
+  - MVVM 
+
+  - Codding Standard 
+
+    <details><summary><b>coding-standards</b></summary>
+    
+              Step - 1
+              --------
+                         - Install the coding-standard folder   --- https://developer.adobe.com/commerce/php/coding-standards/
+                                           |
+                                           |
+                                           |------------------ direct folder
+                                           |
+                                           |------------------ install via composer way
+    
+              Step - 2
+              --------
+                        - Install(keep) folder any directory location
+    
+                        - Here i kept under directory location i.e -  /var/www/html/coding-standards
+    
+                        - cd /var/www/html/coding-standards   ---- composer install
+    
+    
+              Step -3
+              -------
+                       - use below command to check the coding standard
+    
+                       - vendor/bin/phpmd /var/www/html/marina/app/code/Codilar/CustomApi/ text /var/www/html/marina/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml
+                       
+                       - vendor/bin/phpcs --standard=Magento2 --extensions=php /var/www/html/marina/app/code/Codilar/CustomApi/
+                       
+                       - php src/php-cpd/phpcpd.phar --fuzzy /var/www/html/marina/app/code/Codilar/CustomApi/
+                    
+     
+    </details> 
+
+  - Service Contract
+    
+      <details><summary><b>info</b></summary>
+       
+               |
+               |------What is Service contract
+               |                 |-----------why should any one implement Service contract in magento
+               |                 |-----------Benefit of Service Contract 
+               |------types of interface service contract concept implement
+               |                        |-------what is Data interfaces
+               |                        |                        |---------what is data integrity
+               |                        |-------what is service interfaces 
+               |                                                 |----------types of service interfaces
+               |                                                 |----------what is  Repository interfaces(CRUD)
+               |                                                 |----------what is Management interfaces(send the email, manage related)
+               |                                                 |----------what is Metadata interfaces(Eg-name has --first_name, last_name)
+               |          
+       
+    
+     ![Service_contract](https://user-images.githubusercontent.com/78407424/170829619-146e2aa8-2507-4f36-bfaa-718794394412.png)
+    
+    </details>   
+  
+  - Dependency Injection
+       <details><summary><b>info</b></summary>  
+        
+                 |-----deffination
+                 |-----diff ways or types of injection(constructor,method, by declaring di.xml way)
+                 |-----require file to implement the injection
+                 |-----types of dependency class
+                 |                          |-----Injectable 
+                 |                                      |---------what is singleton(cache memory)
+                 |                          |-----Non-Injectable
+                 |                                      |----------what is Factory class(entity table)
+                 |                                      |                    |-------------when we need to use factory class
+                 |                                      |                    |-------------advantage of factory class
+                 |                                      |----------what is Proxy Class(Lazy loading, Object chaining)
+                 |                                                      |--when we need to use proxy class
+                 |                                                      |--where we need to declare the proxy class(di.xml)
+                 |                                                          |----why we did not use proxy class directly inside constructor inject
+                 |-----which two types of node di.xml file support 
+                 |                                      |--------type
+                 |                                      |--------virtual type
+                 |
+                 |-----what is the use type
+                 |-----what is the use of virtual type
+                 |-----Difference bewteen type and virtual type
+                 |                                     |---------when to use type 
+                 |                                     |---------when to use virtual type
+                 |-----What are all the concept we can use to modify the magento core functionality without touching core files
+                 |                             |
+                 |                             |
+                 |                             |----Type
+                 |                             |
+                 |                             |----Virtual Type
+                 |                             |
+                 |                             |----Plugin
+                 |                             |         |-------what is plugin
+                 |                             |         |-------how to declare plugin(folder way)
+                 |                             |         |-------where exactly we can apply the plugin(rule's)
+                 |                             |         |-------advantage and limitation of plugin
+                 |                             |         |-------types of plugin
+                 |                             |                         |------what is before plugin(changing method input parameter)
+                 |                             |                         |------what is after plugin(changing method output parameter)
+                 |                             |                         |------what is around pluign(changing actuall implementation of original code)
+                 |                             |
+                 |                             |----Preference
+                 |                             |            |----what is preference
+                 |                             |            |----how to declare plugin(folder way)
+                 |                             |            |----where exactly we can apply the preference(rule's)
+                 |                             |            |----advantage and limitation of plugin
+                 |                             |
+                 |                             |----Event and Observer(no modification to original class. need to communicate with other classes)
+                 |                                          |---------what is event and observer
+                 |                                          |---------how to declare plugin(folder way)
+                 |                                          |---------where exactly we can apply the preference(rule's)
+                 |                                          |---------advantage and limitation of plugin
+                 |
+                 |-----Why magento doe's not create object using new keyword
+                 |-----Why magento did not allow direct use of Object Manager
+                 |-----Why we did not specify Proxy in the Class Constructor Directly
+                 |-----When we put Factory to Any Class -- how magento will knowing this and when    
+                 |
+                 |------------What is Object Manager in Magento(to mange the object by checking from di.xml(all the things declare here)
+                                                          |----------what is the use of create() method (for non-injectable class)
+                                                          |----------what is the use of get() method (for injectable class)
+                                                          
+       </details>
+
+  - Object Manager 
+  
+  - Type and Virtual Type
+      <details><summary><b>info</b></summary>      
+       
+      ![type_virtualtype](https://user-images.githubusercontent.com/78407424/216369559-323f1132-c4f6-46e7-a039-21fc51bfe545.png)
+    
+    </details>
+
+  - Factories (Factory Class) 
+     <details><summary><b>info</b></summary>
+      
+       ![Factories_3](https://user-images.githubusercontent.com/78407424/170829686-0171959b-3bb8-4469-a952-92ad24aca85d.png)
+    
+     </details>
+
+  - Proxy 
+     <details><summary><b>info</b></summary>
+      
+       - di.xml is having higher priority rather than constructor
+
+      ![Proxy_2](https://user-images.githubusercontent.com/78407424/170829650-ccf014c8-d401-4af4-aed3-a8ea578d9482.png)
+     </details>   
+
+  - Magento Fundamentals Part-1
     <details><summary><b>info: </b></summary>
         
               Unit-1 Fundamentals of Magento Development pt-1
@@ -442,9 +402,7 @@ Adobe Training Docs & Syllabus
       
        </details>
      
-### Magento Fundamentals Part-2
--------------------------------
-
+  - Magento Fundamentals Part-2
     <details><summary><b>info: </b></summary>
       
           1.1  Introduction to UI Components
@@ -488,11 +446,7 @@ Adobe Training Docs & Syllabus
       </details>
  
  
-  
-
-### Cloud for Adobe Commerce
-----------------------------
-
+ - Cloud for Adobe Commerce
     <details><summary><b>info: </b></summary>
         
                          - Overview
@@ -735,146 +689,13 @@ Adobe Training Docs & Syllabus
      </details>
      
  </details>  
-            
 
-Magento Core Concept
---------------------
-<details><summary><b>info</b></summary>
-    
-### Design pattern's 
-<details><summary><b>info</b></summary>
-</details>
+### Intermediate
+-----------------
+- Indexing
 
-                                                             
-### Service Contract
-<details><summary><b>info</b></summary>
-    
-      Service Contract
-      ================
-               |
-               |------What is Service contract
-               |                 |-----------why should any one implement Service contract in magento
-               |                 |-----------Benefit of Service Contract 
-               |------types of interface service contract concept implement
-               |                        |-------what is Data interfaces
-               |                        |                        |---------what is data integrity
-               |                        |-------what is service interfaces 
-               |                                                 |----------types of service interfaces
-               |                                                 |----------what is  Repository interfaces(CRUD)
-               |                                                 |----------what is Management interfaces(send the email, manage related)
-               |                                                 |----------what is Metadata interfaces(Eg-name has --first_name, last_name)
-               |          
-       
-    
-![Service_contract](https://user-images.githubusercontent.com/78407424/170829619-146e2aa8-2507-4f36-bfaa-718794394412.png)
-    
-</details>
-
-### Dependency Injection
-
-<details><summary><b>info</b></summary>  
-    
-              Dependency Injection 
-             --------------------
-                 |-----deffination
-                 |-----diff ways or types of injection(constructor,method, by declaring di.xml way)
-                 |-----require file to implement the injection
-                 |-----types of dependency class
-                 |                          |-----Injectable 
-                 |                                      |---------what is singleton(cache memory)
-                 |                          |-----Non-Injectable
-                 |                                      |----------what is Factory class(entity table)
-                 |                                      |                    |-------------when we need to use factory class
-                 |                                      |                    |-------------advantage of factory class
-                 |                                      |----------what is Proxy Class(Lazy loading, Object chaining)
-                 |                                                      |--when we need to use proxy class
-                 |                                                      |--where we need to declare the proxy class(di.xml)
-                 |                                                          |----why we did not use proxy class directly inside constructor inject
-                 |-----which two types of node di.xml file support 
-                 |                                      |--------type
-                 |                                      |--------virtual type
-                 |
-                 |-----what is the use type
-                 |-----what is the use of virtual type
-                 |-----Difference bewteen type and virtual type
-                 |                                     |---------when to use type 
-                 |                                     |---------when to use virtual type
-                 |-----What are all the concept we can use to modify the magento core functionality without touching core files
-                 |                             |
-                 |                             |
-                 |                             |----Type
-                 |                             |
-                 |                             |----Virtual Type
-                 |                             |
-                 |                             |----Plugin
-                 |                             |         |-------what is plugin
-                 |                             |         |-------how to declare plugin(folder way)
-                 |                             |         |-------where exactly we can apply the plugin(rule's)
-                 |                             |         |-------advantage and limitation of plugin
-                 |                             |         |-------types of plugin
-                 |                             |                         |------what is before plugin(changing method input parameter)
-                 |                             |                         |------what is after plugin(changing method output parameter)
-                 |                             |                         |------what is around pluign(changing actuall implementation of original code)
-                 |                             |
-                 |                             |----Preference
-                 |                             |            |----what is preference
-                 |                             |            |----how to declare plugin(folder way)
-                 |                             |            |----where exactly we can apply the preference(rule's)
-                 |                             |            |----advantage and limitation of plugin
-                 |                             |
-                 |                             |----Event and Observer(no modification to original class. need to communicate with other classes)
-                 |                                          |---------what is event and observer
-                 |                                          |---------how to declare plugin(folder way)
-                 |                                          |---------where exactly we can apply the preference(rule's)
-                 |                                          |---------advantage and limitation of plugin
-                 |
-                 |-----Why magento doe's not create object using new keyword
-                 |-----Why magento did not allow direct use of Object Manager
-                 |-----Why we did not specify Proxy in the Class Constructor Directly
-                 |-----When we put Factory to Any Class -- how magento will knowing this and when    
-                 |
-                 |------------What is Object Manager in Magento(to mange the object by checking from di.xml(all the things declare here)
-                                                          |----------what is the use of create() method (for non-injectable class)
-                                                          |----------what is the use of get() method (for injectable class)
-                                                          
-</details>
-
-### Object Manager
-<details><summary><b>info</b></summary>
-
-</details>
-
-
-### Type vs VirtualType
-
-<details><summary><b>info</b></summary>      
-    
-![type_virtualtype](https://user-images.githubusercontent.com/78407424/216369559-323f1132-c4f6-46e7-a039-21fc51bfe545.png)
+     <details><summary><b>info</b></summary>
  
-</details>
-
-### Factories(Factory Class)
-<details><summary><b>info</b></summary>
-    
-![Factories_3](https://user-images.githubusercontent.com/78407424/170829686-0171959b-3bb8-4469-a952-92ad24aca85d.png)
-    
-</details>
-
-### Proxies(Proxy Class)
-<details><summary><b>info</b></summary>
-    
-- di.xml is having higher priority rather than constructor
-- 
-![Proxy_2](https://user-images.githubusercontent.com/78407424/170829650-ccf014c8-d401-4af4-aed3-a8ea578d9482.png)
-
-</details>
-
-### Indexing
-
-<details><summary><b>info</b></summary>
-    
-      Indexing
-      ========
         |
         |---What is Indexing in Magento
         |               |-------Why we need Indexing
@@ -891,47 +712,42 @@ Magento Core Concept
                                                           |-----how mview file is link with other files and help cron job to work      
     
     
-![Screenshot from 2022-05-28 19-30-43](https://user-images.githubusercontent.com/78407424/170829798-5186503c-dead-4948-a22e-c9620b424515.png)
+    ![Screenshot from 2022-05-28 19-30-43](https://user-images.githubusercontent.com/78407424/170829798-5186503c-dead-4948-a22e-c9620b424515.png)
 
-</details> 
+    </details> 
 
-### Caching
+ - Caching
 
-<details><summary><b>info</b></summary> 
+   <details><summary><b>info</b></summary> 
     
-    Caching 
-    =======
-      |
-      |----------what is caching
-      |                    |-------why we need caching in magento 
-      |                    |-------how to know is cache is enable for particular section in magento
-      |                    |-------if we declare cache is false then what happen 
-      |                    |-------how to know is the site is full cache enabled
-      |
-      |----------What are all the way to know is the page is cache enable and how to achieve 
-      |
-      |---------how many types of cache mechanism
-      |                           |---------------what is public content(server side)
-      |                           |                            
-      |                           |---------------what is private content(client side) 
-      |                                                      |------------what type of data is called private content
-      |--------how cahce is related with
-                                      |------varnih
-                                      |------redis
-                                      |------Opchache
-                                      |------JIT
-                                      |------Zend Engine 
+         |----------what is caching 
+         |                    |-------why we need caching in magento 
+         |                    |-------how to know is cache is enable for particular section in magento
+         |                    |-------if we declare cache is false then what happen 
+         |                    |-------how to know is the site is full cache enabled
+         |
+         |----------What are all the way to know is the page is cache enable and how to achieve 
+         |
+         |---------how many types of cache mechanism
+         |                           |---------------what is public content(server side)
+         |                           |                            
+         |                           |---------------what is private content(client side) 
+         |                                                      |------------what type of data is called private content
+         |--------how cahce is related with
+                                         |------varnih
+                                         |------redis
+                                         |------Opchache
+                                         |------JIT
+                                         |------Zend Engine 
 
-![caching_5](https://user-images.githubusercontent.com/78407424/170829843-dc40a7ba-3ebc-40b3-9e6b-1eb3dfd0b73a.png)
+   ![caching_5](https://user-images.githubusercontent.com/78407424/170829843-dc40a7ba-3ebc-40b3-9e6b-1eb3dfd0b73a.png)
 
- </details>
+   </details>
 
 
-### EAV
-<details><summary><b>info</b></summary>
-    
-           EAV 
-          =======
+ - EAV
+     <details><summary><b>info</b></summary>
+
             |--------what is EAV
             |                 |----Why Magento implement EAV concept why not other concept to manage the data
             |                 |----How many types of entity table in magento(9)
@@ -957,55 +773,10 @@ Magento Core Concept
             |                 |---If we need to add extension attribute for customer then what we need to do.
             |                 |--For getting and set the extension attribute which interface we need extends in service contract design.
                                
-</details>
+    </details>
 
- ### Custom attribute vs Extension attribute
-<details><summary><b>info</b></summary>   
-
-</details>
-
-
-### Declarative Schema (DataPatch vs SchemaPatch)
-<details><summary><b>info</b></summary>
-
-    Declarative Schema
-    ==================
-        |
-        |-----What is declarative schema
-        |                          |-------what all files need to implemnt the declare schema in magento
-        |                          |-------how we can perform crud operation using db_schema.xml only
-        |
-        |----what is the use of db_schema_whitelist.json
-        |                          |-----------------------Is mantory to keep the db_schema_whitelist if no then why 
-        |
-        |----What is Patchs
-        |             |-------how many types of patchs available
-        |             |                            |----------------what is Data patch
-        |             |                            |              
-        |             |                            |----------------what is Schema patch
-        |             |
-        |             |------If we need to create attribute then which patch we need to use
-        |             |------If we need to insert data into table then which patch we need to use
-        |
-
-</details>    
-
-    
-### Order Flow
-<details><summary><b>order concept</b></summary>
-     
-        Order Flow: 
-            New: when customers just created an order and have not made any payment
-            Pending: when the invoice and shipment have not been created
-            Processing: the order has been either invoiced or delivered
-            Complete: when the order has been both invoiced and shipped
-            On hold: admins can assign the On hold status manually
-            Canceled: when the order has not been paid for, the store admin or the payment gateway will decide to put this status.
-            Closed: a credit memo is included and the refund has been made.
- </details>
-    
-### how to setup multiple store
-<details><summary><b>info</b></summary>
+ - how to setup multiple store
+    <details><summary><b>info</b></summary>
             
             Link - https://www.youtube.com/watch?v=1HrOfr8e96A
             
@@ -1024,15 +795,16 @@ Magento Core Concept
                 $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = $runCode;
                 $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = $websiteType;
                 
-    </details>  
-</details>     
+     </details>   
 
-## API
--------
-![api](https://user-images.githubusercontent.com/78407424/229434266-befbda7b-674b-4156-9a62-75c8a9d37319.png)
-    
-#### Rest Api in Magento(Service contract & webapi.xml)
- <details><summary><b>info</b></summary>
+ - API's
+
+ - REST API
+
+   ![api](https://user-images.githubusercontent.com/78407424/229434266-befbda7b-674b-4156-9a62-75c8a9d37319.png)
+      
+    <details><summary><b>info</b></summary>
+     
          - http://magento.local(base_url)/swagger#/
          
                         |
@@ -1044,52 +816,46 @@ Magento Core Concept
                         |----Some time it will not work So Check Below Configuration
                                       |
                                       |--------------Stores > Settings > Configuration > Advanced > Developer
-                                                                                                      |-------Swagger----->Enabled Yes/No (make it Yes)
-   </details> 
+                                                                                                                              |-------Swagger----->Enabled Yes/No (make it Yes)
+    </details> 
 
-#### GraphQl Api in Magento(Resolver & schema.graphqls)
-<details><summary><b>info</b></summary>
-         - http://magento.local(base_url)/swagger#/
-         
-                        |
-                        |------First check the active mode website is running
-                        |                                              |-----------sudo bin/magento deploy:mode:show
-                        |----- If It is in default mode then chane it to "developer"
-                        |                                                     |--------- sudo bin/magento deploy:mode:set developer (do se:up & ca:fl)
-                        |
-                        |----Some time it will not work So Check Below Configuration
-                                      |
-                                      |--------------Stores > Settings > Configuration > Advanced > Developer
-                                                                                                      |-------Swagger----->Enabled Yes/No (make it Yes)
- </details> 
+ - GraphQl Api in Magento(Resolver & schema.graphqls)
+
+   
+    </details> 
 
 
-## Checkout Flow
-----------------
-<details><summary><b>info</b></summary>
+### Advance 
+-----------
 
-### require-config.js
-<details><summary><b>info</b></summary>
-</details> 
+ - Checkout Flow
 
-### how knock.js work
-<details><summary><b>info</b></summary>
+ - Payment Method 
 
-</details> 
-    
-### Payment Method's
-<details><summary><b>info</b></summary>
-</details> 
+ - Order Flow 
+    <details><summary><b>order concept</b></summary> 
+     
+        Order Flow: 
+            New: when customers just created an order and have not made any payment
+            Pending: when the invoice and shipment have not been created
+            Processing: the order has been either invoiced or delivered
+            Complete: when the order has been both invoiced and shipped
+            On hold: admins can assign the On hold status manually
+            Canceled: when the order has not been paid for, the store admin or the payment gateway will decide to put this status.
+            Closed: a credit memo is included and the refund has been made.
+   
+    </details>
 
-</details> 
-</details>
+ - Third Party Integration
 
-Magento Latestes Era
---------------------
-<details><summary><b>info: </b></summary>
-    
-### Magento Contribution Path
-<details><summary><b>info: </b></summary>
+ - ERP 
+
+ - OMS 
+
+ - 
+
+ - Contribution
+        <details><summary><b>info: </b></summary>
                 <i> https://www.slideshare.net/secret/MwPFaOYcTj496V </i>
             
                - Performance
@@ -1098,27 +864,12 @@ Magento Latestes Era
                - As Compare to Other E-commerce 
                - Real Life Simplified
                - Docs Support
-               - Security Thread
-               
-</details>
-
-### Publish your Custom Extension 
-<details><summary><b>info: </b></summary>
-</details>
-
-</details>
-      
-
-E-Commerce Era (how it is working -- flipkart, amazon )
--------------------------------------------------------
-<details><summary><b>info: </b></summary>
-    
-</details>
+               - Security Thread        
+       </details>
+ -        
 
 
-
-
-# Magento Core Concept
+# Magento Works
 #### Multi-Store Setup for Nginx (Ubuntu)
 <details><summary><b>info</b></summary>   
 
@@ -1380,8 +1131,14 @@ E-Commerce Era (how it is working -- flipkart, amazon )
 </details>
 
 
+
+
+
+
+ # Learning At Work
+
+ ## ForeverNew (What I Learn at ForeverNew)
             
-# Magento Cloud Concept
 #### Push and Get Data to Staging Environment Using Ssh
 <details><summary><b>info</b></summary>    
     
@@ -1400,25 +1157,125 @@ E-Commerce Era (how it is working -- flipkart, amazon )
 </details>           
             
   
-#### Get some select table from staging environment
-<details><summary><b>info</b></summary>    
+#### How to Take Table Dump From Staging Environment
+<details><summary><b>info</b></summary>
     
-        Get some selected table from staging environment
-        ------------------------------------------------
-          bin/n98-magerun2.phar db:dump --strip="emarsys_events_data core_config_data cron_schedule emarsys_log_cron_schedule experius_emailcatcher forevernew_rma_quote  
-          eshopworld_extension_logs fn_riskify_whitelist gene_bluefoot_entity_text rating_option_vote review_detail integration legacym1_giftcardwebservice_giftcardlog 
-          magento_giftcardaccount_history mcom_api_messages mcom_logged_messages_queue os_search_result_customers_index password_reset_request_event webpos_staff emarsys_contact_field 
-          catalog_category_flat_store_* catalog_category_product_index_* catalog_product_flat_* catalogrule_product_price_* catalogrule_product_* catalogsearch_fulltext_* 
-          fredhopper_product_data_index_* queue_* salesrule_customer sequence_creditmemo_* sequence_invoice_* sequence_order_* sequence_rma_item_* sequence_shipment_* social_account adyen_* 
-          stockists_location_entity_ @mailchimp @temp @klarna @newrelic_reporting @2fa @dotmailer @development" -c gz var/backups/stg-db-strip_29Oct2024.sql.gz
-</details>             
-            
-            
-            
-            
-            
-            
-            
-            
+     Staging Database Export
+     =======================
+        Connect to Cloud  
+         ------------------
+            - magento-cloud ssh
+            - choose the respective environment 
+
+      Run this command to Get the DB Dump
+     ------------------------------------
+           - Go to respective directory where want to keep the file (e.g - e.x - cd var/backups )
+           -  mysqldump -uwh2okhswlvpuo_stg2 -pVTdE8ZvbZC7FfLM -h 127.0.0.1 wh2okhswlvpuo_stg2 | gzip > forevernew_sql_12.sql.gz
+
+     After this connect to the SFTP to get .sql File into Local
+     -------------------------------------------------------   
+          - Run this command inside some directory where you want to keep on local(e.x - cd Downloads)
+          - sftp 1.ent-wh2okhswlvpuo-staging-ded-yg3eyli@ssh.us-3.magentosite.cloud
+          - Get fileName(e.x - Get forevernew_sql_12.sql.gz)
+
+     Production Database Export
+     ==========================
+             - same step as staging only - change userName and Password
+
+     Unzip the File 
      
+            - gunzip < forevernew_sql_mar_10.gz | mysql -uroot -pAbhi@9902 forevernew
+</details>
+
+#### How to Resolve Git Conflict
+<details><summary><b>info</b></summary>  
+
+    Creating a new branch for any task 
+ 
+         git checkout production
+         git pull origin production
+         git checkout -b feature/MS-0000 (Your branch name)
+         git add (File path)
+         git commit -m "MS-0000 new functionality for website"
+         git push origin feature/MS-0000     
+
+   Go to git UI and  create PR of "feature/MS-0000" against staging or release
+      If conflict comes in feature/MS-0000 against staging or release      
+
+        Go to your console or terminal
+
+             git checkout feature/MS-0000
+             git checkout -b resolve-conflicts/MS-0000 (New branch to resolve conflict)
+             git pull origin staging or release branch (Generally staging branch conflict will come)
+
+        Resolve conflict
+                  - You can see the conflicts on respective file (just resolved it - PhpStrom UI way or Manually)             
+
+              git add (File path)
+              git commit -m "MS-0000_resolve_conflict Fixed conflict issues"
+              git push origin resolve-conflicts/MS-0000 
+
+       Go to git UI create PR of "feature/MS-0000_resolve_conflict" against staging or release
+           Merge "feature/MS-0000_resolve_conflict" (In background feature/MS-0000 will also get resolved)
+
+    Smart Way : - 
+
+             git pull origin production
+             git checkout -b yourTaskBranchName
+             git pull origin staging
+
+      Do the development
+                git add files
+                git commit -m "your commit"
+                git push origin yourTaskBranchName  :- Go to git UI and  create PR of "yourTaskBranchName" against staging or release
+           
+
+</details>
+
+#### How to Setup X-Debug for Local and Staging Environment On Mac OS
+<details><summary><b>info</b></summary>
+
+     
+   Xdebug Setup For Local Development 
+    
+         - Install the Xdebug
+
+
+   Xdebug Setup For Staging Development
+
+         Xdebug For GUI 
+
+
+
+
+
+         Xdebug For CLI
+         
+         
+</details>
+
+
+
+### Interview Question 
+----------------------
+ -  https://docs.google.com/spreadsheets/d/1CTDWqtxC-DM2sldvQu7Eeq6UAi5McKhk6OoYLNsgCgk/edit?usp=sharing
+  
+
+  -  understand the vendor code 
+
+  -  best practice
+  -  recent challenges
+  -  mainly - session , cookie, local - storage , caching , indexing , redis , varnish
+  -  knockout binding , how js file linked with - html, phtml
+  -  data-mage-init vs x-magento-init (https://developer.adobe.com/commerce/frontend-core/javascript/init/) 
+
+
+
+
+
+
+
+
+
+
 
