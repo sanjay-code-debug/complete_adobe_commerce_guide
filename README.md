@@ -1258,8 +1258,7 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
 ### Interview Question 
 ----------------------
- -  https://docs.google.com/spreadsheets/d/1CTDWqtxC-DM2sldvQu7Eeq6UAi5McKhk6OoYLNsgCgk/edit?usp=sharing
-  
+ -  Docs Link - 
 
   -  understand the vendor code 
 
