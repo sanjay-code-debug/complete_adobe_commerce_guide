@@ -1258,6 +1258,55 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
 ### Interview Question 
 ----------------------
+
+- Core Concept
+     <details><summary><b>info: </b></summary>
+             <i> https://www.slideshare.net/secret/MwPFaOYcTj496V </i>
+         
+            - Performance      
+    </details>
+
+
+- Core Concept : Alway's Refer Vendor Module
+     <details><summary><b>info: </b></summary>
+
+             <i> Backend (view/adminhtml) | app/code </i>
+
+              - module 
+                  - explain module creation 
+                  - why route.xml - explain - id, frontName
+                  
+
+      
+             <i> Frontend (view/frontend) | app/design </i>
+
+              - theme
+                  - how to create theme
+                  - explain what are themes (e.g - hyva)
+                  -
+  
+              - layout  
+                 - handles
+                 - container, referenceContainer
+                 - block, referenceBlock 
+
+                 - how data is passed from .phtml file to ----? js File (ForeverNew/Adyen- storecard.js - $this.attr('data-agreement')
+                 - data-mage-init vs x-magento-init
+
+  
+  
+              - uiComponent : https://developer.adobe.com/commerce/frontend-core/ui-components/
+                 - listing component
+                 - form component
+                 - how data is passed to form or listing (dataSource)
+  
+              - knockout js 
+                 - knockout binding , how js file linked with - html, phtml
+                 - what is mixins
+                 - explain - ways to override the js file (all the - define , dependency and functionality e.g - map, *, true/false)
+                 
+    </details>
+
  -  Docs Link - 
 
   -  understand the vendor code 
@@ -1266,7 +1315,7 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
   -  recent challenges
   -  mainly - session , cookie, local - storage , caching , indexing , redis , varnish
   -  knockout binding , how js file linked with - html, phtml
-  -  data-mage-init vs x-magento-init (https://developer.adobe.com/commerce/frontend-core/javascript/init/) 
+  -  data-mage-init vs x-magento-init 
 
 
 
