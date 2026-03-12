@@ -148,79 +148,14 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
     
     </details>   
   
-  - Dependency Injection
+  - Dependency Injection vs Object Manager
        <details><summary><b>info</b></summary>  
-        
-                 |-----deffination
-                 |-----diff ways or types of injection(constructor,method, by declaring di.xml way)
-                 |-----require file to implement the injection
-                 |-----types of dependency class
-                 |                          |-----Injectable 
-                 |                                      |---------what is singleton(cache memory)
-                 |                          |-----Non-Injectable
-                 |                                      |----------what is Factory class(entity table)
-                 |                                      |                    |-------------when we need to use factory class
-                 |                                      |                    |-------------advantage of factory class
-                 |                                      |----------what is Proxy Class(Lazy loading, Object chaining)
-                 |                                                      |--when we need to use proxy class
-                 |                                                      |--where we need to declare the proxy class(di.xml)
-                 |                                                          |----why we did not use proxy class directly inside constructor inject
-                 |-----which two types of node di.xml file support 
-                 |                                      |--------type
-                 |                                      |--------virtual type
-                 |
-                 |-----what is the use type
-                 |-----what is the use of virtual type
-                 |-----Difference bewteen type and virtual type
-                 |                                     |---------when to use type 
-                 |                                     |---------when to use virtual type
-                 |-----What are all the concept we can use to modify the magento core functionality without touching core files
-                 |                             |
-                 |                             |
-                 |                             |----Type
-                 |                             |
-                 |                             |----Virtual Type
-                 |                             |
-                 |                             |----Plugin
-                 |                             |         |-------what is plugin
-                 |                             |         |-------how to declare plugin(folder way)
-                 |                             |         |-------where exactly we can apply the plugin(rule's)
-                 |                             |         |-------advantage and limitation of plugin
-                 |                             |         |-------types of plugin
-                 |                             |                         |------what is before plugin(changing method input parameter)
-                 |                             |                         |------what is after plugin(changing method output parameter)
-                 |                             |                         |------what is around pluign(changing actuall implementation of original code)
-                 |                             |
-                 |                             |----Preference
-                 |                             |            |----what is preference
-                 |                             |            |----how to declare plugin(folder way)
-                 |                             |            |----where exactly we can apply the preference(rule's)
-                 |                             |            |----advantage and limitation of plugin
-                 |                             |
-                 |                             |----Event and Observer(no modification to original class. need to communicate with other classes)
-                 |                                          |---------what is event and observer
-                 |                                          |---------how to declare plugin(folder way)
-                 |                                          |---------where exactly we can apply the preference(rule's)
-                 |                                          |---------advantage and limitation of plugin
-                 |
-                 |-----Why magento doe's not create object using new keyword
-                 |-----Why magento did not allow direct use of Object Manager
-                 |-----Why we did not specify Proxy in the Class Constructor Directly
-                 |-----When we put Factory to Any Class -- how magento will knowing this and when    
-                 |
-                 |------------What is Object Manager in Magento(to mange the object by checking from di.xml(all the things declare here)
-                                                          |----------what is the use of create() method (for non-injectable class)
-                                                          |----------what is the use of get() method (for injectable class)
                                                           
        </details>
-
-  - Object Manager 
   
   - Type and Virtual Type
       <details><summary><b>info</b></summary>      
        
-      ![type_virtualtype](https://user-images.githubusercontent.com/78407424/216369559-323f1132-c4f6-46e7-a039-21fc51bfe545.png)
-    
     </details>
 
   - Factories (Factory Class) 
@@ -238,407 +173,9 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
       ![Proxy_2](https://user-images.githubusercontent.com/78407424/170829650-ccf014c8-d401-4af4-aed3-a8ea578d9482.png)
      </details>   
 
-  - Magento Fundamentals Part-1
-    <details><summary><b>info: </b></summary>
-        
-              Unit-1 Fundamentals of Magento Development pt-1
-              -----------------------------------------------
-    
-                                    - Video Intro
-                                    - Using the Player
-                                    - Introduction
-                                    - Approach Audience
-                                    - Course Content
-                                    - Best Way to Take the Course
-                                    - Unit One Home Page
-    
-              Preparation
-              -----------
-                              - Preparation | Module Topics
-                              - Preparation | LAMP $ Composer
-                              - Preparation | Magento2 Installation
-                              - Video :Install Magento part1
-                              - Video :Install Magento part2
-                              - Video :Install Magento part3
-                              - Video :Install Magento part4
-            Overview $ Architecture
-            -------------------------
-                            - Magento 2 Overview & Architecture | Module Topics
-                            - Magento 2 Platform & Architecture Platform
-                            - Magento 2 Platform & Architecture | Architecture
-                            - Magento 2 Platform & Architecture | Areas
-                            - Magento 2 Platform & Architecture | Magento 2 Essentials
-                            - Magento 2 Platform & Architecture | Components
-                            - Magento 2 Platform & Architecture | Paths
-                            - Magento 2 Platform & Architecture | File Types
-                            - Magento 2 Platform & Architecture | Config Files
-                            - Magento 2 Platform & Architecture | PHP Classes
-                            - Magento 2 Platform & Architecture | Development Process
-                            - Magento 2 Platform & Architecture | Enable Custom Code
-                            - Magento 2 Platform & Architecture | Modules
-                            - Modules | Location
-                            - Modules | Naming a Module 
-                            - Modules | Registering a Module/Empty Module Structure
-                            - Modules | module.xml
-                            - Modules | module.xml Example
-                            - Modules | registration.php
-                            - Modules | Module Dependencies
-                            - Modules | Types of Module Dependencies
-                            - Modules | Module Dependencies Tasks
-                            - Reinforcement Exercise 1.3.1:Modules
-    
-    
-               File System
-               -----------
-                            - File System | Module Topics
-                            - File System | Root Folders
-                            - File System | App Folder Contents 
-                            - File System | Framework & Core Modules
-                            - File System | Core Source Code
-                            - File System | Framework Source Code
-                            - File System | Module Structure
-                            - File System | Module View File Types
-                            - File System | Templates
-                            - File System | Templates(expanded)
-                            - File System | Themes
-                            - File System | Static Files
-                            - MULTIPLE CHOICE QUESTION
-    
-               Development Operations
-               ----------------------
-    
-                                              - Development Operations | Module Topics
-                                              - Modes | Modules in Magento2
-                                              - Modes | Developer Mode in Magento 2 
-                                              - Modes | Production Mode in Magento 2 
-                                              - Modes | Default Mode in Magento 2 
-                                              - Modes | Summary of Mode Features
-                                              - Modes | Maintenance Mode in Magento 2 
-                                              - Modes | Specifying a Mode : Environment Variable
-                                              - Modes | Specifying a Mode : Web Server Environment
-                                              - Modes | Specifying a Mode : php-fpm Environment
-                                              - Video : Magento Modes
-                                              - Reinforcement Exercise 1.5.1:Mode
-                                              - Command-Line Interface | Magento 2 CLI
-                                              - Cache | Cache in Magento 2 
-                                              - Cache | Cache Type
-                                              - Cache | Cache Cleaning
-                                              - Reinforcement Exercise 1.5.2:Cache
-                                            
-                   DI & Object Manager
-                   ------------------ 
-                  
-                                              - DI & Object Manager  | Modules Topics 
-                                              - Dependency Injection | DI Pattern
-                                              - Dependency Injection | Overview
-                                              - Reinforcement Exercise 1.6.1:Dependency Injection
-                                              - Dependency Injection | Class Instantiation in Magento 2
-                                              - Dependency Injection | Different Classes Instantiation
-                                              - Object Manager
-                                              - Object Manager | Shared Instances Concept
-                                              - Object Manager | Object Manager Usage
-                                              - Object Manager | Magento 2 Best Practice
-                                              - Object Manager | Auto-generated Classes
-                                              - Object Manager | Configuration
-                                              - Object Manager Configuration | Specification
-                                              - Object Manager Configuration | Preferences Example
-                                              - Object Manager Configuration | Argument Example
-                                              - Object Manager | Configuration Shared Argument Example
-                                              - Video : Dependency Injection
-                                              - Reinforcement Exercise 1.6.2: Object Manager
-                                              - Check Your Understanding(1.6.B)
-                                              
-                                              
-                                        
-                    Plugins
-                    -------
-                                            - Plugins | Module Topics
-                                            - Plugins | Defination
-                                            - Plugins | Customizations
-                                            - Declare a Plugin
-                                            - Plugin Example | Before-Listener Method
-                                            - Plugin Example | After-Listener Method
-                                            - Plugin Example | Around-Listener Method
-                                            - Prioritizing Plugins
-                                            - Configuration Inheritance & Plugins
-                                            - Plugins | Interception
-                                            - Reinforcement Exercise 1.7.1: Plugins 1
-                                            - Reinforcement Exercise 1.7.2: Plugins 2
-                                            - Check Your Understanding 
-                                            - Check Your Understanding
-                                        
-    
-                  Events
-                  ------
-    
-                                            - Events | Module Example
-                                            - Events | Defination
-                                            - Events | Schema
-                                            - Events | Core Example: Saving an Order Process
-                                            - Demo | Registering an Event
-                                            - Reinforcement Exercise 1.8.1:Events
-                                            
-                                            
-                                            
-                                          
-                    Module Configuration
-                    --------------------
-                                           - Module Configuration | Module Topics 
-                                           - Configuration Files Overview
-                                           - Configuration Files: Application Configuration
-                                           - Configuration Files: Modules's Configuration
-                                           - Configuration Files: Merging Config Files
-                                           - Configuration Files | Storage
-                                           - Configuration Files | core_config_data
-                                           - Configuration Files | Backend System Config Page
-                                           - Configuration Files | Scope
-                                           - Configuration Files | Merging
-                                           - Configuration Files | Validation
-                                           - Video : XSD Schema
-                                           - Error Reporting Settings | Overview
-                                           - Check Your Understanding(1.9.1:Module)
-                                           - Reinforcement Exercise 1.9.1: Module Configuration
-                                           - End of Unit One
-      
-       </details>
      
-  - Magento Fundamentals Part-2
-    <details><summary><b>info: </b></summary>
-      
-          1.1  Introduction to UI Components
-    
-                    - UiComponent Overview
-                    - UiComponent Definition
-                    - UiComponent & Block Comparison
-                            
-          1.2 Architecture and Configuration
-      
-                   - Architecture 
-                   - Configuration
-                      
-         1.3 Templates and Rendering
-    
-                   - Templates
-                   - Rendering
-     
-         1.4 JavaScript Role in UiComponents
-    
-                   - JavaScript in UiComponent Overview
-                   - Executing of UiComponents
-      
-         2.1 Introduction to Grids
-    
-                  - Grids Overview
-                  - Listing UiComponent
-                  - DataSource
-                  - Columns
-                  - Filters
-                  - Mass Actions
-                  - Grid Indexer
-                  - Paging
-                  
-         2.2  Intriduction to Forms
-      
-                  - Forms Overview
-                  - Form Components
-                  - Form Fieldsets
-                  - Form Elements 
-      </details>
- 
- 
- - Cloud for Adobe Commerce
-    <details><summary><b>info: </b></summary>
-        
-                         - Overview
-                         - Onboarding tasks
-      Architecture
-    
-                         - Starter architecture
-                         - Starter develop and deploy workflow
-                         - Pro architecture
-                         - Pro develop and deploy workflow
-                         - Scaled architecture
-                         
-      Technologies and requirements
-    
-                          - Composer
-                          - magento-cloud CLI
-                          - ece-tools package
-                          - Git
-                          - SSH and sFTP
-                          - PrivateLink
-                          - New Relic
-                          - SendGrid 
-                          
-      Manage your project
-    
-                          - Configure your project
-                          - Project structure
-                          - Manage user access
-                          - Enable MFA for SSH
-                          - Manage branches with the Interface
-                          - Manage branches with the CLI
-                          - Manage disk space
-                          - Monitor performance
-                          - View logs
-                          - Snapshots and backup management
-                          - Restore an environment
-                          - Profile database queries
-                          
-       Local development setup
-    
-                           - Prepare for manual setup
-                           - Install prerequisites
-                           - Enable SSH keys
-                           - Set up the file system owner
-                           - Clone and branch the project
-                           - Install Commerce
-                           - First time deployment
-                           - Optional - Configure Xdebug
-                           - Optional - Install sample data
-                           
-       Cloud Docker development
-    
-                      Install
-                          - Additional tools for file synchronization
-                          - Upgrade
-                      Use Docker
-                            - Production mode
-                            - Developer mode
-                      Configure and manage
-                            - Configuration sources
-                            - Manage the database
-                            - Manage cron jobs
-                            - Set up multiple websites or stores
-                            - Xdebug for Docker
-                            - Extend Docker
-                            - Add Blackfire.io service
-                     Docker container architecture
-                             - Service containers
-                             - CLI containers
-                     Functional Testing
-                             - Application testing
-                             - Cloud code testing for Commerce
-                             - Docker quick reference
-                             - Get support for Cloud Docker
-      Integrations
-    
-                   - Bitbucket integration
-                   - GitHub integration
-                   - GitLab integration
-                   - Health notifications
-                   
-      Import existing code into a project
-    
-                   - Prepare your existing system
-                   - Import code
-                   
-      Configure your store
-    
-                   - Best practices for store configuration
-                   - Set up PayPal
-                   - Set up B2B
-                   - Set up cron jobs
-                   - Set up multiple Cloud websites or stores
-                   - Install, manage, and upgrade modules
-                   - Install a theme
-                   - Import URL Rewrites
-                   
-      Configure Fastly services
-    
-                   - Set up Fastly
-                        - Customize cache configuration
-                        - Customize error and maintenance pages
-                   - Web Application Firewall
-                   - Image Optimization
-                   - Custom VCL snippets
-                        - Reroute requests to a CMS backend
-                        - Block referral spam
-                        - IP allow list
-                        - IP block list
-                        - Bypass Fastly cache
-                   - Fastly troubleshooting
-                   
-      Configure environments
-    
-                   - Application
-                       - Properties
-                       - Variables
-                       - PHP application
-                       - Workers
-                       - Set cache for static files
-                   - Build and deploy
-                       - Set up notifications
-                       - Logging handlers
-                   - Routes
-                        - Caching
-                        - Redirects
-                        - Server side includes
-                   - Services
-                        - Set up MySQL service
-                        - Set up Redis service
-                        - Set up Elasticsearch service
-                        - Set up OpenSearch service
-                        - Set up RabbitMQ service
-                   - PHP (php.ini)
-                   - Environment variables
-                        - ADMIN variables
-                        - Global variables
-                        - Build variables
-                        - Cloud variables
-                        - Deploy variables
-                        - Post-deploy variables
-                        - Working with variables
-                        
-      Configuration management for store settings
-    
-                   - Example of managing system-specific settings
-                   
-      Optimize deployment
-    
-                   - Cloud deployment process
-                   - Scenario-based deployment
-                   - Zero downtime deployment
-                   - Static content deployment
-                   - Smart wizards
-                   
-      Deploy your store
-    
-                   - Deployment process
-                   - Continuous deployment
-                   - Protective block
-                   - Build and deploy on local
-                   - Prepare to deploy to Staging and Production
-                   - Deploy code and migrate static files and data
-                   - Test deployment
-                   - Error message reference for ece-tools
-                   
-      Site launch
-    
-                   - Launch checklist
-                   - Launch steps
-                   
-      Troubleshooting
-    
-                   - Component deployment failure
-                   - Add site map and search engine robots
-                   
-      Upgrades and patches
-    
-                   - Update ece-tools
-                   - Apply patches
-                   - Upgrade version
-                   - Upgrade project
-                   
-      Release notes
-    
-                   - ece-tools
-                   - Cloud Patches for Commerce
-                   - Cloud Docker for Commerce
-                   - Cloud Components for Commerce
-                   - Backward incompatible changes
-        
-        
+  - Magento Cloud
+    <details><summary><b>info: </b></summary>        
         
                Cloud overview --> https://devdocs.magento.com/cloud/bk-cloud.html
                
@@ -752,10 +289,6 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
             |                 |----Why Magento implement EAV concept why not other concept to manage the data
             |                 |----How many types of entity table in magento(9)
             |                 |----How many types of data types table for entity table in magneto(5)
-            |                 |----From Which table we will get the complete details of eav_table(eav_entity_type)    
-            |                 |----Explain the complete eav_table relation in magento
-            |                 |---If we need to add simple customer attribute then explain 
-            |                                                                  |----complete flow table including attribute creation from code
             |  
             |--------types of eav attribute 
             |          |--------Custome attribute
@@ -1258,15 +791,6 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
 ### Interview Question 
 ----------------------
-
-- Core Concept
-     <details><summary><b>info: </b></summary>
-             <i> https://www.slideshare.net/secret/MwPFaOYcTj496V </i>
-         
-            - Performance      
-    </details>
-
-
 - Core Concept : Alway's Refer Vendor Module
      <details><summary><b>info: </b></summary>
 
@@ -1307,16 +831,88 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
                  
     </details>
 
- -  Docs Link - 
+- Advance Concept : 
+     <details><summary><b>info: </b></summary>
+             <i>  </i>
+         
+            - Performance      
+    </details>
+    
+- Scenario Based Concept : 
+     <details><summary><b>info: </b></summary>
+             <i>  </i>
+         
+            - Performance      
+    </details>
+    
+- Current Work Based Concept : 
+     <details><summary><b>info: </b></summary>
+             <i>  </i>
+         
+            - Performance      
+    </details>
+    
+- Current Company Based Concept/Challenges : 
+     <details><summary><b>info: </b></summary>
+             <i>  </i>
+              
+    </details>
 
-  -  understand the vendor code 
+- Cloud Based Concept : 
+     <details><summary><b>info: </b></summary>
+             <i>  </i>
+              
+    </details>
 
-  -  best practice
-  -  recent challenges
+
+- Third Party Extension Based Question : 
+     <details><summary><b>info: </b></summary>
+             <i>  </i>
+              
+    </details>
+
+- End to End Question : 
+     <details><summary><b>info: </b></summary>
+             <i>  </i>
+              
+    </details>
+    
+
+
+- Overall Question : 
+     <details><summary><b>info: </b></summary>
+             <i>  </i>
+              
+    </details>
+
+
+
+- MySql Question : 
+  <details><summary><b>info: </b></summary>
+
+         - there is 2 table - product , orders - can you fetch the - sku which is not sold in last 6 month
+
+         - find the nth highest price of product 
+  
+         - 
+              
+  </details>
+
+- Coding Question (Time Complexity / Space Complexity - Best Case): 
+  <details><summary><b>info: </b></summary>
+
+         - 0(1) ---- constant time
+         - 0(n) ---- linear time
+         - 0(log n) -- 
+         - 0(n2)
+
+     - reverse a array 3 way (inbuit , by lenth and loop(here 0(n)-time, 0(n)-space, two pointer way (here 0(n)-- time, 0(1)-- space)
+     - 
+              
+  </details>  
+    
+   
   -  mainly - session , cookie, local - storage , caching , indexing , redis , varnish
-  -  knockout binding , how js file linked with - html, phtml
-  -  data-mage-init vs x-magento-init 
-
 
 
 
