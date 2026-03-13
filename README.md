@@ -799,6 +799,47 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
               - module 
                   - explain module creation 
                   - why route.xml - explain - id, frontName
+
+              - DI(loose coupling- constructor injection) vs Object Manager(get, create)
+
+              - Singletone Class 
+
+              - Factory (Auto generated Class - non-injectable class ---> Entity Class)
+
+              - Proxy (when their is need of Object - Lazy Loading - Resource Instancesive Class)
+
+
+              - REST and GraphQl
+
+              - Service Contract (Data , Service - Repository, Managemnt, )
+
+              - Repository (CRUD Operation -- no direct connect to Database)
+
+              - Model , Resource Model, Collection (ORM)
+
+              - EAV (eav_entity_type, eav_attribute) --- eav_ prefix 
+                  
+                  - 9 but as per b2b more
+                  - 5 table (text, varchar, int, decimal, datetime)
+
+              - Declarative Schema, Data Patch , Schema Patch
+
+              - Plugin (before, around, after ) - interceptor (modify the behaviour of class ---public method) - sort order 
+
+              - Event & Observer 
+
+              - Preference (last case)
+
+              - Type vs VirtualType 
+
+              - uiComponent (listing , form component)
+
+              - area in magento (6)
+
+              - 
+
+             
+
                   
 
       
@@ -833,34 +874,116 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
 - Advance Concept : 
      <details><summary><b>info: </b></summary>
-             <i>  </i>
-         
-            - Performance      
+            <i>Performance</i>
+
+               - Caching (private content | public content)
+                   
+                   - Redis (session + cache)
+
+                   - Varnish (HTML)
+
+                   - FPC (Opcache)
+
+
+
+               - Indexing (Prtial | Full)
+
+                  - Update on Save
+
+                  - Update By Schedule 
+
+
+               - CDN
+
+               - 
+
+                
+            <i> Security </i>
+
+
+            <i>Best Practice</i>
+                 
+                 - SOLID 
+                 
+                 - PHPmd , PHPCs
+
+                 - codding standard modules 
+
+
+
     </details>
     
 - Scenario Based Concept : 
      <details><summary><b>info: </b></summary>
-             <i>  </i>
-         
-            - Performance      
-    </details>
-    
-- Current Work Based Concept : 
-     <details><summary><b>info: </b></summary>
-             <i>  </i>
-         
-            - Performance      
+
+        - Home ---> PLP (sort, search, filter)---> PDP----> Add to Cart | Add to Wishlist ---> Checkout ---> Coupon Code ---> Shipping + Billing - Payment --> Place Order
+
+            - Customer
+
+                - 
+
+            - Price 
+                
+                - explain tier price 
+
+                - cart price , cartalog price 
+
+                - how to create a coupon code 
+
+                - 
+
+            - Checkout
+
+                - how to add a new attribute to checkout 
+
+                - 
+
+
+            - Payment
+
+                - how to implement a new payment method without breaking existing payment method 
+
+
+            - Product
+                
+                - when searching a product how it is working (end to end flow)
+
+                - types of product 
+
+            - Order
+                - explain complete order flow 
+
+
+            - Return
+                 
+                 - 
+
+
+
+
+             
     </details>
     
 - Current Company Based Concept/Challenges : 
      <details><summary><b>info: </b></summary>
-             <i>  </i>
+            - what is the recent issue you faced and how you overcome it.
+
+            - 
               
     </details>
 
 - Cloud Based Concept : 
      <details><summary><b>info: </b></summary>
-             <i>  </i>
+
+            - list b2b modules 
+
+            - what is ece tools 
+
+            - explain all .yaml file for .magento (routes, services, app)
+
+            - newrelic
+
+            - fastly (replace as - redis)
               
     </details>
 
@@ -871,17 +994,67 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
               
     </details>
 
+
+
 - End to End Question : 
      <details><summary><b>info: </b></summary>
-             <i>  </i>
+            - explain attribute creation by Patch and it respectice table (patch_list, eav_attribute)
+
+            - when placing order what all table involved 
+
+            - when do add to cart --- where the billing information will going to store
+
+            - 
               
     </details>
     
 
 
+
+- Practical Question : 
+     <details><summary><b>info: </b></summary>
+
+            - how to create a plugin 
+
+            - how to create a event and observer
+
+            - how to create custom cli commands 
+
+            - how to create custom logger 
+
+            - how to create email_template 
+
+            - how to create custom rest api
+
+            - how to create graphQl
+
+            - 
+
+
+              
+    </details>
+
+
+
 - Overall Question : 
      <details><summary><b>info: </b></summary>
-             <i>  </i>
+
+            <i>Magento Upgrade | Migration</i>
+
+
+            <i>Magento Setup</i>
+
+
+            <i>Git Conflict & Deploy</i>
+
+
+            - composer install vs composer update
+
+            - how to apply a patch (m2_hotfix)
+
+            - 
+
+
               
     </details>
 
@@ -911,9 +1084,6 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
               
   </details>  
     
-   
-  -  mainly - session , cookie, local - storage , caching , indexing , redis , varnish
-
 
 
 
