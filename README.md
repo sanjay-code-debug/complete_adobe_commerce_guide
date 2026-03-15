@@ -794,7 +794,7 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 - Core Concept : Alway's Refer Vendor Module
      <details><summary><b>info: </b></summary>
 
-             <i> Backend (view/adminhtml) | app/code </i>
+            <i> Backend (view/adminhtml) | app/code </i>
 
               - module 
                   - explain module creation 
@@ -807,7 +807,6 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
               - Factory (Auto generated Class - non-injectable class ---> Entity Class)
 
               - Proxy (when their is need of Object - Lazy Loading - Resource Instancesive Class)
-
 
               - REST and GraphQl
 
@@ -834,14 +833,60 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
               - uiComponent (listing , form component)
 
-              - area in magento (6)
+              - Area in magento (6)
 
               - 
 
-             
 
-                  
+              - GA4 , GTM 
 
+              - Social Login
+
+
+              - Explain - Website , Store and Store View :- https://experienceleague.adobe.com/en/docs/commerce-admin/start/setup/websites-stores-views
+                      |
+                      |
+                      |--- Website manages business level, Store manages product categories, and Store View manages language or presentation layer.
+
+
+                    E.g - 
+                       Website: ForeverNew AU  -------------> One website because business is only in Australia
+                                      Currency: AUD
+                                      Tax: Australia GST
+                                      Shipping: Australia rules
+
+                                Store: Women ---------------------> Women product catalog
+                                                                    Categories: Dresses, Tops, Skirts
+
+                                    Store View: English -----------> Default language
+                                    Store View: Chinese -----------> Chinese translation for customers
+
+
+                                Store: Men -----------------------> Men product catalog
+                                                                    Categories: Shirts, Jeans, Jackets
+
+                                    Store View: English -----------> Default language
+                                    Store View: Chinese -----------> Chinese translation
+
+
+              - Stocks and sources(MSI – Multi-Source Inventory):- (https://experienceleague.adobe.com/en/docs/commerce-admin/inventory/basics/sources-stocks)
+
+                    - Stock -
+                        - A Source represents the physical location where inventory is stored.
+
+                    - Source
+                       - A virtual inventory that links Sources to Websites.
+                       - It decides from which source the product will be sold.
+
+                    - Website → Stock → Sources → Product Qty     
+
+
+                    - Tables invovped 
+
+                        - inventory_source_item
+                        - inventory_reservation
+                        - inventory_stock
+                        - inventory_source
       
              <i> Frontend (view/frontend) | app/design </i>
 
@@ -874,26 +919,49 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
 - Advance Concept : 
      <details><summary><b>info: </b></summary>
-            <i>Performance</i>
 
-               - Caching (private content | public content)
+               - Caching (private content | public content) - https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management
                    
-                   - Redis (session + cache)
+                   - Redis (session storage + cache) ---> env.php [Redis stores data in RAM, so it is extremely fast.]
 
-                   - Varnish (HTML)
+                        - session:
+                            customer_id
+                            cart data
+                            login state
 
+                        - cache :
+                            config
+                            layout
+                            block_html
+                            collections
+      
+                   - Varnish (Varnish is a reverse proxy cache server placed in front of Magento.) ----> Settings ---> Configurtion ----> Advance ---> System ---> Caching Application
+
+                        - Serve cached pages
+
+                        
                    - FPC (Opcache)
 
 
 
-               - Indexing (Prtial | Full)
+               - Indexing (Prtial | Full) - https://developer.adobe.com/commerce/php/development/components/indexing/
 
                   - Update on Save
 
                   - Update By Schedule 
+                         
+                         - Cron Job
+                         - mview & indexer (mview.xml | indexer.xml) 
+                              |
+                              |------- Sql Triggers 
+                                             |
+                                             |----- CL Table  (how change log table will create based on - what ?)
+                                                      |
+                                                      |---------
 
+                        - what are the status and which table to see the status(indexer_state)
 
-               - CDN
+                            -                               
 
                - 
 
@@ -907,7 +975,7 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
                  
                  - PHPmd , PHPCs
 
-                 - codding standard modules 
+                 - Codding standard modules 
 
 
 
@@ -917,6 +985,16 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
      <details><summary><b>info: </b></summary>
 
         - Home ---> PLP (sort, search, filter)---> PDP----> Add to Cart | Add to Wishlist ---> Checkout ---> Coupon Code ---> Shipping + Billing - Payment --> Place Order
+
+
+
+        - Frontend - Produt Is not Loading It is Slow - Explain the Step to Debug and Found Why it is Slow 
+
+        
+        - Stock and Source 
+
+            - When an order is placed Magento creates a reservation to reduce salable quantity, and actual source inventory is deducted only when shipment is created. 
+            If the order fails or is cancelled, the reservation is released and stock is restored.
 
             - Customer
 
@@ -966,31 +1044,69 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
     
 - Current Company Based Concept/Challenges : 
      <details><summary><b>info: </b></summary>
+
             - what is the recent issue you faced and how you overcome it.
 
-            - 
+            - What is the Recent Project or Feature You Developed 
               
     </details>
 
 - Cloud Based Concept : 
      <details><summary><b>info: </b></summary>
 
-            - list b2b modules 
+            - list B2B modules
+                    |
+                    |
+                    |------- Shared Catalog
+                    |
+                    |------- Quick Order
+                    |
+                    |------- Purchase Order
+                    |
+                    |------- Negotiable Quote
+                    |
+                    |------- Requisition List 
+                    
+                        
+                
 
             - what is ece tools 
 
-            - explain all .yaml file for .magento (routes, services, app)
+            - what is the purpose newrelic. explain all various cases 
 
-            - newrelic
+            - why we are using - Fastly. explain in details 
 
-            - fastly (replace as - redis)
+
+            - what .mgento and what is the purpose explain 
+                     |
+                     |
+                     |------ .magento/routes.yaml
+                     |
+                     |------ .magento/services.yaml
+                     |
+                     |------ .magento/app.yaml
+                     |
+                     |------ .magento/env.yaml
+
+
+
+                   
               
     </details>
 
 
 - Third Party Extension Based Question : 
      <details><summary><b>info: </b></summary>
-             <i>  </i>
+            
+            - Explain ERP 
+
+            - Akeno 
+
+            - Tecsys
+
+            - Iconic 
+
+            - Freedhopper
               
     </details>
 
@@ -998,6 +1114,7 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
 - End to End Question : 
      <details><summary><b>info: </b></summary>
+
             - explain attribute creation by Patch and it respectice table (patch_list, eav_attribute)
 
             - when placing order what all table involved 
@@ -1083,6 +1200,24 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
      - 
               
   </details>  
+
+
+
+#### Interview Tips 
+
+      - Full Confidence
+      
+      - Never Ever Beg 
+
+      - Stay On - My Point (Show I Am the Best --- Make Them - Wrong)
+
+      - Never Try to Get Hire --- By Empathy and Emotion
+
+      - No Matter What ----> Say the Correct and Be Polite
+
+      - Never Show---- Weakness | Make Interviewer -- Superioir (make them -- confuse) 
+
+
     
 
 
