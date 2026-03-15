@@ -963,8 +963,79 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
                             -                               
 
-               - 
+               - What is RabbitMq - Explain how to configure and --- In Case Of Cloud -- Is RabbitMQ we need to install or any other servies we need instead of RabbitMQ
 
+                    - It processes asynchronous tasks using queues.
+                    - Instead of executing immediately, the task is pushed to a queue and processed by consumers.
+
+                    - Used for:
+                        Async APIs
+                        Bulk operations
+                        Inventory reservations
+                        Order processing
+                        Email processing
+
+
+               - If RabbitMq is not available --- Which Services Magento uses and How
+
+               - What is CRON Job - Explain How It Works 
+                     |
+                     |---- Is Cron Job Is Asynchronous
+                     |
+                     |---- Is a cron job asynchronous? Let's say I schedule a cron job for every 5 minutes. If that cron fails, what happens to the next cron job?
+                           
+                           - Cron itself is not asynchronous. It runs tasks at a specific time interval.
+
+                           - If a cron job fails, Magento records the status in the table:
+                                 |
+                                 |
+                                 |----- cron_schedule
+                                            |
+                                            |----- pending, running, success, missed and error
+
+                           - The next cron job will still run normally. Cron jobs are independent executions.
+
+                           - Used for:
+                                Reindexing
+                                Sending emails
+                                Catalog price rules
+                                Generating feeds
+                                Cleaning logs               
+                                            
+
+
+               - Is RabbitMQ is Same as CRON Job -- Exaplain in Detail
+
+
+            - REST vs GraphQL — Are both cached, and how does authorization work?
+
+                - Authorization 
+                   - Admin token
+                   - Customer token
+                   - Integration token 
+
+                - You created a custom GraphQL query, but it's very slow. What will you check?
+
+                - Your ERP system cannot access product APIs. It gets 401 Unauthorized. What will you check?  
+
+                - Your REST API is not cached even though Varnish is enabled.
+
+                - GraphQL responses are not cached. What could be the reason?
+
+                - GraphQL is slower than REST in your project. Why?
+
+                - How would you secure Magento APIs from abuse?
+
+                - Your mobile app uses GraphQL, and after deployment product queries fail.
+
+                - GraphQL query is loading 100 products, but DB query count is 1000+. (N+1 Query Problem - Use bulk loading / collections.)
+
+                - How would you cache GraphQL product queries with Varnish?
+
+                - 
+
+
+                
                 
             <i> Security </i>
 
@@ -1207,7 +1278,7 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
       - Full Confidence
       
-      - Never Ever Beg 
+      - Never Ever Beg -- Ask the Cross Question If Feel - Low 
 
       - Stay On - My Point (Show I Am the Best --- Make Them - Wrong)
 
