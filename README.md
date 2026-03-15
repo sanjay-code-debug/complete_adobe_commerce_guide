@@ -840,8 +840,6 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
               - GA4 , GTM 
 
-              - Social Login
-
 
               - Explain - Website , Store and Store View :- https://experienceleague.adobe.com/en/docs/commerce-admin/start/setup/websites-stores-views
                       |
@@ -887,6 +885,30 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
                         - inventory_reservation
                         - inventory_stock
                         - inventory_source
+
+
+                - EAV Attribute vs Extension Attribute (Explain uses cases and where the value is going to store)\
+
+                    - EAV attributes are used to store dynamic entity data in EAV tables, 
+                      while extension attributes are used to extend service contract APIs and usually store data in custom tables.
+
+                    - EAV
+                       - Used to add dynamic attributes to entities like products or customers and stored in EAV tables.
+
+                    - Extension Attribute
+                       - Used to extend API data objects without modifying the core database schema. 
+
+
+                - Explain ViewModel 
+
+                      - declare for specific layout <referenceBlock> <argument> so it will pass to respective .phtml file 
+
+                - Singleton Class 
+
+                      - A Singleton class means only one instance of the class is created and reused everywhere during the application lifecycle.
+                      - Instead of creating a new object every time, Magento shares the same object.            
+
+                      
       
              <i> Frontend (view/frontend) | app/design </i>
 
@@ -1061,6 +1083,9 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
         - Frontend - Produt Is not Loading It is Slow - Explain the Step to Debug and Found Why it is Slow 
 
+
+        - Exaplain MVC and MVVM 
+
         
         - Stock and Source 
 
@@ -1159,6 +1184,8 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
                      |
                      |------ .magento/env.yaml
 
+            - How to update Php version, Mysql or any Other Services         
+
 
 
                    
@@ -1178,6 +1205,8 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
             - Iconic 
 
             - Freedhopper
+
+            - Social Login (Adyen - Applepay / Googlepay)
               
     </details>
 
