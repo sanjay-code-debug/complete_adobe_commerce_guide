@@ -802,11 +802,29 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
 
               - DI(loose coupling- constructor injection) vs Object Manager(get, create)
 
-              - Singletone Class 
+              - DI
+                 - Dependency Injection in Magento 2 is a design pattern where dependencies are provided to a class instead of being created inside it.
+                   Magento uses a DI container (Object Manager) to automatically inject dependencies via constructors
+
+              - Object Manager
+                  - The Object Manager is the core class responsible for creating and managing objects in Magento 2.
+                      - It is Magento’s Dependency Injection (DI) container
+                      - It creates objects, resolves dependencies, and manages shared instances
+
+              - Singletone Class
+                    - A Singleton class ensures that only one instance of a class exists and provides a global access point.
+                      In Magento 2, Singleton behavior is achieved using dependency injection with shared instances instead of manually implementing the pattern.
 
               - Factory (Auto generated Class - non-injectable class ---> Entity Class)
+                  - In Magento 2, a Factory is used to create new instances of a class dynamically. Magento automatically generates Factory classes,
+                    and each call to the create() method returns a new object, unlike Singleton which returns a shared instance."
 
-              - Proxy (when their is need of Object - Lazy Loading - Resource Instancesive Class)
+
+              - Proxy
+                 - In Magento 2, a Proxy class is used for lazy loading.
+                   It delays the instantiation of heavy objects until they are actually needed, improving performance.
+                   Magento automatically generates proxy classes when we use \Proxy in dependency injection.
+
 
               - REST and GraphQl
 
