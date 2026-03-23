@@ -120,8 +120,7 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                     
      
     </details> 
-    
-- Codding Standard
+
     <details><summary><b>SOLID</b></summary>
         - https://blog.bytebytego.com/p/mastering-design-principles-solid
     </details> 
