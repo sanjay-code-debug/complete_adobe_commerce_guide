@@ -84,14 +84,8 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
             
     </details>
 
-  - OOPS
 
-  - MVC 
-
-  - MVVM 
-
-  - Codding Standard 
-
+  - Codding Standard
     <details><summary><b>coding-standards</b></summary>
     
               Step - 1
@@ -124,54 +118,13 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
                     
      
     </details> 
-
-  - Service Contract
     
-      <details><summary><b>info</b></summary>
-       
-               |
-               |------What is Service contract
-               |                 |-----------why should any one implement Service contract in magento
-               |                 |-----------Benefit of Service Contract 
-               |------types of interface service contract concept implement
-               |                        |-------what is Data interfaces
-               |                        |                        |---------what is data integrity
-               |                        |-------what is service interfaces 
-               |                                                 |----------types of service interfaces
-               |                                                 |----------what is  Repository interfaces(CRUD)
-               |                                                 |----------what is Management interfaces(send the email, manage related)
-               |                                                 |----------what is Metadata interfaces(Eg-name has --first_name, last_name)
-               |          
-       
-    
-     ![Service_contract](https://user-images.githubusercontent.com/78407424/170829619-146e2aa8-2507-4f36-bfaa-718794394412.png)
-    
-    </details>   
-  
-  - Dependency Injection vs Object Manager
-       <details><summary><b>info</b></summary>  
-                                                          
-       </details>
-  
-  - Type and Virtual Type
-      <details><summary><b>info</b></summary>      
-       
-    </details>
+- Codding Standard
+    <details><summary><b>SOLID</b></summary>
+        - https://blog.bytebytego.com/p/mastering-design-principles-solid
+    </details> 
+   
 
-  - Factories (Factory Class) 
-     <details><summary><b>info</b></summary>
-      
-       ![Factories_3](https://user-images.githubusercontent.com/78407424/170829686-0171959b-3bb8-4469-a952-92ad24aca85d.png)
-    
-     </details>
-
-  - Proxy 
-     <details><summary><b>info</b></summary>
-      
-       - di.xml is having higher priority rather than constructor
-
-      ![Proxy_2](https://user-images.githubusercontent.com/78407424/170829650-ccf014c8-d401-4af4-aed3-a8ea578d9482.png)
-     </details>   
 
      
   - Magento Cloud
@@ -227,86 +180,8 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
      
  </details>  
 
-### Intermediate
------------------
-- Indexing
-
-     <details><summary><b>info</b></summary>
- 
-        |
-        |---What is Indexing in Magento
-        |               |-------Why we need Indexing
-        |               |-------How many types of Indexing mode
-        |                                 |-----How Update on Save is working
-        |                                 |-----How Update on Schedule is working
-        |                                           |----Explain end to end how schedule work based on cron job
-        |                                                          |------what is change_log table and how it tigger      
-        |                                                          |------what is tigger function
-        |                                                                  
-        |---What all file require to implement indexing concept in magento
-                                        |----------what is the use of indexer.xml
-                                        |----------what is the use of mview.xml 
-                                                          |-----how mview file is link with other files and help cron job to work      
-    
-    
-    ![Screenshot from 2022-05-28 19-30-43](https://user-images.githubusercontent.com/78407424/170829798-5186503c-dead-4948-a22e-c9620b424515.png)
-
-    </details> 
-
- - Caching
-
-   <details><summary><b>info</b></summary> 
-    
-         |----------what is caching 
-         |                    |-------why we need caching in magento 
-         |                    |-------how to know is cache is enable for particular section in magento
-         |                    |-------if we declare cache is false then what happen 
-         |                    |-------how to know is the site is full cache enabled
-         |
-         |----------What are all the way to know is the page is cache enable and how to achieve 
-         |
-         |---------how many types of cache mechanism
-         |                           |---------------what is public content(server side)
-         |                           |                            
-         |                           |---------------what is private content(client side) 
-         |                                                      |------------what type of data is called private content
-         |--------how cahce is related with
-                                         |------varnih
-                                         |------redis
-                                         |------Opchache
-                                         |------JIT
-                                         |------Zend Engine 
-
-   ![caching_5](https://user-images.githubusercontent.com/78407424/170829843-dc40a7ba-3ebc-40b3-9e6b-1eb3dfd0b73a.png)
-
-   </details>
-
-
- - EAV
-     <details><summary><b>info</b></summary>
-
-            |--------what is EAV
-            |                 |----Why Magento implement EAV concept why not other concept to manage the data
-            |                 |----How many types of entity table in magento(9)
-            |                 |----How many types of data types table for entity table in magneto(5)
-            |  
-            |--------types of eav attribute 
-            |          |--------Custome attribute
-            |          |                     |---------
-            |          |                     |---------
-            |          |
-            |          |--Extension Attribute
-            |                 |               
-            |                 |
-            |                 |---What is extension attribute
-            |                 |---what all folder structure need to implemnt extension attribute
-            |                 |---what is the use of resource in extension_attribute in magento
-            |                 |                |-------------------what is the use of join in extension_attribute
-            |                 |                |-------------------what are all type of extension attribute (string, init, float or Object)
-            |                 |---If we need to add extension attribute for customer then what we need to do.
-            |                 |--For getting and set the extension attribute which interface we need extends in service contract design.
-                               
-    </details>
+### Magento Practical
+---------------------
 
  - how to setup multiple store
     <details><summary><b>info</b></summary>
@@ -330,40 +205,6 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
                 
      </details>   
 
- - API's
-
- - REST API
-
-   ![api](https://user-images.githubusercontent.com/78407424/229434266-befbda7b-674b-4156-9a62-75c8a9d37319.png)
-      
-    <details><summary><b>info</b></summary>
-     
-         - http://magento.local(base_url)/swagger#/
-         
-                        |
-                        |------First check the active mode website is running
-                        |                                              |-----------sudo bin/magento deploy:mode:show
-                        |----- If It is in default mode then chane it to "developer"
-                        |                                                     |--------- sudo bin/magento deploy:mode:set developer (do se:up & ca:fl)
-                        |
-                        |----Some time it will not work So Check Below Configuration
-                                      |
-                                      |--------------Stores > Settings > Configuration > Advanced > Developer
-                                                                                                                              |-------Swagger----->Enabled Yes/No (make it Yes)
-    </details> 
-
- - GraphQl Api in Magento(Resolver & schema.graphqls)
-
-   
-    </details> 
-
-
-### Advance 
------------
-
- - Checkout Flow
-
- - Payment Method 
 
  - Order Flow 
     <details><summary><b>order concept</b></summary> 
@@ -379,14 +220,7 @@ complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/ph
    
     </details>
 
- - Third Party Integration
-
- - ERP 
-
- - OMS 
-
- - 
-
+### Community
  - Contribution
         <details><summary><b>info: </b></summary>
                 <i> https://www.slideshare.net/secret/MwPFaOYcTj496V </i>
