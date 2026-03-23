@@ -3,6 +3,8 @@
 
 complete adobe commerce(magento guide) - https://developer.adobe.com/commerce/php/development/roadmap/  
 
+latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/commerce-operations/release/versions
+
 
 ## adobe commerce guide 
 -------------------------
