@@ -87,7 +87,7 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
     </details>
 
 
-  - Codding Standard
+  - Best Practices
     <details><summary><b>coding-standards</b></summary>
     
               Step - 1
