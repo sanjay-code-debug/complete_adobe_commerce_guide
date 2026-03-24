@@ -815,7 +815,7 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                         - Serve cached pages
 
                         
-                   - FPC (Opcache)
+                   - FPC (Opcache) - Default Built in Magento Cache (Full - Html Content will cache)
 
 
 
@@ -917,7 +917,12 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
             <i>Best Practice</i>
                  
-                 - SOLID 
+                 - SOLID
+                       S -
+                       O -
+                       L -
+                       I -
+                       D - 
                  
                  - PHPmd , PHPCs
 
@@ -932,9 +937,36 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
         - Home ---> PLP (sort, search, filter)---> PDP----> Add to Cart | Add to Wishlist ---> Checkout ---> Coupon Code ---> Shipping + Billing - Payment --> Place Order
 
+        - Performance
+  
+              - How to increase the performace of magento site (Explain - in details)
+
+              - In Customer Cart - you added a custom - customer attribute but it is fails under - Pulic content so - how you make this will be different value for respective customer
+
+              - Customer Cart Is --- Loading Slow  --- What are Step to flow so - find the root cause why it is causing issue 
+               
+
+        - Security
+              - What are best way to prevent various attack on Magento site.
+              - Sql Injection - How to prevent the Sql injection attack
+              - What is CSRF → form key valitdation.
+              - What is DDOs Attack and How To Prevent.
 
 
-        - Frontend - Produt Is not Loading It is Slow - Explain the Step to Debug and Found Why it is Slow 
+        - Caching (Explain In Detail - Scenario Based)
+  
+             - Customer - Related Data (specially - specific customer attribute where it will cache and how it will render for - Respective Customer)
+
+             - how actually caching is working for Specific Customer can you explain end to end flow -- is any issue with performance how we can improve
+
+      
+
+        - Frontend Layout(Magento / Adobe Commerce Frontend)
+
+              - Produt Is not Loading It is Slow - Explain the Step to Debug and Found Why it is Slow
+
+              - For Specif Block --- 
+
 
 
         - Exaplain MVC and MVVM 
@@ -945,8 +977,10 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
             - When an order is placed Magento creates a reservation to reduce salable quantity, and actual source inventory is deducted only when shipment is created. 
             If the order fails or is cancelled, the reservation is released and stock is restored.
 
-            - Customer
 
+            - Customer
+  
+                - How Customer Data Loads
                 - 
 
             - Price 
@@ -1051,6 +1085,8 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
             
             - Explain ERP 
 
+            - RMS
+  
             - Akeno 
 
             - Tecsys
@@ -1068,17 +1104,15 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 - End to End Question : 
      <details><summary><b>info: </b></summary>
 
-            - explain attribute creation by Patch and it respectice table (patch_list, eav_attribute)
+            - Explain attribute creation by Patch and it respectice table (patch_list, eav_attribute)
 
-            - when placing order what all table involved 
+            - When placing order what all table involved 
 
-            - when do add to cart --- where the billing information will going to store
+            - When do add to cart --- where the billing information will going to store
 
-            - 
+            - What is Index : - Explain in db_schema.xml (how actually helps to - in performance)
               
     </details>
-    
-
 
 
 - Practical Question : 
@@ -1137,6 +1171,8 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
          - find the nth highest price of product 
   
+         - Btree vs Full-index Magento 2 (real time example)
+         - Having vs Where 
          - 
               
   </details>
