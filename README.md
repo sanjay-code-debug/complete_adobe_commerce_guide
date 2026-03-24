@@ -959,6 +959,14 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
              - how actually caching is working for Specific Customer can you explain end to end flow -- is any issue with performance how we can improve
 
+             - If Cache is Faster than Database - why not store everything in Cache
+
+                     - Cache is Volatile but the Database is Durable
+                     - RAM is expensive. The Disk is Cheap
+                     - Cache is not designed for Complex Queries
+                     - Consistency becomes nightmare
+                     - Not all data needs to be fast
+
       
 
         - Frontend Layout(Magento / Adobe Commerce Frontend)
