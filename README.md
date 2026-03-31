@@ -793,17 +793,15 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
     </details>
 
 - Advance Concept : 
-     <details><summary><b>info: </b></summary>
-
-               - Caching (private content | public content)
+<details><summary><b>info: </b></summary>
+   - Caching (private content | public content)
+   
                    |
                    |---- public content --- https://developer.adobe.com/commerce/php/development/cache/page/public-content
                    |---- private content --- https://developer.adobe.com/commerce/php/development/cache/page/private-content 
 
 
-               - Cache Storage 
-
-                   - https://developer.adobe.com/commerce/php/development/cache/partial/cache-type
+    - Cache Storage - https://developer.adobe.com/commerce/php/development/cache/partial/cache-type
                    
                    - Redis (session storage + cache) ---> env.php [Redis stores data in RAM, so it is extremely fast.]
 
@@ -827,7 +825,10 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
                    
 
-               - Cache Management - - https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management
+      - Cache Management - - https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management
+
+              - cache : clean 
+              - cache : flush
                
  
                - Indexing (Prtial | Full) - https://developer.adobe.com/commerce/php/development/components/indexing/
