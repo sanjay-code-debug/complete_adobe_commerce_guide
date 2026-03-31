@@ -795,7 +795,15 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 - Advance Concept : 
      <details><summary><b>info: </b></summary>
 
-               - Caching (private content | public content) - https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management
+               - Caching (private content | public content)
+                   |
+                   |---- public content --- https://developer.adobe.com/commerce/php/development/cache/page/public-content
+                   |---- private content --- https://developer.adobe.com/commerce/php/development/cache/page/private-content 
+
+
+               - Cache Storage 
+
+                   - https://developer.adobe.com/commerce/php/development/cache/partial/cache-type
                    
                    - Redis (session storage + cache) ---> env.php [Redis stores data in RAM, so it is extremely fast.]
 
@@ -817,14 +825,17 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                         
                    - FPC (Opcache) - Default Built in Magento Cache (Full - Html Content will cache)
 
+                   
 
-
+               - Cache Management - - https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management
+               
+ 
                - Indexing (Prtial | Full) - https://developer.adobe.com/commerce/php/development/components/indexing/
-
+               
                   - Update on Save
+                         - 
 
                   - Update By Schedule 
-                         
                          - Cron Job
                          - mview & indexer (mview.xml | indexer.xml) 
                               |
