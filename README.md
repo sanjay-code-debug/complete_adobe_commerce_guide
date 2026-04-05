@@ -699,6 +699,29 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                       |
                       |--- Website manages business level, Store manages product categories, and Store View manages language or presentation layer.
 
+   
+                      Global (Magento Installation)
+   
+                          ├── AU Website (forevernew.com.au)
+                          │     └── Main Store
+                          │           └── English Store View
+                          
+                          ├── CA Website (evernew.ca)
+                          │     └── Main Store
+                          │           ├── English Store View
+                          │           └── French Store View
+                          
+                          ├── IN Website (forevernew.co.in)
+                          │     └── Main Store
+                          │           └── English Store View
+                          
+                          ├── NZ Website (forevernew.co.nz)
+                                └── Main Store
+                                      └── English Store View
+
+                      Website = Country / Domain (Business separation)
+                      Store = Product catalog (logical grouping)
+                      Store View = Language / localization (UI level)                
 
                     E.g - 
                        Website: ForeverNew AU  -------------> One website because business is only in Australia
@@ -718,6 +741,8 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
                                     Store View: English -----------> Default language
                                     Store View: Chinese -----------> Chinese translation
+
+                                    
 
 
               - Stocks and sources(MSI – Multi-Source Inventory):- (https://experienceleague.adobe.com/en/docs/commerce-admin/inventory/basics/sources-stocks)
