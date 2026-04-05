@@ -811,7 +811,7 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
               - cache : flush
                
  
-               - Indexing (Prtial | Full) - https://developer.adobe.com/commerce/php/development/components/indexing/
+      - Indexing (Prtial | Full) - https://developer.adobe.com/commerce/php/development/components/indexing/
                
                   - Update on Save
                          - 
@@ -830,8 +830,11 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
                             -                               
 
-               - What is RabbitMq - Explain how to configure and --- In Case Of Cloud -- Is RabbitMQ we need to install or any other servies we need instead of RabbitMQ
+       - What is RabbitMq : - https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/prerequisites/message-brokers/rabbitmq
+     
+                    - https://developer.adobe.com/commerce/php/development/components/message-queues/
 
+                    - Explain how to configure and --- In Case Of Cloud -- Is RabbitMQ we need to install or any other servies we need instead of RabbitMQ
                     - It processes asynchronous tasks using queues.
                     - Instead of executing immediately, the task is pushed to a queue and processed by consumers.
 
@@ -845,6 +848,8 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
                - If RabbitMq is not available --- Which Services Magento uses and How
 
+      - CRON JOB :- https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/crons/custom-cron
+      
                - What is CRON Job - Explain How It Works 
                      |
                      |---- Is Cron Job Is Asynchronous
@@ -873,7 +878,8 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
                - Is RabbitMQ is Same as CRON Job -- Exaplain in Detail
 
-
+     - API
+  
             - REST vs GraphQL — Are both cached, and how does authorization work?
 
                 - Authorization 
@@ -902,12 +908,14 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                 - 
 
 
+    - Performance
+<hr>
                 
                 
-            <i> Security </i>
+    - Security
 
 
-            <i>Best Practice</i>
+    - Best Practice
                  
                  - SOLID
                        S -
