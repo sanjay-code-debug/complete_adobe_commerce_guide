@@ -909,7 +909,6 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
 
     - Performance
-<hr>
                 
                 
     - Security
