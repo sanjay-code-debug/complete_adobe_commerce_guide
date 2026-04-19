@@ -83,6 +83,12 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
             |
             |
             |-----comming soon......
+
+
+
+           - Explain this below
+
+                  - echo true + true + false ; ----- is is correct 
             
     </details>
 
@@ -584,7 +590,13 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 - Core Concept : Alway's Refer Vendor Module
      <details><summary><b>info: </b></summary>
 
-            <i> Backend (view/adminhtml) | app/code </i>
+              - What are Design Patterns in Magento
+
+                   - Explain Service Design Pattern
+  
+                   - Explain Registry Pattern 
+
+
 
               - module 
                   - explain module creation 
@@ -631,9 +643,11 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
               - Declarative Schema, Data Patch , Schema Patch
 
-              - Plugin (before, around, after ) - interceptor (modify the behaviour of class ---public method) - sort order 
+              - Plugin (before, around, after ) - interceptor (modify the behaviour of class ---public method) - sort order
+                    - 3 Pluin written on same core method (which will execute -- tell the exact flow)
 
-              - Event & Observer 
+              - Event & Observer
+                    - 2 event and obserser written on a core event -- tell which will execute first 
 
               - Preference (last case)
 
@@ -643,7 +657,12 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
               - Area in magento (6)
 
-              - 
+                    - frontend
+                    - adminhtml
+                    - crontab
+                    - webapi_soap
+                    - webapi_rest
+                             |---------- why we need to write the di.xml inside this area (why not global area)
 
 
               - GA4 , GTM 
@@ -741,7 +760,17 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                       - A Singleton class means only one instance of the class is created and reused everywhere during the application lifecycle.
                       - Instead of creating a new object every time, Magento shares the same object.            
 
-                      
+
+                 - GraphQl
+
+                      - How to add a custom field to Product
+                      - How to Maintain the Security 
+ 
+                  - Rest Api
+  
+                      - Add a Custom Field and That Value only applicable to RestAPI not into -- Frontend
+                      - I want to add value to custom field based on Price -- How we can achieve it
+                
       
              <i> Frontend (view/frontend) | app/design </i>
 
@@ -802,6 +831,11 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
                         
                    - FPC (Opcache) - Default Built in Magento Cache (Full - Html Content will cache)
+
+
+                   - There is 20 to 30 Product In this Case Which Caching We Can Use
+                                    |
+                                    |-------- Redis ? Varnish ? FPC and Why   
 
                    
 
@@ -912,6 +946,32 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                 
                 
     - Security
+ 
+           - What is XSS
+
+           - What is Ddoss
+
+      
+ 
+
+     - Data Migration
+
+           - 10 Lakh Product --- How to Migrate
+
+           - 10 Lakh Customer --- How to Migrate
+
+
+
+     - Upgrade Magento 2 
+ 
+             - What are the Step you will follow to --- Upgrade the Current Verion of Magento To Any Specific Verison
+
+             - What is the Latest Vesion and It's - Respective Requirements
+
+             - 
+ 
+
+     
 
 
     - Best Practice
@@ -925,9 +985,11 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                  
                  - PHPmd , PHPCs
 
-                 - Codding standard modules 
+                 - Codding standard modules
 
+                 - explain SOLID with Current Magento Code Base
 
+                 - Proper Example of -- Oops 
 
     </details>
 
@@ -1092,10 +1154,11 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 - Third Party Extension Based Question : 
      <details><summary><b>info: </b></summary>
             
-            - Explain ERP 
+            - Explain ERP
+                 - RMS
+                 - OVC
 
-            - RMS
-  
+          - PIM 
             - Akeno 
 
             - Tecsys
@@ -1120,7 +1183,10 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
             - When do add to cart --- where the billing information will going to store
 
             - What is Index : - Explain in db_schema.xml (how actually helps to - in performance)
-              
+
+            - Once Order Is Place --- How to Send the Order Details To ERP Explain End to End Flow
+
+            - 
     </details>
 
 
@@ -1211,7 +1277,7 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
       - Never Try to Get Hire --- By Empathy and Emotion
 
-      - No Matter What ----> Say the Correct and Be Polite
+      - No Matter What ----> Say the Correct and Be Polite | Clam and Confident | Say Not Sure 
 
       - Never Show---- Weakness | Make Interviewer -- Superioir (make them -- confuse) 
 
