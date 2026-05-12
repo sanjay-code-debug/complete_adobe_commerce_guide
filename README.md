@@ -127,12 +127,6 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
      
     </details> 
 
-    <details><summary><b>SOLID</b></summary>
-        - https://blog.bytebytego.com/p/mastering-design-principles-solid
-    </details> 
-   
-
-
      
   - Magento Cloud
     <details><summary><b>info: </b></summary> 
@@ -592,9 +586,32 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
               - What are Design Patterns in Magento
 
-                   - Explain Service Design Pattern
+                   - explain service design pattern
+                          |
+                          |-- data 
+                          |
+                          |-- service 
+                                 |------ repo
+                                 |
+                                 |------ management 
+                                 |
+                                 |------ data 
   
-                   - Explain Registry Pattern 
+                   - explain registry pattern 
+
+                   - mvc
+
+                   - mvvm
+
+                   - factory
+
+                   - proxy 
+
+                   - dependency injection
+
+                   - singletom
+
+                   - 
 
 
 
@@ -664,8 +681,13 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                     - webapi_rest
                              |---------- why we need to write the di.xml inside this area (why not global area)
 
-
               - GA4 , GTM 
+
+              - LogRocket 
+
+              - DataDome 
+
+              - 
 
 
               - Explain - Website , Store and Store View :- https://experienceleague.adobe.com/en/docs/commerce-admin/start/setup/websites-stores-views
@@ -914,12 +936,14 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
      - API
   
-            - REST vs GraphQL — Are both cached, and how does authorization work?
+        - REST vs GraphQL — Are both cached, and how does authorization work?
 
-                - Authorization 
-                   - Admin token
-                   - Customer token
-                   - Integration token 
+            - Authorization 
+
+                - Admin token
+                - Customer token
+                - Integration token 
+
 
                 - You created a custom GraphQL query, but it's very slow. What will you check?
 
@@ -943,6 +967,12 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
 
     - Performance
+       
+
+        - after add to cart -- cart items is not loading why and how to debug in adobe commerce 
+
+        - check is slow customer is unable to make the payment 
+        
                 
                 
     - Security
@@ -959,6 +989,16 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
            - 10 Lakh Product --- How to Migrate
 
            - 10 Lakh Customer --- How to Migrate
+
+                - Migration tool :- https://experienceleague.adobe.com/en/docs/commerce-operations/tools/data-migration/basics/upgrade
+
+                  - composer require magento/data-migration-tool
+
+                  - php bin/magento migrate:settings
+
+                - CSV Import
+
+                     -   
 
 
 
@@ -977,13 +1017,35 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
     - Best Practice
                  
                  - SOLID
-                       S -
-                       O -
-                       L -
-                       I -
-                       D - 
+                       S – Single Responsibility Principle
+                            One class should have only one responsibility.
+                            Example: In Magento, a Product class should handle only product data, not email sending.
+
+                       O – Open/Closed Principle
+                            Open for extension, closed for modification.
+                            Example: In Magento, use Plugins or Preferences to extend functionality instead of changing core files.
+
+                       L – Liskov Substitution Principle
+                            A subclass should be replaceable with its parent class without breaking functionality.
+                            Example: A custom payment method should work anywhere the base payment method is used.
+
+                       I – Interface Segregation Principle
+                            Clients should not depend on interfaces they do not use.
+                            Example: Create small Magento interfaces for specific features instead of one large interface.
+
+                       D – Dependency Inversion Principle
+                            High-level modules should not depend on low-level modules; both should depend on abstractions.
+                            Example: In Magento, use Dependency Injection (DI) with interfaces instead of directly creating objects using new.
+
                  
-                 - PHPmd , PHPCs
+                - PHPMD (PHP Mess Detector)
+                    Tool used to find bad code practices and unnecessary code in PHP.
+                    Example: Detects unused variables, long methods, complex code in Magento.
+
+                - PHPCS (PHP CodeSniffer)
+                    Tool used to check coding standards and formatting rules in PHP.
+                    Example: Checks Magento coding standards like indentation, naming, and file structure.
+
 
                  - Codding standard modules
 
@@ -999,6 +1061,13 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
      <details><summary><b>info: </b></summary>
 
         - Home ---> PLP (sort, search, filter)---> PDP----> Add to Cart | Add to Wishlist ---> Checkout ---> Coupon Code ---> Shipping + Billing - Payment --> Place Order
+
+        - when declare di.xml file for webapi_rest (why we need to declare globally why need to declare inside the webapi_rest)
+
+        - Writen 2 pluin on a - existing vendor code function --- which plugin will execute and why explain same for event and observer
+
+        - In a particular case 
+                   -- some junior written the plugin but we can achieve the same with event as well === can you explain -- when exactly we need the pluin or event 
 
         - Performance
   
@@ -1068,7 +1137,7 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
                 - how to add a new attribute to checkout 
 
-                - 
+                - is checkout data for the customer is cache ? 
 
 
             - Payment
@@ -1082,8 +1151,14 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
                 - types of product 
 
+
             - Order
+
                 - explain complete order flow 
+
+                - explain end to end flow --- how order will flow to erp and other system 
+
+                - if i want to add any extra attribute to order how we can do that - can you explain 
 
 
             - Return
@@ -1101,7 +1176,25 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
             - what is the recent issue you faced and how you overcome it.
 
-            - What is the Recent Project or Feature You Developed 
+            - what is the Recent Project or Feature You Developed 
+
+            - what is your day to day work 
+
+            - how many project did you work 
+
+            - What are  OMS used 
+
+            - What are PIM used 
+
+            - What are used for security 
+
+            - What are the used for ERP 
+
+            - What are all integration you worked on - explain any good one 
+
+
+
+            
               
     </details>
 
@@ -1159,6 +1252,7 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                  - OVC
 
           - PIM 
+
             - Akeno 
 
             - Tecsys
@@ -1168,6 +1262,8 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
             - Freedhopper
 
             - Social Login (Adyen - Applepay / Googlepay)
+
+
               
     </details>
 
