@@ -987,97 +987,97 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
                 
                 
     - Security
-        
-        1. XSS — Cross Site Scripting
-            - Attacker injects malicious JS into your page, runs in victim's browser.
-             
-            - php// Prevent
-                echo $block->escapeHtml($userInput);        // always escape output
-                echo $block->escapeUrl($url);               // escape URLs  
-
-        2. DDoS — Distributed Denial of Service
-            - Thousands of bots flood your server with requests, making it unavailable.   
             
+            1. XSS — Cross Site Scripting
+                - Attacker injects malicious JS into your page, runs in victim's browser.
+                
+                - php// Prevent
+                    echo $block->escapeHtml($userInput);        // always escape output
+                    echo $block->escapeUrl($url);               // escape URLs  
+
+            2. DDoS — Distributed Denial of Service
+                - Thousands of bots flood your server with requests, making it unavailable.   
+                
+                - Prevent
+                    limit_req_zone $binary_remote_addr zone=one:10m rate=10r/s;
+                    Use Cloudflare / Fastly WAF rate limiting at edge
+
+            3. SQL Injection
+            - Attacker injects SQL via input fields to read/delete your database.   
+
+            - // Prevent — always use prepared statements
+
+                    $collection->addFieldToFilter('sku', ['eq' => $sku]);
+                    $connection->query("SELECT * FROM t WHERE id = ?", [$id]);    
+
+            4. CSRF — Cross Site Request Forgery        
+                
+                - Tricks logged-in user's browser into making unwanted requests to your site.
+
+                - // Prevent
+                    Magento handles automatically via form_key
+                    <input type="hidden" name="form_key" 
+                        value="<?= $block->getFormKey() ?>"/>
+
+            5. Brute Force Attack
+            - Attacker tries thousands of password combinations on admin/customer login.   
+
             - Prevent
-                limit_req_zone $binary_remote_addr zone=one:10m rate=10r/s;
-                Use Cloudflare / Fastly WAF rate limiting at edge
+                // Admin → Stores > Config > Advanced > Admin
+                // Max Login Failures = 5
+                // Lockout time = 15 mins
+                // Change admin URL: bin/magento setup:config:set --backend-frontname=secret123  
 
-        3. SQL Injection
-           - Attacker injects SQL via input fields to read/delete your database.   
+            6. Remote Code Execution (RCE)
+            - Attacker uploads malicious PHP file and executes it on your server.
 
-           - // Prevent — always use prepared statements
+            - Prevent — block PHP execution in media/uploads folder
+                    location ~* /pub/media/.*\.php$ { deny all; }
+                    location ~* /pub/static/.*\.php$ { deny all; }
 
-                $collection->addFieldToFilter('sku', ['eq' => $sku]);
-                $connection->query("SELECT * FROM t WHERE id = ?", [$id]);    
+            7. Path Traversal / Directory Traversal
+            - Attacker uses ../../etc/passwd in file paths to access server files.
 
-        4. CSRF — Cross Site Request Forgery        
+            - Prevent — validate and sanitize file paths
+                    $safePath = basename($userInput);   // strips directory traversal
+                    $realPath = realpath($basePath . '/' . $safePath);
+                    if (strpos($realPath, $basePath) !== 0) { throw new Exception('Invalid path'); }
+
+            8. Clickjacking
+            - Attacker embeds your site in invisible iframe and tricks users into clicking.  
+
+            - Prevent — X-Frame-Options header
+                // Magento sets this by default
+                // Verify in: Stores > Config > General > Web > Default Pages
+                header('X-Frame-Options: SAMEORIGIN');
+                header('Content-Security-Policy: frame-ancestors \'self\'');  
+
+            9. Sensitive Data Exposure
+            - API keys, DB passwords, .env files exposed publicly via misconfiguration.
+
+            - Prevent
+                - Block sensitive files in nginx
+                    location ~* \.(env|log|git|htaccess|pem|key)$ { deny all; }
+                    Never commit credentials — use Vault / AWS Secrets Manager    
+
+            10. Insecure Direct Object Reference (IDOR) 
+            - Attacker changes order ID in URL (/sales/order/view/order_id/1001) to see other customer orders.
+
+            11. Mass Assignment / Parameter Tampering 
+            - Attacker sends extra POST params (price=0.01) to manipulate order totals.
+
+            12. XML External Entity (XXE)
+            - Attacker sends malicious XML to read server files via XML parsers.
+
+            13. Magento-Specific — Admin Panel Exposure 
+            - Admin accessible at /admin — bots constantly probe this.
+
+            14. Third Party Module Vulnerabilities
             
-            - Tricks logged-in user's browser into making unwanted requests to your site.
+            - Malicious or poorly coded modules injecting backdoors or exposing data.
 
-            - // Prevent
-                Magento handles automatically via form_key
-                <input type="hidden" name="form_key" 
-                    value="<?= $block->getFormKey() ?>"/>
-
-        5. Brute Force Attack
-           - Attacker tries thousands of password combinations on admin/customer login.   
-
-           - Prevent
-            // Admin → Stores > Config > Advanced > Admin
-            // Max Login Failures = 5
-            // Lockout time = 15 mins
-            // Change admin URL: bin/magento setup:config:set --backend-frontname=secret123  
-
-        6. Remote Code Execution (RCE)
-           - Attacker uploads malicious PHP file and executes it on your server.
-
-           - Prevent — block PHP execution in media/uploads folder
-                location ~* /pub/media/.*\.php$ { deny all; }
-                location ~* /pub/static/.*\.php$ { deny all; }
-
-        7. Path Traversal / Directory Traversal
-           - Attacker uses ../../etc/passwd in file paths to access server files.
-
-           - Prevent — validate and sanitize file paths
-                $safePath = basename($userInput);   // strips directory traversal
-                $realPath = realpath($basePath . '/' . $safePath);
-                if (strpos($realPath, $basePath) !== 0) { throw new Exception('Invalid path'); }
-
-        8. Clickjacking
-           - Attacker embeds your site in invisible iframe and tricks users into clicking.  
-
-           - Prevent — X-Frame-Options header
-            // Magento sets this by default
-            // Verify in: Stores > Config > General > Web > Default Pages
-            header('X-Frame-Options: SAMEORIGIN');
-            header('Content-Security-Policy: frame-ancestors \'self\'');  
-
-        9. Sensitive Data Exposure
-           - API keys, DB passwords, .env files exposed publicly via misconfiguration.
-
-           - Prevent
-             - Block sensitive files in nginx
-                location ~* \.(env|log|git|htaccess|pem|key)$ { deny all; }
-                # Never commit credentials — use Vault / AWS Secrets Manager    
-
-        10. Insecure Direct Object Reference (IDOR) 
-           - Attacker changes order ID in URL (/sales/order/view/order_id/1001) to see other customer orders.
-
-        11. Mass Assignment / Parameter Tampering 
-           - Attacker sends extra POST params (price=0.01) to manipulate order totals.
-
-        12. XML External Entity (XXE)
-           - Attacker sends malicious XML to read server files via XML parsers.
-
-        13. Magento-Specific — Admin Panel Exposure 
-           - Admin accessible at /admin — bots constantly probe this.
-
-        14. Third Party Module Vulnerabilities
-          
-           - Malicious or poorly coded modules injecting backdoors or exposing data.
-
-        15. Session Hijacking
-           - Attacker steals session cookie to impersonate logged-in customer/admin.
+            15. Session Hijacking
+            - Attacker steals session cookie to impersonate logged-in customer/admin.
   
  
 
