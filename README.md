@@ -609,10 +609,20 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
                    - dependency injection
 
-                   - singletom
+                   - singleton
 
                    - 
 
+
+            - Product Types 
+               
+                - Simple Product — Individual product without variations.
+                - Configurable Product — Product with selectable options like size or color.
+                - Grouped Product — Collection of simple products shown together.
+                - Bundle Product — Customizable product where customers choose components.
+                - Virtual Product — Non-physical product like services or memberships.
+                - Downloadable Product — Digital product such as PDFs, software, or music.
+                - Gift Card Product — Product used to purchase/store gift card balance.
 
 
               - module 
@@ -647,7 +657,7 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
               - REST and GraphQl
 
-              - Service Contract (Data , Service - Repository, Managemnt, )
+              - Service Contract (Data , Service - Repository, Managemnt, Data)
 
               - Repository (CRUD Operation -- no direct connect to Database)
 
@@ -672,11 +682,12 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
               - uiComponent (listing , form component)
 
-              - Area in magento (6)
+              - Area in magento (7)
 
                     - frontend
                     - adminhtml
                     - crontab
+                    - graphql
                     - webapi_soap
                     - webapi_rest
                              |---------- why we need to write the di.xml inside this area (why not global area)
