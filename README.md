@@ -999,7 +999,56 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
            - 10 Lakh Product --- How to Migrate
 
+               - Standard import approach on 1M products:
+               
+                    Magento Admin Import    → times out at 10k products ❌
+                    Single CSV import       → memory exhaustion ❌
+                    All at once             → DB locks, site goes down ❌
+                    No rollback plan        → data corruption risk ❌
+                    Images all at once      → storage I/O bottleneck ❌
+                    Reindex after import    → hours of downtime ❌
+
+               - Migration Architecture Overview
+               
+                 SOURCE SYSTEM                                          MAGENTO
+                 (ERP/PIM/Old Platform)
+
+                 Products Data ──► Extract ──► Transform ──► Validate ──► Load ──► Verify
+                                    ↓              ↓             ↓          ↓        ↓
+                                 CSV/API        Mapping        Rules      Batches   Reports
+                                   JSON            Logic         Check       Queue     Alerts
+
+               - 1.1 — Audit Source Data First
+
+               - 1.2 — Split 1M Products into Categories
+            
+               - 2.1 — Dedicated Migration Server
+
+               - 2.2 — Disable Everything Non-Essential
+
+
            - 10 Lakh Customer --- How to Migrate
+
+                - Phase 1 — Database Migration Strategy (Biggest Risk)
+
+                    - These tables will be HUGE
+                        customer_entity          -- 1M+ rows
+                        customer_entity_varchar  -- 10M+ rows
+                        customer_entity_int      -- 5M+ rows
+                        customer_grid_flat       -- 1M+ rows
+                        quote                    -- millions of rows
+                        sales_order              -- millions of rows
+
+
+                # NEVER run ALTER TABLE directly on production with 1M rows
+
+                    - It locks table for hours
+
+                # Custom Batch Reindexer for 1M customers:
+
+                    - // Console/Command/BatchReindexCustomers.php
+
+
 
                 - Migration tool :- https://experienceleague.adobe.com/en/docs/commerce-operations/tools/data-migration/basics/upgrade
 
@@ -1007,9 +1056,6 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
                   - php bin/magento migrate:settings
 
-                - CSV Import
-
-                     -   
 
 
 
@@ -1017,13 +1063,183 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
  
              - What are the Step you will follow to --- Upgrade the Current Verion of Magento To Any Specific Verison
                   
-                - UCT Tools - https://experienceleague.adobe.com/en/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/use-upgrade-compatibility-tool/run
+                - UCT Tools - https://experienceleague.adobe.com/en/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/use-upgrade-compatibility-tool/run\
+
+
+        - Steps 
                 
+            1.1 — Check Compatibility First
+
+                - # Check current version
+
+                bin/magento --version
+
+                    # Check target version release notes
+                    # https://experienceleague.adobe.com/docs/commerce-operations/release/notes
+
+                    # Run Adobe Upgrade Compatibility Tool (UCT)
+                    composer require magento/upgrade-compatibility-tool --dev
+
+                    bin/uct upgrade:check . \
+                        --coming-version=2.4.7 \
+                        --ignore-current-version-compatibility-issues
+
+            1.2 — Check All 3rd Party Module Compatibility
+
+                # List all non-Magento modules
+                    composer show | grep -v magento
+
+                        # For each module check vendor's changelog
+                        # Check on Magento Marketplace compatibility tab
+
+                        # Example: check if module supports target version
+                        composer outdated
+
+            1.3 — Backup Everything
+
+                # Full database backup
+
+                    mysqldump -u root -p magento_db > backup_$(date +%Y%m%d).sql
+
+                    # Full codebase backup
+                    tar -czf magento_backup_$(date +%Y%m%d).tar.gz \
+                        --exclude='./var' \
+                        --exclude='./pub/media' \
+                        .
+
+                    # Note current version in backup filename
+                    # backup_2.4.5_to_2.4.7_20240516.sql
+                      
+            1.4 — Check PHP & System Requirements
+
+                # Target version requirements
+
+                    # Magento 2.4.7 needs PHP 8.2+
+                    php -v
+
+                    # Check required extensions
+                    php -m | grep -E 'bcmath|ctype|curl|dom|gd|hash|iconv|intl|mbstring|openssl|pdo_mysql|simplexml|soap|xsl|zip'
+
+                    # MySQL version
+                    mysql --version   # needs 8.0+
+
+                    # Elasticsearch/OpenSearch version
+                    curl localhost:9200  # check version
+
+            2.1 — Enable Maintenance Mode
+
+                bin/magento maintenance:enable
+
+                # Verify
+                bin/magento maintenance:status
+
                
-             - What is the Latest Vesion and It's - Respective Requirements
+              - What is the Latest Vesion and It's - Respective Requirements
 
                 - https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/system-requirements
 
+            2.2 — Update composer.json
+               
+               # Option A — Command (recommended)
+
+                    composer require \
+                        magento/product-community-edition=2.4.7 \
+                        --no-update
+
+                    # For Adobe Commerce (Enterprise)
+                    composer require \
+                        magento/product-enterprise-edition=2.4.7 \
+                        --no-update
+
+                    # Update 3rd party modules to compatible versions
+                    composer require \
+                        vendor/module-name=^2.0 \
+                        --no-update
+
+            2.3 — Run Composer Update
+
+                # Dry run first
+                    composer update --dry-run 2>&1 | tee upgrade_dryrun.log
+
+                    # Review the log — check for conflicts
+
+                    # Actual update
+                    composer update \
+                        --with-all-dependencies \
+                        2>&1 | tee upgrade_composer.log   
+
+            2.4 — Handle Composer Conflicts
+
+                # Common conflict — fix one by one
+                    # Example: module requires old magento/framework version
+                    composer why-not magento/framework 2.4.7
+
+                    # Check what's blocking
+                    composer prohibits magento/framework 2.4.7
+
+                    # Update conflicting module
+                    composer require conflicting/module=^3.0 --no-update
+
+                    # Retry update
+                    composer update --with-all-dependencies   
+
+            3.1 — Run Magento Upgrade Commands
+                # 1. Run setup upgrade
+                    bin/magento setup:upgrade
+                    # This runs all db_schema, data patches, upgrades
+
+                    # 2. Compile DI
+                    bin/magento setup:di:compile
+
+                    # 3. Deploy static content
+                    # For production
+                    bin/magento setup:static-content:deploy \
+                        en_US en_AU en_GB \
+                        -f \
+                        --jobs=4
+
+                    # 4. Reindex all
+                    bin/magento indexer:reindex
+
+                    # 5. Flush cache
+                    bin/magento cache:flush
+
+            3.2 — Disable Maintenance Mode
+
+                bin/magento maintenance:disable
+
+            4.1 — Automated Testing
+
+            4.2 — Manual Smoke Test Checklist   
+
+                FRONTEND
+                    □ Homepage loads
+                    □ Category page loads with products
+                    □ Product page loads — images, price, add to cart
+                    □ Search works
+                    □ Mini cart updates
+                    □ Checkout — guest & logged in
+                    □ Payment methods work (test each one)
+                    □ Order confirmation email received
+                    □ My Account — orders, address, wishlist
+
+                ADMIN
+                    □ Admin login works
+                    □ Order grid loads
+                    □ Create order from admin
+                    □ Invoice, Ship, Credit Memo creation
+                    □ Product save works
+                    □ Category save works
+                    □ CMS page save works
+                    □ Config save works
+                    □ Import/Export works
+
+                INTEGRATIONS
+                    □ ERP sync working
+                    □ Payment gateway responding
+                    □ Shipping carriers returning rates
+                    □ Email sending working
+                    □ Cron jobs running    
 
 
     - Best Practice
