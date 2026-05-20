@@ -462,7 +462,7 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
  # Learning At Work
 
- ## ForeverNew (What I Learn at ForeverNew)
+ ### ForeverNew (What I Learn at ForeverNew)
             
 #### Push and Get Data to Staging Environment Using Ssh
 <details><summary><b>info</b></summary>    
@@ -580,8 +580,20 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 </details>
 
 
+ ### Hitachi (What I Learn at Hitchi)
+            
+#### ACH PaymentGateway Integration
+<details><summary><b>info</b></summary>                   
+        
+</details>           
 
-### Interview Question 
+#### ERP  Integration
+<details><summary><b>info</b></summary>                   
+        
+</details>  
+            
+
+## Interview Question 
 ----------------------
 - Core Concept : Alway's Refer Vendor Module
      <details><summary><b>info: </b></summary>
@@ -1578,6 +1590,11 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
             - Freedhopper
 
             - Social Login (Adyen - Applepay / Googlepay)
+
+     - Payment Gateway Integraton
+
+       
+     - ERP Integration 
 
 
               
