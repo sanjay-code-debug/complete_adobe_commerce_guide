@@ -193,8 +193,36 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
        </details>
  -        
 
+# Magento Works 
 
-# Magento Works
+## Payment GateWay Integration
+
+#### Custom Payment Method Basic 
+<details><summary><b>info</b></summary> 
+
+</details>
+
+#### Customize Payment Method For - ACH:  
+<details><summary><b>info</b></summary> 
+
+</details>
+
+#### Customize Payment Method For - Comming Soon..:  
+<details><summary><b>info</b></summary> 
+
+</details>
+
+
+## ERP Integration
+
+#### 30 Lakh Product Disable From Magento to Akeno:  
+<details><summary><b>info</b></summary> 
+
+</details>
+   
+
+
+# Magento Quick - Hacks
 #### Multi-Store Setup for Nginx (Ubuntu)
 <details><summary><b>info</b></summary>   
 
