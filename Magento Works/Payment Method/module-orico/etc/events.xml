@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ADOBE CONFIDENTIAL
+ * ___________________
+ *
+ * Copyright 2022 Adobe
+ * All Rights Reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Adobe and its suppliers, if any. The intellectual
+ * and technical concepts contained herein are proprietary to Adobe
+ * and its suppliers and are protected by all applicable intellectual
+ * property laws, including trade secret and copyright laws.
+ * Adobe permits you to use and modify this file
+ * in accordance with the terms of the Adobe license agreement
+ * accompanying it (see LICENSE_ADOBE_PS.txt).
+ * If you have received this file from a source other than Adobe,
+ * then your use, modification, or distribution of it
+ * requires the prior written permission from Adobe.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_place_after">
+        <observer name="casiojp_orico_order_save_after" instance="CasioJP\Orico\Observer\OrderStatus" />
+    </event>
+    <event name="email_order_set_template_vars_before">
+        <observer name="casiojp_orico_payment_variable_to_order"
+                  instance="CasioJP\Orico\Observer\AddAdditionOrderData"/>
+    </event>
+</config>

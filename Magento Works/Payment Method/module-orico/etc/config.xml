@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <casiojp_orico>
+         <orico_checkout>
+            <orico_description>
+                <![CDATA[
+                ※24回払の場合
+                ※最大60回払いまで選択できます。
+                ※ご利用には審査があります。]]>
+            </orico_description>
+             <orico_order_status>pending_orico_payment</orico_order_status>
+         </orico_checkout>
+        </casiojp_orico>
+        <payment>
+            <orico>
+                <model>CasioJP\Orico\Model\OricoPaymentMethod</model>
+                <active>1</active>
+                <title>Orico Payment</title>
+                <order_status>pending_payment</order_status>
+                <sort_order>99</sort_order>
+            </orico>
+        </payment>
+    </default>
+</config>

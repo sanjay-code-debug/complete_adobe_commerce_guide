@@ -1,0 +1,82 @@
+<?php
+/**
+ *
+ * @var \Magento\Checkout\Block\Onepage\Success $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+
+/** @var $orico \CasioJP\Orico\ViewModel\OricoPaymentSuccess */
+
+$orico = $block->getViewModel();
+?>
+<section class="sec">
+    <div class="sec-inr sec-inr-success">
+        <?php if ($block->getOrderId()): ?>
+            <?php if ($block->getCanViewOrder()): ?>
+                <p>
+                    <?= $block->escapeHtml(__('Your order number is: %1.', sprintf('
+<a href="%s" class="order-number">
+<strong>%s</strong></a>', $block->escapeUrl($block->getViewOrderUrl()), $block->getOrderId())), ['a', 'strong']) ?>
+                </p>
+            <?php else: ?>
+                <p>
+                    <?= $block->escapeHtml(__('Your order # is: <span>%1</span>.', $block->getOrderId()), ['span']) ?>
+                </p>
+            <?php endif; ?>
+            <p><?= $escaper->escapeHtml(__('Please quote the reception number when making inquiries.')) ?></p>
+        <?php endif; ?>
+
+        <?php
+        if ($orico->IsOricoPaymentMethod()): ?>
+            <p class="get-warning "><?= $orico->getOricoWarningMessage() ?></p>
+            <p class="get-button" >
+            <form class="pad-bottom-20-cm" accept-charset="SHIFT-JIS"
+                  action="<?= $block->escapeHtml(__($orico->getOricoEndpoint())) ?>" method="POST">
+                <input type="hidden" name="DESCRIPTION_ID" value="OP00">
+                <input type="hidden" name="CONTRACT_DOCUMENT_KBN" value="0">
+                <input type="hidden" name="KAMEI_NO" value="<?= $block->escapeHtml(__($orico->getClientNumber())) ?>">
+                <input type="hidden" name="DEFERRED_ENTRY_FLG" value="0">
+                <input type="hidden" name="KYAKU_SYU"
+                       value="<?= $block->escapeHtml(__($orico->getContractNumber())) ?>">
+                <input type="hidden" name="BACK_URL" value="<?= $block->escapeHtml(__($orico->getRedirectUrl())) ?>">
+                <input type="hidden" name="PR_NUM"
+                       value="<?= $block->escapeHtml(__($orico->getOrder()->getIncrementId())) ?>">
+                <?php
+                $order = $orico->getOrder();
+                $oricoItems = $orico->getOricoItems($order);
+                $discount = $orico->getOricoItemsBySortAndDiscount($order)['total_discount'];
+                $totalAmount = $orico->getOricoItemsBySortAndDiscount($order)['total_amount'];
+                $postalCode = $orico->getOricoItemsBySortAndDiscount($order)['postal_code'];
+                foreach ($oricoItems as $level => $item) {
+                    ?>
+                    <input type="hidden" name="BRAND_MEI<?= $block->escapeHtml(__($level)) ?>"
+                           value="<?= $block->escapeHtml(__($item['name'])) ?>">
+                    <input type="hidden" name="BRAND_SUU<?= $block->escapeHtml(__($level)) ?>"
+                           value="<?= $block->escapeHtml(__((int)$item['qty'])) ?>">
+                    <input type="hidden" name="BRAND_KIN<?= $block->escapeHtml(__($level)) ?>"
+                           value="<?= $block->escapeHtml(__((float)$item['sub_total'])) ?>">
+                    <?php if (isset($item['code'])) { ?>
+                        <input type="hidden" name="BRAND_CODE<?= $block->escapeHtml(__($level)) ?>" value="0999999">
+                    <?php }
+                }
+                ?>
+                <input type="hidden" name="BRAND_GOKEI"
+                       value="<?= $block->escapeHtml(__((int)$totalAmount - (int)$discount)) ?>">
+                <input type="hidden" name="SORYO_GOKEI"
+                       value="<?= $block->escapeHtml(__((int)$orico->getOrder()->getShippingAmount())) ?>">
+                <input type="hidden" name="LOAN_KIN"
+                       value="<?= $block->escapeHtml(__((int)$orico->getOrder()->getGrandTotal())) ?>">
+                <input type="hidden" name="H_YUBIN"
+                       value="<?= $block->escapeHtml(__($postalCode)) ?>">
+
+                <input class="account primary" type="submit" value="<?= $orico->getOricoButtonLabel() ?>">
+
+            </form></p>
+            <p class="get-title"><?= $orico->getOricoTitleForApproval() ?></p>
+            <p class="get-guidance-approval pad-bottom-20-cm"><?= $orico->getOricoGuidanceForApproval() ?></p>
+            <p class="get-rejected-title get-title"><?= $orico->getOricoRejectedTitle() ?></p>
+            <p class="get-guidance-rejected pad-bottom-20-cm"><?= $orico->getOricoGuidanceForRejected() ?></p>
+        <?php endif; ?>
+        <?= $block->getAdditionalInfoHtml() ?>
+    </div>
+</section>
