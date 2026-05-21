@@ -1,0 +1,37 @@
+{
+    "name": "aune-io/magento2-stripe",
+    "description": "Stripe payments integration module for Magento 2",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "require": {
+        "php": "~8.1|~8.2|~8.3|~8.4",
+        "psr/log": "*",
+        "magento/framework": "*",
+        "magento/module-config": "*",
+        "magento/module-directory": "*",
+        "magento/module-payment": "*",
+        "magento/module-checkout": "*",
+        "magento/module-sales": "*",
+        "magento/module-backend": "*",
+        "magento/module-vault": "*",
+        "magento/module-quote": "*",
+        "magento/module-ui": "*",
+        "stripe/stripe-php": "^10.0"
+    },
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Aune\\Stripe\\": ""
+        }
+    }
+}
