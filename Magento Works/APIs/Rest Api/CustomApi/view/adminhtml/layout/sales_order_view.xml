@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Codilar Technologies Pvt. Ltd. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="order_info">
+            <block class="Codilar\CustomApi\Block\Adminhtml\Order\View\CustomMessage" name="sales_order_view_custom_msg"
+                   template="order/view/custom_info.phtml" />
+        </referenceBlock>
+    </body>
+</page>

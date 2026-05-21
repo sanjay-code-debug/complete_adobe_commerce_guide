@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Codilar
+ *
+ * @package Codilar_CustomApi
+ * @author Codilar
+ * @copyright Copyright (c) 2023 Codilar (https://www.codilar.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\CustomApi\Api\OrderRepositoryInterface"
+                type="Codilar\CustomApi\Model\OrderRepository"/>
+    <preference for="Codilar\CustomApi\Api\Data\Message\MessageInterface"
+                type="Codilar\CustomApi\Model\Api\Data\Message\Message" />
+
+    <preference for="Codilar\CustomApi\Api\KlevuCustomSearchInterface"
+                type="Codilar\CustomApi\Model\Search\Search" />
+
+    <type name="Magento\Quote\Api\CartManagementInterface">
+        <plugin name="plugin_to_set_the_value_to_quote" type="Codilar\CustomApi\Plugin\PlaceOrderSetExtensionValue" />
+        <plugin name="plugin_for_order_success_page" type="Codilar\CustomApi\Plugin\PlaceOrderIdModify" />
+    </type>
+
+    <type name="Magento\Checkout\Api\ShippingInformationManagementInterface">
+        <plugin name="plugin_for_payment_method_on_checkout" type="Codilar\CustomApi\Plugin\CheckoutPaymentMethod" />
+    </type>
+
+    <!--    Instant coupon extension attribute add -->
+    <type name="Magento\Quote\Api\CartTotalRepositoryInterface">
+        <plugin name="instant_coupon_cart_total_plugin" type="Codilar\CustomApi\Plugin\CartTotalPlugin" />
+    </type>
+
+    <!--    Plugin for invoice mail sync with order-->
+    <type name="Magento\Sales\Api\InvoiceOrderInterface">
+        <plugin name="invoice_order_mail_sync" type="Codilar\CustomApi\Plugin\InvoiceOrderPlugin" />
+    </type>
+
+    <!--    Plugin for mp4 video restriction -->
+    <type name="Magento\Catalog\Api\ProductRepositoryInterface">
+        <plugin name="validate_mp4_video_config" type="Codilar\CustomApi\Plugin\ProductMp4Video" />
+    </type>
+
+    <preference for="Codilar\CustomApi\Api\OrderReturnInfo"
+                type="Codilar\CustomApi\Model\OrderReturnInformation" />
+
+    <preference for="Codilar\CustomApi\Api\ShareCartItemsViaUrlInterface"
+                type="Codilar\CustomApi\Model\ShareCartItemsViaUrl" />
+
+    <preference for="Codilar\CustomApi\Api\AppShareEmailInterface"
+                type="Codilar\CustomApi\Model\AppShareShoppingCart" />
+
+    <preference for="Codilar\CustomApi\Api\AppGetUrlInterface"
+                type="Codilar\CustomApi\Model\AppGetUrl" />
+
+    <preference for="Codilar\CustomApi\Api\AppWhatsAppInterface"
+                type="Codilar\CustomApi\Model\AppWhatsApp" />
+
+    <preference for="Codilar\CustomApi\Api\Data\Message\ShareShoppingCartMessageInterface"
+                type="Codilar\CustomApi\Model\Api\Data\Message\ShareShoppingCart" />
+
+    <type name="Magento\SalesRule\Model\Utility">
+        <plugin name="validate_app_salesrule" type="Codilar\CustomApi\Plugin\ValidateAppSalesRule"  disabled="false"/>
+    </type>
+
+    <type name="Magento\SalesRule\Model\RulesApplier">
+        <plugin name="cart_rule_app_restriction" type="Codilar\CustomApi\Plugin\SalesRule" sortOrder="10" disabled="false"/>
+    </type>
+
+    <preference for="Codilar\CustomApi\Api\PopularSearchInterface"
+                type="Codilar\CustomApi\Model\PopularSearch" />
+
+    <preference for="Codilar\CustomApi\Api\Data\Message\PopularSearchResultInterface"
+                type="Codilar\CustomApi\Model\Api\Data\Message\PopularSearchResult" />
+
+    <preference for="Codilar\CustomApi\Api\GuestRequestManagementInterface"
+                type="Codilar\CustomApi\Model\GuestRequestManagement" />
+
+    <type name="Magento\Quote\Api\CartTotalRepositoryInterface">
+        <plugin name="custom_cart_total_plugin" type="Codilar\CustomApi\Plugin\RemoveDiscountCodeFromCartTotal" />
+    </type>
+
+    <preference for="Codilar\CustomApi\Api\UrlDeeplinkInterface"
+                type="Codilar\CustomApi\Model\UrlDeepLink" />
+
+    <preference for="Codilar\CustomApi\Api\Data\DeepLinkResponse\DeepLinkResponseInterface"
+                type="Codilar\CustomApi\Model\Api\Data\DeepLinkResponseFormat\DeepLinkResponse" />
+
+    <preference for="Codilar\CustomApi\Api\AppShareCartViaUrlInterface"
+                type="Codilar\CustomApi\Model\AppGuestShareCartViaUrl" />
+
+    <preference for="Codilar\CustomApi\Api\AppShareCartViaWhatsappInterface"
+                type="Codilar\CustomApi\Model\AppGuestShareCartViaWhatsapp" />
+
+    <preference for="Codilar\CustomApi\Api\InitializeCartManagementInterface"
+                type="Codilar\CustomApi\Model\InitializeCartManagement"/>
+
+    <preference for="Codilar\CustomApi\Api\Data\DeepLinkResponse\DeepLinkFilterResponseInterface"
+                type="Codilar\CustomApi\Model\Api\Data\DeepLinkResponseFormat\DeepLinkFilterResponse" />
+
+    <preference for="Codilar\CustomApi\Api\ShareGuestWishListInterface"
+                type="Codilar\CustomApi\Model\ShareGuestWishList" />
+
+    <preference for="Codilar\CustomApi\Api\Data\ProductDetailInterface"
+                type="Codilar\CustomApi\Model\Data\ProductDetail" />
+
+</config>

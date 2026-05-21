@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Codilar Technologies Pvt. Ltd. All rights reserved.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <!--Fetch Wishlist Data -->
+    <route url="/V1/wishlist/product" method="GET">
+        <service class="Codilar\CustomApi\Api\WishListInterface" method="getWishlist"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+    <!-- Fetch Wishlist Data for guest -->
+    <route url="/V1/wishlist/guest/product" method="GET">
+        <service class="Codilar\CustomApi\Api\WishListInterface" method="getWishlistItemsData"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- add guest all wishlist items to cart -->
+    <route url="/V1/wishlist/add/items/guest/cart" method="POST">
+        <service class="Codilar\CustomApi\Api\WishListInterface" method="addItemsToCartGuest"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Mobile app logger -->
+    <route url="/V2/print/message" method="POST">
+        <service class="Codilar\CustomApi\Model\MessageLogger" method="printMessage"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Get available country list for header-->
+    <route url="/V1/header/country" method="GET">
+        <service class="Codilar\CustomApi\Api\CountryListInterface" method="getCountryList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!--     get category tree -->
+    <route url="/V2/categories" method="GET">
+        <service class="Codilar\CustomApi\Api\CategoryManagementInterface" method="getTree" />
+        <resources>
+            <resource ref="Magento_Catalog::categories" />
+        </resources>
+    </route>
+
+    <!-- Product listing available filters API V2 -->
+    <route url="/V2/category/:categoryId/products/available-filters" method="GET">
+        <service class="Codilar\CustomApi\Api\ProductRepositoryInterface" method="addAvailableFiltersUpdated"/>
+        <resources>
+            <resource ref="Magento_Catalog::categories" />
+        </resources>
+    </route>
+
+    <!-- add to wishlist Api -->
+    <route url="/V1/wishlist/product/:productId" method="POST">
+        <service class="Codilar\CustomApi\Api\WishListInterface" method="save"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+    <!-- delete item from wishlist Api -->
+    <route url="/V1/wishlist/product/:productId" method="DELETE">
+        <service class="Codilar\CustomApi\Api\WishListInterface" method="delete"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+    <!-- clear all item from wishlist Api -->
+    <route url="/V1/wishlist" method="DELETE">
+        <service class="Codilar\CustomApi\Api\WishListInterface" method="clearALL"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+    <!-- move product from wishlist to cart -->
+    <route url="/V1/wishlist/move/cart/:productId" method="POST">
+        <service class="Codilar\CustomApi\Api\WishListInterface" method="moveToCart"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+            <parameter name="qty">%qty%</parameter>
+        </data>
+    </route>
+
+    <!-- add all product from wishlist to cart -->
+    <route url="/V1/wishlist/add/all/cart" method="POST">
+        <service class="Codilar\CustomApi\Api\WishListInterface" method="allToCart"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/cities" method="GET">
+        <service class="Codilar\CustomApi\Api\CityRepositoryInterface" method="getCities"/>
+        <resources>
+            <resource ref="Magento_Sales::actions_view" />
+        </resources>
+    </route>
+    <route url="/V1/fetch/guest-order" method="GET">
+        <service class="Codilar\CustomApi\Api\GuestOrderDetailInterface" method="getOrders"/>
+        <resources>
+            <resource ref="Magento_Sales::actions_view" />
+        </resources>
+    </route>
+
+    <!-- share wishlist details to other -->
+    <route url="/V1/share/wishlist-details" method="POST">
+        <service class="Codilar\CustomApi\Api\WishListInterface" method="shareWishListDetails"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+            <parameter name="recipient_emails">%recipient_emails%</parameter>
+            <parameter name="message">%message%</parameter>
+        </data>
+    </route>
+    <route url="/V1/addresses" method="POST">
+        <service class="Magento\Customer\Api\AddressRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Magento_Customer::manage"/>
+        </resources>
+    </route>
+
+    <!-- move product from cart to wishlist -->
+    <route url="/V2/carts/mine/move-to-wishlist/:sku" method="POST">
+        <service class="Codilar\CustomApi\Api\CustomCartInterface" method="moveToWishlist"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+            <parameter name="qty">%qty%</parameter>
+        </data>
+    </route>
+
+    <!-- Add Sales Order payment Transaction ID -->
+    <route url="/V2/sales/add/transaction" method="POST">
+        <service class="Codilar\CustomApi\Api\OrderRepositoryInterface" method="addTransaction"/>
+        <resources>
+            <resource ref="Magento_Sales::sales" />
+        </resources>
+    </route>
+    <!-- Store Credit Card Details -->
+    <route url="/V2/store/card/details" method="POST">
+        <service class="Codilar\CustomApi\Api\StoreCardDetailInterface" method="storedPaymentMethods"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <!-- Fetch the Credit Card Details -->
+    <route url="/V2/fetch/card/details" method="GET">
+        <service class="Codilar\CustomApi\Api\StoreCardDetailInterface" method="fetchCardDetails"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <!-- Delete the Credit Card Details -->
+    <route url="/V2/delete/card" method="DELETE">
+        <service class="Codilar\CustomApi\Api\StoreCardDetailInterface" method="deleteCard"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+            <parameter name="hashValue">%hashValue%</parameter>
+        </data>
+    </route>
+    <!-- Order tracking -->
+    <route url="/V2/order/tracking/details" method="POST">
+        <service class="Codilar\CustomApi\Api\OrderTrackingInterface" method="orderTrackingDetails"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+        <data>
+            <parameter name="increment_id">%increment_id%</parameter>
+            <parameter name="billing_lastname">%billing_lastname%</parameter>
+            <parameter name="email">%email%</parameter>
+        </data>
+    </route>
+    <!-- Filters for Search Result Api -->
+    <route url="/V2/search/filters" method="GET">
+        <service class="Codilar\CustomApi\Api\SearchInterface" method="searchFilters"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!-- Product Search Api -->
+    <route url="/V2/product/search" method="GET">
+        <service class="Codilar\CustomApi\Api\KlevuCustomSearchInterface" method="productSearch"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!-- Get order return status and return qty limit  -->
+    <route url="/V2/order/return/info" method="POST">
+        <service class="Codilar\CustomApi\Api\OrderReturnInfo" method="orderReturnInfo"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!-- Clear the Current Cart and Load the Cart items by using unique_id  -->
+    <route url="/V2/share_cart/via/url/cart/items" method="POST">
+        <service class="Codilar\CustomApi\Api\ShareCartItemsViaUrlInterface" method="getShareCartItems"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+        <data>
+            <parameter name="uniqueId">%uniqueId%</parameter>
+            <parameter name="currentQuoteId">%currentQuoteId%</parameter>
+        </data>
+    </route>
+
+    <!-- Share Shopping Cart Details Via Email-->
+    <route url="/V2/app/share_cart/via/email" method="POST">
+        <service class="Codilar\CustomApi\Api\AppShareEmailInterface" method="sendAppEmail"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+
+    <!-- Share Shopping Cart URl-->
+    <route url="/V2/app/share_cart/via/url" method="POST">
+        <service class="Codilar\CustomApi\Api\AppGetUrlInterface" method="appGetUrl"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+
+    <!-- Share Shopping Cart Url Whatsapp-->
+    <route url="/V2/app/share_cart/via/whatsApp" method="POST">
+        <service class="Codilar\CustomApi\Api\AppWhatsAppInterface" method="appWhatsApp"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+
+    <!--    App update details fetch-->
+    <route url="/V2/app/update" method="GET">
+        <service class="Codilar\CustomApi\Api\AppUpdateManagementInterface" method="getAppUpdateDetails"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+
+    <!-- Get the popular searchs-->
+    <route url="/V2/popular/searches" method="GET">
+        <service class="Codilar\CustomApi\Api\PopularSearchInterface" method="getPopularSearches"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!--   Remove Login customer cart instant discount -->
+    <route url="/V2/cart/instant_discount/:cartId" method="DELETE">
+        <service class="Codilar\CustomApi\Api\InstantDiscountManagementInterface" method="removeInstantDiscountLogin"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+
+    <!--    Wishlist items add in by customer id-->
+    <route url="/V2/wishlist/:customerId/items/add" method="POST">
+        <service class="Codilar\CustomApi\Api\WishListInterface" method="addProductsToWishList"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+
+    <!--   Remove Login customer cart instant discount -->
+    <route url="/V2/guest_cart/instant_discount/:cartId" method="DELETE">
+        <service class="Codilar\CustomApi\Api\InstantDiscountManagementInterface" method="guestRemoveInstantDiscount"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Order return flow for guest user -->
+
+    <!-- get guest return request details-->
+    <route url="/V2/mpRMA/guest/requests" method="GET">
+        <service class="Codilar\CustomApi\Api\GuestRequestManagementInterface" method="getGuestRequest"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!-- conversion for guest return request-->
+    <route url="/V2/mpRMA/guest/requests/conversation" method="POST">
+        <service class="Codilar\CustomApi\Api\GuestRequestManagementInterface" method="saveGuestReply"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!-- cancel guest return request-->
+    <route url="/V2/mpRMA/guest/requests/cancel" method="POST">
+        <service class="Codilar\CustomApi\Api\GuestRequestManagementInterface" method="cancel"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+      <!-- url deep link redirection -->
+      <route url="/V2/url_deeplink/validation" method="POST">
+           <service class="Codilar\CustomApi\Api\UrlDeeplinkInterface" method="urlDeepLinkValidation"/>
+           <resources>
+               <resource ref="anonymous"/>
+           </resources>
+      </route>
+
+    <!-- Share Shopping Cart URl for Guest-->
+    <route url="/V2/app/guest/share_cart/via/url" method="POST">
+        <service class="Codilar\CustomApi\Api\AppShareCartViaUrlInterface" method="shareCartViaUrl"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Share Shopping Cart Via Whatsapp for Guest-->
+    <route url="/V2/app/guest/share_cart/via/whatsApp" method="POST">
+        <service class="Codilar\CustomApi\Api\AppShareCartViaWhatsappInterface" method="shareCartViaWhatsapp"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Initialize Guest cart active or not-->
+    <route url="/V2/guest/cart/validate/:cartMask" method="POST">
+        <service class="Codilar\CustomApi\Api\InitializeCartManagementInterface" method="initilizeGuestCart"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Initialize Login cart active or not-->
+    <route url="/V2/customer/cart/validate" method="POST">
+        <service class="Codilar\CustomApi\Api\InitializeCartManagementInterface" method="initilizeLoginCart"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+
+    <!-- Order notification validation -->
+    <route url="/V2/order/notification/validation/:orderIncrementid" method="POST">
+        <service class="Codilar\CustomApi\Api\OrderRepositoryInterface" method="validateOrderStore"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- share guest wishlist details to other -->
+    <route url="/V2/share/guest/wishlist-details" method="POST">
+        <service class="Codilar\CustomApi\Api\ShareGuestWishListInterface" method="shareGuestWishList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!--    klaviyo Customer profile update -->
+    <route url="/V1/klaviyo/customer/profile/update" method="POST">
+        <service class="Codilar\CustomApi\Api\AppNotificationManagementInterface" method="updateCutomerKlaviyo"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+</routes>

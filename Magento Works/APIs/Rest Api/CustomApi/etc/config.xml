@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Codilar
+ *
+ * @package Codilar_CustomApi
+ * @author Codilar
+ * @copyright Copyright (c) 2023 Codilar (https://www.codilar.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <footer_config>
+            <bnpl>
+                <enabled>0</enabled>
+                <postpay_price_limit>15000</postpay_price_limit>
+                <tabby_price_limit>15000</tabby_price_limit>
+            </bnpl>
+        message    <deliver_return_message>
+                <message>Receive your order in 2 days.</message>
+            </deliver_return_message>
+            <order_tracking>
+                <api_oauth_url>https://demo-api.carriyo.com/oauth/token</api_oauth_url>
+            </order_tracking>
+            <prefix_message>
+                <append_text>APPUAEUN</append_text>
+            </prefix_message>
+            <store_card>
+                 // removed
+            </store_card>
+            <force_app_update>
+                <app_update_title>Elevate Your Experience!</app_update_title>
+                <app_update_description>Update the app now for elevated user experience and exclusive features!</app_update_description>
+            </force_app_update>
+            <klevu_url>
+             // removed
+            </klevu_url>
+            <mp_4url>
+                <enable>1</enable>
+            </mp_4url>
+        </footer_config>
+        <payment>
+                <postpay_split_payment>
+                    <enable>1</enable>
+                </postpay_split_payment>
+                <tabby_installments>
+                    <enable>1</enable>
+                </tabby_installments>
+                <checkoutcom_card_payment>
+                    <enable>1</enable>
+                </checkoutcom_card_payment>
+                <checkoutcom_vault>
+                    <enable>1</enable>
+                </checkoutcom_vault>
+                <checkoutcom_apple_pay>
+                    <enable>1</enable>
+                </checkoutcom_apple_pay>
+        </payment>
+    </default>
+</config>

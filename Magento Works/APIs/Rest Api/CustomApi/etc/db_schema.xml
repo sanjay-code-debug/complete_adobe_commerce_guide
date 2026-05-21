@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Codilar
+ *
+ * @package Codilar_CustomApi
+ * @author Codilar
+ * @copyright Copyright (c) 2023 Codilar (https://www.codilar.com/)
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <table name="wp_product_warning" resource="default" engine="innodb" comment="Product Warnings">
+        <column xsi:type="text" name="ios_popup_message" nullable="false" comment="Ios Warning Message"/>
+    </table>
+    <table name="salesrule" resource="default" engine="innodb">
+        <column xsi:type="int" name="rule_is_for" default="0" unsigned="true" nullable="false" comment="Rule is for(Desktop,Mobile or Both)"/>
+    </table>
+    <table name="quote" resource="checkout" engine="innodb" comment="Sales Order">
+        <column xsi:type="varchar" name="app_version" nullable="false" default="not available" length="255" comment="App Version"/>
+        <column xsi:type="varchar" name="iphone_model_type" nullable="false" default="not available" length="255" comment="Iphone Model Type"/>
+    </table>
+    <table name="sales_order" resource="sales" engine="innodb" comment="Sales Order">
+        <column xsi:type="varchar" name="order_device_type" nullable="false" default="website" length="255" comment="Order Device Type"/>
+        <column xsi:type="varchar" name="app_version" nullable="false" default="not available" length="255" comment="App Version"/>
+        <column xsi:type="varchar" name="iphone_model_type" nullable="false" default="not available" length="255" comment="Iphone Model Type"/>
+    </table>
+</schema>

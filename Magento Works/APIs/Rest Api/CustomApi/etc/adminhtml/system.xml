@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Codilar
+ *
+ * @package Codilar_CustomApi
+ * @author Codilar
+ * @copyright Copyright (c) 2023 Codilar (https://www.codilar.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="footer_config" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <tab>codilar</tab>
+            <resource>Codilar_HomePageManager::footer</resource>
+            <group id="bnpl" translate="label" showInDefault="1" showInWebsite="1"
+                   showInStore="1"  sortOrder="2" canRestore="0">
+                <label>BNPL Configuration</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Postpay Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="postpay_price_limit" translate="label comment" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>PostPay Price Limit</label>
+                </field>
+                <field id="tabby_price_limit" translate="label comment" type="text" sortOrder="2" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Tabby Price Limit</label>
+                </field>
+            </group>
+            <group id="deliver_return_message" translate="label" showInDefault="1" showInWebsite="1"
+                   showInStore="1"  sortOrder="2" canRestore="0">
+                <label>Delivery and Return Message For Product </label>
+                <field id="message" translate="label comment" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Message For Website</label>
+                </field>
+                <field id="message_ios" translate="label comment" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Message For IOS</label>
+                </field>
+            </group>
+            <group id="order_tracking" translate="label" showInDefault="1" showInWebsite="1"
+                   showInStore="1"  sortOrder="2" canRestore="0">
+                <label>Order Tracking Details</label>
+                <field id="api_oauth_url" translate="label comment" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Api Oauth Url</label>
+                </field>
+            </group>
+            <group id="prefix_message" translate="label" showInDefault="1" showInWebsite="1"
+                   showInStore="1"  sortOrder="2" canRestore="0">
+                <label>Prefix Message</label>
+                <field id="append_text" translate="label comment" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Text Append for Store</label>
+                </field>
+            </group>
+            <group id="store_card" translate="label" showInDefault="1" showInWebsite="1"
+                   showInStore="1"  sortOrder="2" canRestore="0">
+                <label>Store Card CheckoutCom Credentials</label>
+                <field id="api_url" translate="label comment" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>API URL</label>
+                </field>
+                <field id="secret_key" translate="label comment" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Secret Key</label>
+                </field>
+            </group>
+            <group id="klevu_url" translate="label" showInDefault="1" showInWebsite="1"
+                   showInStore="1"  sortOrder="2" canRestore="0">
+                <label>Klevu</label>
+                <field id="url" translate="label comment" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Klevu Url</label>
+                </field>
+            </group>
+
+            <!--            App Update configuration -->
+            <group id="force_app_update" translate="label" showInDefault="1" showInWebsite="1"
+                   showInStore="1"  sortOrder="2">
+                <label>Force APP Update Details</label>
+                <field id="force_update_version" translate="force app version" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1">
+                    <label>Force App Update Version</label>
+                    <comment>
+                        <![CDATA[<strong class="colorRed">Warning!</strong> Please note that the entered version must
+                        be a forced version of the application and The entered version must be live application version.]]>
+                    </comment>
+                </field>
+                <field id="app_update_title" translate="app update title" type="text" sortOrder="2" showInDefault="1"
+                       showInWebsite="1">
+                    <label>App Update Title</label>
+                </field>
+                <field id="app_update_description" translate="app update description" type="textarea" sortOrder="3" showInDefault="1"
+                       showInWebsite="1">
+                    <label>App Update Description</label>
+                </field>
+            </group>
+            <group id="mp_4url" translate="label" showInDefault="1" showInWebsite="1"  showInStore="1">
+                <label>App MP_4</label>
+                <field id="enable" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable APP MP 4 video </label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <!--            Website available for use-->
+            <group id="app_websites" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="60">
+                <label>Available Countries</label>
+                <field id="enabled_websites" translate="label" type="multiselect" sortOrder="1" showInDefault="1">
+                    <label>Enable Store View For App</label>
+                    <source_model>Codilar\CustomApi\Model\Config\Source\Stores</source_model>
+                </field>
+                <field id="default_store" translate="label" type="select" sortOrder="2" showInWebsite="1">
+                    <label>Default Store View For Website</label>
+                    <source_model>Codilar\CustomApi\Model\Config\Source\Stores</source_model>
+                </field>
+                <field id="country_full_name" translate="Country full name" type="text" sortOrder="4" showInStore="1">
+                    <label>Full Name Of The Country</label>
+                </field>
+                <field id="image_icon" translate="label" type="image" sortOrder="6" showInWebsite="1">
+                    <label>Country Icon Upload</label>
+                    <backend_model>Codilar\PushNotification\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">push_notification</base_url>
+                    <comment><![CDATA[Allowed file types: jpg, jpeg, gif, png, svg]]></comment>
+                </field>
+            </group>
+
+            <!--  Adjust configuration  -->
+            <group id="adjust_configuration" translate="label" showInDefault="1" showInWebsite="1"
+                   showInStore="1"  sortOrder="100">
+                <label>Adjust Configuration</label>
+                <field id="adjust_token" translate="Adjust Token" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Adjust Authorization Token</label>
+                </field>
+                <field id="search_event" translate="Search Product Event" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Search Product Event</label>
+                </field>
+                <field id="shipping_event" translate="Shipping Details Event" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Shipping Details Event</label>
+                </field>
+                <field id="payment_event" translate="Payment Details Event" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Payment Details Event</label>
+                </field>
+                <field id="add_to_cart_event" translate="AddtoCart Event" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>AddtoCart Event</label>
+                </field>
+                <field id="login_event" translate="Login Event" type="text" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Login Event</label>
+                </field>
+                <field id="registration_event" translate="Registration Event" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Registration Event</label>
+                </field>
+                <field id="sale_event" translate="Sale Event" type="text" sortOrder="35" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Sale Event</label>
+                </field>
+                <field id="viewcart_event" translate="ViewCart Event" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>ViewCart Event</label>
+                </field>
+                <field id="viewlisting_event" translate="ViewListing Event" type="text" sortOrder="45" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>ViewListing Event</label>
+                </field>
+                <field id="viewproduct_event" translate="ViewProduct Event" type="text" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>ViewProduct Event</label>
+                </field>
+                <field id="firstsale_event" translate="FirstSale Event" type="text" sortOrder="55" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>FirstSale Event</label>
+                </field>
+                <field id="addtowishlist_event" translate="AddToWishList Event" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>AddToWishList Event</label>
+                </field>
+            </group>
+        </section>
+
+        <!--  App Payment method configuration -->
+        <section id="payment">
+            <group id="postpay" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="4" translate="label" type="text">
+                <group id="postpay_split_payment" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="70" translate="label comment">
+                    <field id="enable" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="11" translate="label comment" type="select">
+                        <label>Enable For App</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/postpay_split_payment/enable</config_path>
+                    </field>
+                </group>
+            </group>
+            <group id="tabby" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <group id="tabby_installments" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <field id="enable" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable For App</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/tabby_installments/enable</config_path>
+                    </field>
+                </group>
+            </group>
+            <group id="checkoutcom" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <group id="checkoutcom_card_payment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <field id="enable" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable For App</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/checkoutcom_card_payment/enable</config_path>
+                    </field>
+                </group>
+                <group id="checkoutcom_vault" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Vault Enabled For App</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/checkoutcom_vault/enable</config_path>
+                    </field>
+                </group>
+                <group id="checkoutcom_apple_pay" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable Apple Pay For App</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/checkoutcom_apple_pay/enable</config_path>
+                    </field>
+                </group>
+            </group>
+        </section>
+        <!--            Klaviyo push notification configuration -->
+        <section id="klaviyo_reclaim_general">
+            <group id="klaviyo_notification" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Push Notification</label>
+                <field id="profile_fetch_api" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>profile Fetch APi</label>
+                </field>
+                <field id="profile_update_api" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>profile Update API</label>
+                </field>
+                <field id="revision_date" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Revision Date</label>
+                    <comment>
+                        <![CDATA[<strong class="colorRed">Warning!</strong> Revision Date must be YYYY-MM-DD format.]]>
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

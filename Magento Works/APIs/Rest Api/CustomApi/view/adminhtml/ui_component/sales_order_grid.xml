@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <columns name="sales_order_columns">
+        <!-- Other columns -->
+        <column name="app_version" sortOrder="120" >
+            <settings>
+                <filter>text</filter>
+                <label translate="true">App Version</label>
+                <visible>true</visible>
+            </settings>
+        </column>
+        <column name="iphone_model_type"  sortOrder="130" >
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Iphone Model Type</label>
+                <visible>true</visible>
+            </settings>
+        </column>
+    </columns>
+</listing>

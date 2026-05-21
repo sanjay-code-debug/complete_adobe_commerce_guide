@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Codilar
+ *
+ * @package Codilar_CustomApi
+ * @author Codilar
+ * @copyright Copyright (c) 2023 Codilar (https://www.codilar.com/)
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">warning_form.warning_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save_and_continue" class="WebPanda\ProductWarning\Block\Adminhtml\Block\Edit\SaveAndContinueButton"/>
+            <button name="save" class="WebPanda\ProductWarning\Block\Adminhtml\Block\Edit\SaveButton"/>
+            <button name="delete" class="WebPanda\ProductWarning\Block\Adminhtml\Block\Edit\DeleteButton"/>
+            <button name="back" class="WebPanda\ProductWarning\Block\Adminhtml\Block\Edit\BackButton"/>
+        </buttons>
+        <namespace>warning_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>warning_form.warning_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="warning_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="warning/message/save"/>
+        </settings>
+        <dataProvider class="WebPanda\ProductWarning\Ui\DataProvider\WarningFormDataProvider" name="warning_form_data_source">
+            <settings>
+                <requestFieldName>warning_id</requestFieldName>
+                <primaryFieldName>warning_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="ios_popup_message" template="ui/form/field" sortOrder="60" formElement="wysiwyg">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="wysiwygConfigData" xsi:type="array">
+                        <item name="height" xsi:type="string">120px</item>
+                    </item>
+                    <item name="source" xsi:type="string">warning</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">IOS Warning Message</label>
+                <dataScope>ios_popup_message</dataScope>
+            </settings>
+            <formElements>
+                <wysiwyg class="Magento\Ui\Component\Form\Element\Wysiwyg">
+                    <settings>
+                        <rows>10</rows>
+                        <wysiwyg>true</wysiwyg>
+                    </settings>
+                </wysiwyg>
+            </formElements>
+        </field>
+    </fieldset>
+</form>

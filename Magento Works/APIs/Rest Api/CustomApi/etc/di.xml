@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Codilar
+ *
+ * @package Codilar_CustomApi
+ * @author Codilar
+ * @copyright Copyright (c) 2023 Codilar (https://www.codilar.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\CustomApi\Api\WishListInterface"
+                type="Codilar\CustomApi\Model\WishList" />
+    <preference for="Codilar\CustomApi\Api\CountryListInterface"
+                type="Codilar\CustomApi\Model\CountryList" />
+    <preference for="Codilar\CustomApi\Api\CategoryManagementInterface"
+                type="Codilar\CustomApi\Model\CategoryManagement"/>
+    <preference for="Codilar\CustomApi\Api\Data\AvailableFilterInterface"
+                type="Codilar\CustomApi\Model\Api\AvailableFilter"/>
+    <preference for="Codilar\CustomApi\Api\Data\ProductSearchResultsInterface"
+                type="Codilar\CustomApi\Model\Api\ProductSearchResults"/>
+    <preference for="Codilar\CustomApi\Api\ProductRepositoryInterface"
+                type="Codilar\CustomApi\Model\ProductRepository" />
+    <!--    Wishlist item model -->
+    <preference for="Codilar\CustomApi\Api\Data\WishListItemInterface"
+                type="Codilar\CustomApi\Model\Api\WishlistItem" />
+
+    <!--    App version API -->
+    <preference for="Codilar\CustomApi\Api\Data\AppUpdateInterface"
+                type="Codilar\CustomApi\Model\Api\Data\AppUpdate" />
+    <preference for="Codilar\CustomApi\Api\AppUpdateManagementInterface"
+                type="Codilar\CustomApi\Model\AppUpdateManagement" />
+    <!--    Instant Discount Management-->
+    <preference for="Codilar\CustomApi\Api\InstantDiscountManagementInterface"
+                type="Codilar\CustomApi\Model\InstantDiscountManagement" />
+
+    <!--    Instant discount add -->
+    <preference for="RedChamps\InstantCartDiscount\Plugin\Cart\GetAttributes"
+                type="Codilar\CustomApi\Model\InstantCartDiscount\GetAttributes" />
+
+    <!--  Country model -->
+    <preference for="Codilar\CustomApi\Api\Data\CountryModelInterface"
+                type="Codilar\CustomApi\Model\Api\CountryModel" />
+
+    <preference for="Codilar\CustomApi\Api\Data\KlevuModelInterface"
+                type="Codilar\CustomApi\Model\Api\Data\KlevuModel" />
+
+    <preference for="Codilar\CustomApi\Api\Data\BaseUrlModelInterface"
+                type="Codilar\CustomApi\Model\Api\Data\BaseUrlModel" />
+
+    <type name="Magento\Catalog\Api\ProductRepositoryInterface">
+        <plugin name="product_repository_plugin" type="Codilar\CustomApi\Plugin\ModifyPdpPage" />
+    </type>
+    <type name="\Magento\Quote\Api\CartManagementInterface">
+        <plugin name="cart_interface_plugin" type="Codilar\CustomApi\Plugin\CartRepositoryPlugin" />
+    </type>
+    <type name="\Magento\Quote\Api\GuestCartRepositoryInterface">
+        <plugin name="guest_cart_repository_plugin" type="Codilar\CustomApi\Plugin\CartRepositoryPluginGuest" />
+    </type>
+
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="order_detail_plugin" type="Codilar\CustomApi\Plugin\OrderRepositoryPlugin" />
+    </type>
+
+    <type name="Magento\Catalog\Api\ProductRepositoryInterface">
+        <plugin name="codilar_customapi_product_repository" type="Codilar\CustomApi\Plugin\RelevanceGetListPlugin" />
+    </type>
+
+    <preference for="Codilar\CustomApi\Api\GuestOrderDetailInterface"
+                type="Codilar\CustomApi\Model\GuestOrderDetail"/>
+
+    <preference for="Codilar\CustomApi\Api\CityRepositoryInterface"
+                type="Codilar\CustomApi\Model\CityRepository"/>
+
+    <preference for="Codilar\CustomApi\Api\CustomCartInterface"
+                type="Codilar\CustomApi\Model\Cart" />
+
+    <preference for="Codilar\CustomApi\Api\StoreCardDetailInterface"
+                type="Codilar\CustomApi\Model\StoreCardDetails" />
+
+    <preference for="Codilar\CustomApi\Api\OrderTrackingInterface"
+                type="Codilar\CustomApi\Model\OrderTracking" />
+
+    <preference for="Codilar\CustomApi\Api\SearchInterface"
+                type="Codilar\CustomApi\Model\Search" />
+
+    <preference for="Codilar\CustomApi\Api\AppNotificationManagementInterface"
+                type="Codilar\CustomApi\Model\AppNotificationManagement" />
+
+    <type name="Magento\Quote\Api\ShippingMethodManagementInterface">
+        <plugin name="plugin_for_shipping_method_delivery_date"
+                type="Codilar\CustomApi\Plugin\ShippingMethodDeliveryDate" />
+    </type>
+
+    <type name="Magento\Quote\Model\CouponManagement">
+        <plugin name="plugin_to_restrict_website_coupon_for_loggedin_customer"
+                type="Codilar\CustomApi\Plugin\AroundCouponManagement"/>
+    </type>
+
+    <type name="Magento\Quote\Model\GuestCart\GuestCouponManagement">
+        <plugin name="plugin_to_restrict_website_coupon_for_guest_customer"
+                type="Codilar\CustomApi\Plugin\AroundGuestCouponManagement"/>
+    </type>
+    <type name="Psr\Log\LoggerInterface">
+        <arguments>
+            <argument name="name" xsi:type="string">tabby-webhook</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">Codilar\CustomApi\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sales_order_grid_data_source"
+                      xsi:type="string">Codilar\CustomApi\Model\ResourceModel\Order\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Codilar\CustomApi\Model\ResourceModel\Order\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sales_order_grid</argument>
+            <argument name="resourceModel" xsi:type="string">Magento\Sales\Model\ResourceModel\Order</argument>
+        </arguments>
+    </type>
+
+
+    <type name="Codilar\CustomApi\Logger\LogHandler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Codilar\CustomApi\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">customLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Codilar\CustomApi\Logger\LogHandler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Monolog\Logger">
+        <plugin name="before_plugin_for_logger"
+                type="Codilar\CustomApi\Plugin\BeForePluginLogger"/>
+    </type>
+
+    <!--    plugin to recollect quote total-->
+    <type name="Magento\SalesRule\Observer\RuleQuoteRecollectTotalsObserver">
+        <plugin name="quote_recollecter_when_plugin_change"
+                type="Codilar\CustomApi\Plugin\AroundQuoteRecollectTotals"/>
+    </type>
+
+    <!--  Adjust model -->
+    <preference for="Codilar\CustomApi\Api\Data\AdjustModelInterface"
+                type="Codilar\CustomApi\Model\Api\Data\AdjustModel" />
+
+</config>

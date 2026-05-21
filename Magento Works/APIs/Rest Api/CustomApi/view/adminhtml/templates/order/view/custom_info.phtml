@@ -1,0 +1,20 @@
+<?php
+/**
+ * Copyright © Codilar Technologies Pvt. Ltd. All rights reserved.
+ */
+
+/**
+ * @var  $block  CustomMessage
+ */
+
+use Codilar\CustomApi\Block\Adminhtml\Order\View\CustomMessage;
+
+?>
+<tr>
+    <th><?= $block->escapeHtml(__('App Version')) ?></th>
+    <td><?= $block->escapeHtml($block->getAppVersion()) ?></td>
+</tr>
+<tr>
+    <th><?= $block->escapeHtml(__('Iphone Model Type')) ?></th>
+    <td><?= $block->escapeHtml($block->getIphoneModelType()) ?></td>
+</tr>
