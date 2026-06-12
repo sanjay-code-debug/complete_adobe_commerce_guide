@@ -686,31 +686,33 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 
 #### Switch  Xdebug Script
 <details>
-   #!/bin/bash
-INI=/etc/php/8.2/fpm/conf.d/20-xdebug.ini
+   
+    #!/bin/bash
+      INI=/etc/php/8.2/fpm/conf.d/20-xdebug.ini
+      
+      if [ "$1" == "1" ]; then
+        IDEKEY="PHPSTORM"
+      elif [ "$1" == "2" ]; then
+        IDEKEY="VSCODE"
+      else
+        echo "Usage: $0 [1=PhpStorm | 2=VSCode]"
+        exit 1
+      fi
+      
+      sudo tee "$INI" > /dev/null <<EOF
+      [xdebug]
+      zend_extension=xdebug.so
+      xdebug.mode=debug
+      xdebug.start_with_request=yes
+      xdebug.client_host=127.0.0.1
+      xdebug.client_port=9003
+      xdebug.log=/tmp/xdebug.log
+      xdebug.idekey=$IDEKEY
+      EOF
+      
+      sudo systemctl restart php8.2-fpm
+      echo "Configured for $IDEKEY and restarted PHP-FPM."
 
-if [ "$1" == "1" ]; then
-  IDEKEY="PHPSTORM"
-elif [ "$1" == "2" ]; then
-  IDEKEY="VSCODE"
-else
-  echo "Usage: $0 [1=PhpStorm | 2=VSCode]"
-  exit 1
-fi
-
-sudo tee "$INI" > /dev/null <<EOF
-[xdebug]
-zend_extension=xdebug.so
-xdebug.mode=debug
-xdebug.start_with_request=yes
-xdebug.client_host=127.0.0.1
-xdebug.client_port=9003
-xdebug.log=/tmp/xdebug.log
-xdebug.idekey=$IDEKEY
-EOF
-
-sudo systemctl restart php8.2-fpm
-echo "Configured for $IDEKEY and restarted PHP-FPM."
 </details>
 
 
