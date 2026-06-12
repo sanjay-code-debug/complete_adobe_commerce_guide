@@ -588,10 +588,87 @@ latest adobe commerce version : - https://experienceleague.adobe.com/en/docs/com
 #### How to Setup X-Debug for Local and Staging Environment On Mac OS
 <details><summary><b>info</b></summary>
 
-     
    Xdebug Setup For Local Development 
     
-         - Install the Xdebug
+   For Vs Code 
+   --------------
+      - sudo apt install php8.4-xdebug -y
+      - php -v
+
+      nano /etc/php/8.4/cli/conf.d/20-xdebug.ini 
+
+      zend_extension=xdebug.so
+      xdebug.mode=debug
+      xdebug.start_with_request=yes
+      xdebug.client_host=127.0.0.1
+      xdebug.client_port=9003
+      xdebug.log=/tmp/xdebug.log
+      xdebug.idekey=VSCODE
+      xdebug.max_nesting_level=1000
+
+      Open Code into VS Code 
+          cd /var/www/html/local$ code . 
+
+      Create dir
+      
+      .vscode
+        |
+        |----- /var/www/html/local/.vscode/launch.json
+
+         {
+          "version": "0.2.0",
+          "configurations": [
+              {
+                  "name": "Listen for Xdebug (Magento2)",
+                  "type": "php",
+                  "request": "launch",
+                  "port": 9003,
+                  "pathMappings": {
+                      "/var/www/html/local": "${workspaceFolder}"
+                  },
+                  "log": true
+              }
+          ]
+      }
+
+   Start Debug 
+   
+      Now do the Full Test:
+      In VS Code press Ctrl+Shift+D
+      Select "Listen for Xdebug (Magento2)"
+      Click ▶️ — bottom bar turns orange
+      Open pub/index.php in VS Code
+      Click line 1 to set a 🔴 breakpoint
+      Visit http://magento.local in browser
+      VS Code should pause ✅   
+
+
+  For PhpStrom
+   -----------
+      - sudo apt install php8.4-xdebug -y
+      - php -v
+      
+      sudo bash -c 'cat > /etc/php/8.4/cli/conf.d/20-xdebug.ini << EOF
+      zend_extension=xdebug.so
+      xdebug.mode=debug
+      xdebug.start_with_request=yes
+      xdebug.client_host=172.30.224.1
+      xdebug.client_port=9003
+      xdebug.log=/tmp/xdebug.log
+      xdebug.idekey=PHPSTORM
+      xdebug.max_nesting_level=1000
+      EOF'
+      
+      sudo touch /tmp/xdebug.log
+      sudo chmod 777 /tmp/xdebug.log
+      
+      sudo service php8.4-fpm restart
+      sudo service nginx restart
+      
+      Run → Edit Configurations → + → PHP Remote Debug
+      SettingValueNameMagento XdebugFilter by IDE key✅ checkedServerlocalIDE keyPHPSTORM
+      Click Apply → OK
+
 
 
    Xdebug Setup For Staging Development
